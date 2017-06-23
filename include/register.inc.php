@@ -1,14 +1,14 @@
 <?php
 include("connexiondb.php");
-if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['prenom']) && !empty($_POST['prenom']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['passwd']) && !empty($_POST['passwd']) && isset($_POST['username']) && !empty($_POST['username'])){
+if(isset($_POST['EMAIL']) && !empty($_POST['EMAIL']) && isset($_POST['PRENOM']) && !empty($_POST['PRENOM']) && isset($_POST['NOM']) && !empty($_POST['NOM']) && isset($_POST['PASSWORD']) && !empty($_POST['PASSWORD']) && isset($_POST['USERNAME']) && !empty($_POST['USERNAME'])){
 
-    $email=htmlspecialchars($_POST['email']);
-	$nom=htmlspecialchars($_POST['nom']);
-    $prenom=htmlspecialchars($_POST['prenom']);
-    $passwd=htmlspecialchars($_POST['passwd']);
+    $email=htmlspecialchars($_POST['EMAIL']);
+	$nom=htmlspecialchars($_POST['NOM']);
+    $prenom=htmlspecialchars($_POST['PRENOM']);
+    $passwd=htmlspecialchars($_POST['PASSWORD']);
     $passwd=sha1($passwd);
-    $username=htmlspecialchars($_POST['username']);
-	$req = $DBcon->prepare('INSERT INTO `user`(`ID`, `NOM`, `PRENOM`, `MAIL`, `USERNAME`, `PASSWORD`) VALUES (NULL,?,?,?,?,?)');
+    $username=htmlspecialchars($_POST['USERNAME']);
+	$req = $DBcon->prepare('INSERT INTO `USER`(`IDUSER`, `NOM`, `PRENOM`, `EMAIL`, `USERNAME`, `PASSWORD`) VALUES (NULL,?,?,?,?,?)');
 					
     $req->bindValue(1, $nom, PDO::PARAM_STR);
     $req->bindValue(2, $prenom, PDO::PARAM_STR);
