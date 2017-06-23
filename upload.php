@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ((!isset($_SESSION['id'])) || (empty($_SESSION['id']))){
+if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=login.php'>";
 }
 ?>
@@ -11,7 +11,7 @@ if ((!isset($_SESSION['id'])) || (empty($_SESSION['id']))){
 	<title>Téléchargement</title>
 </head>
 <body>
-
+<?php include 'layout_base.php'; ?>
 <form method="post" action="actionupload.php" enctype="multipart/form-data">
 	
 	<label for="File">Sélectionner le fichier à télécharger.</label><br />

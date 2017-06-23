@@ -4,7 +4,7 @@
 	<title>Connexion</title>
 </head>
 <body>
-
+<?php include 'layout_base.php'; ?>
 <div>
 	<form class="form-signin" method="POST">
 		<div class="titre">
