@@ -8,6 +8,8 @@
 
         <div>
 
+            <?php echo sha1("COCATargus182019!"); ?>
+
           <form action="include/register.inc.php" method="POST">
             <h2 class="titre">Inscription</h2>
 
