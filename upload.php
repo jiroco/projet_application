@@ -11,7 +11,5 @@
 	<input type="submit" name="submit" value="Upload" />
 </div>
 
-<?php include("include/connexion.inc.php");?>
-
 </body>
 </html>
