@@ -1,21 +1,21 @@
 <?php
 include("connexiondb.php");
-if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['passwd']) && !empty($_POST['passwd']) && is_string($_POST['username']) && is_string($_POST['passwd'])){
-        
-        $username=htmlspecialchars($_POST['username']);
-        $pass=htmlspecialchars(sha1($_POST['passwd']));
-        $req = $DBcon->prepare('SELECT ID, USERNAME, PASSWORD, MAIL, NOM, PRENOM from user WHERE USERNAME = ? ');
+echo "c'est parti";
+if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PASSWORD']) && !empty($_POST['PASSWORD']) && is_string($_POST['USERNAME']) && is_string($_POST['PASSWORD'])){
+        $username=htmlspecialchars($_POST['USERNAME']);
+        $pass=htmlspecialchars(sha1($_POST['PASSWORD']));
+        $req = $DBcon->prepare('SELECT IDUSER, USERNAME, PASSWORD, EMAIL, NOM, PRENOM from USER WHERE USERNAME = ? ');
         $req->bindValue(1,$username,PDO::PARAM_STR);
-        $check=$req->execute();  
+        $check=$req->execute();
         if($check){
             if($donnee = $req->fetch()){
                 if($pass == $donnee['PASSWORD']){
                     session_start(); 
-                    $_SESSION['id'] = $donnee['ID'];
-                    $_SESSION['mail']=$donnee['MAIL'];
-                    $_SESSION['nom'] = $donnee['NOM'];
-                    $_SESSION['prenom']=$donnee['PRENOM'];
-                    $_SESSION['username']= $donnee['USERNAME'];
+                    $_SESSION['IDUSER'] = $donnee['IDUSER'];
+                    $_SESSION['EMAIL']=$donnee['EMAIL'];
+                    $_SESSION['NOM'] = $donnee['NOM'];
+                    $_SESSION['PRENOM']=$donnee['PRENOM'];
+                    $_SESSION['USERNAME']= $donnee['USERNAME'];
                     echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";    
                 }
                 else
