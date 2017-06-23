@@ -11,9 +11,9 @@
 			<p>Connexion</p>
 			<br>
 			<input type="hidden"/>
-			<input name="username" id="username"  placeholder="username" required="" type="text"/>
+			<input name="USERNAME" id="username"  placeholder="username" required="" type="text"/>
 			<br>
-			<input name="passwd" id="passwd" placeholder="Mot de passe" required="" type="password"/>
+			<input name="PASSWORD" id="passwd" placeholder="Mot de passe" required="" type="password"/>
 			<br>
 			<input type="submit"  value="Connexion"/>
 		</div>
