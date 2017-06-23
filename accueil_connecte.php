@@ -21,10 +21,38 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 <?php include 'layout_base.php'; ?>
 <div>
 	fichier uploader
+	<?php
+	if($dossier = opendir('./data')){
+		while(false !== ($fichier = readdir($dossier))){
+			if($fichier != '.' && $fichier != '..'){
+				echo '<li>' . $fichier . '</li>';
+			}
+		}
+		echo '</ul><br />';
+		closedir($dossier);
+	}
+	else
+	    echo 'Le dossier n\' a pas pu être ouvert';
+	
+?>
 </div>
-
 <div>
 	fichier downloader
+	<?php
+	if($dossier = opendir('./download')){
+		while(false !== ($fichier = readdir($dossier))){
+			if($fichier != '.' && $fichier != '..'){
+				echo '<li>' . $fichier . '</li>';
+
+			}
+		}
+		echo '</ul><br />';
+		closedir($dossier);
+	}
+	else
+	    echo 'Le dossier n\' a pas pu être ouvert';
+	
+?>
 </div>
 
 </body>
