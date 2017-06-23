@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 23 Juin 2017 à 14:23
+-- Généré le :  Ven 23 Juin 2017 à 15:11
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -119,7 +119,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
 (1, 1, '', 'adepelley', 'aloise.depelley@insa-cvl.fr', 'c5992ae9801d756f8cba5a61589771bfd06046f6', 'INSA', 'Depelley', 'Aloïse'),
 (2, 1, '', 'jiroco', 'jean.savoldeli@insa-cvl.fr', '51f8b1fa9b424745378826727452997ee2a7c3d7', 'INSA', 'Savoldeli', 'Jean'),
-(3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David');
+(3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David'),
+(6, 1, NULL, 'admin', 'admin@admin.fr', 'COCATargus182019!', 'INSA', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -207,7 +208,7 @@ ALTER TABLE `setup`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `IDUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IDUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

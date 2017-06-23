@@ -28,6 +28,7 @@
 						<li><a href="#">Page 1</a></li>
 						<li><a href="upload.php">Téléchargement</a></li>
 						<li><a href="#">Page 3</a></li>
+						<li><a href="admin.php">Administrateur</a></li>
 					</ul>
 				</div>
 			</div>
