@@ -7,11 +7,8 @@ if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PAS
         $req = $DBcon->prepare('SELECT IDUSER, USERNAME, PASSWORD, EMAIL, NOM, PRENOM from USER WHERE USERNAME = ? ');
         $req->bindValue(1,$username,PDO::PARAM_STR);
         $check=$req->execute();
-        print ("$username, $pass");
-        print ("check = ".$check);
         if($check){
             if($donnee = $req->fetch()){
-                echo "donnee :".$donnee['PASSWORD'];
                 if($pass == $donnee['PASSWORD']){
                     session_start(); 
                     $_SESSION['IDUSER'] = $donnee['IDUSER'];
@@ -22,7 +19,7 @@ if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PAS
                     echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";    
                 }
                 else
-                    echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> pass incorrects. </div></div>";
+                    echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Identifiants incorrects. </div></div>";
             }
             else                
                 echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Identifiants incorrects. </div></div>";        
