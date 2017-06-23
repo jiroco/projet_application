@@ -28,7 +28,7 @@
 						<li><a href="accueil_connecte.php">Accueil</a></li>
 						<li><a href="upload.php">Téléchargement</a></li>
 						<li><a href="#">Page 3</a></li>
-						<li><a href="admin.php">Administrateur</a></li>
+						<li><a href="connexion_admin.php">Administrateur</a></li>
 						<li><a href="#">Réglages</a></li>
 						<li><a href="profil.php">Profil</a></li>
 						<li><a href="apropos.php">A propos</a></li>
