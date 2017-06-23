@@ -28,15 +28,43 @@
         	<p>Valider un utilisteur</p>
             <?php
 
-                $req = $DBcon->query('SELECT U.NOM, U.PRENOM, U.SOCIETE FROM USER U WHERE USERNAME = NULL');
-                $result = $req->fetch();
-                print_r($result);
+                $req = $DBcon->query('SELECT IDUSER, NOM, PRENOM, SOCIETE FROM user WHERE USERNAME = "no_username"');
+                while ($resultat = $req->fetch()) { ?>
+                    <div id='<?php echo -$resultat["IDUSER"];?>' >
+                        <input class='autor' id='<?php echo $resultat["IDUSER"];?>' type=button value='Autoriser'></input>
+                        <?php print_r($resultat["NOM"] . " " . $resultat["PRENOM"] . " travaillant chez " . $resultat["SOCIETE"] . "<br/>"); ?>
+                    </div>
+                <?php }
 
             ?>
+            <script
+                src="https://code.jquery.com/jquery-3.2.1.js"
+                integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+                crossorigin="anonymous"></script>
+            <script type="text/javascript">
+              $(document).ready(function () {
+                $('.autor').click(function () {
+                  var id_button = $(this).attr('id');
+                  var dataObject = {};
+                  dataObject["id_button"] = id_button;
+                  $.ajax({
+                    url:  'include/autor_users.php',
+                    timeout: 30000,
+                    type: 'POST',
+                    data: dataObject,
+                    success: function(data) {
+                      $("#" + -id_button).html(data);
+                    },
+                    error: function() {
+                      $("#" + -id_button).html(data);
+                    },
+                  });
+                });
+              });
+            </script>
         </div>
-        <div style="color:#0000FF">
+        <div style="color:#00F89F">
         	<p>Logs</p>
         </div>
     </body>
-
 </html>
