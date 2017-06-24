@@ -48,14 +48,26 @@
                   var dataObject = {};
                   dataObject["id_button"] = id_button;
                   $.ajax({
+                    url:  'include/confirm_admin.inc.php',
+                    timeout: 30000,
+                    type: 'POST',
+                    data: dataObject,
+                    success: function() {
+                    },
+                    error: function() {
+                        alert("Erreur de requête");
+                    },
+                  });
+                  $.ajax({
                     url:  'include/autor_users.php',
                     timeout: 30000,
                     type: 'POST',
                     data: dataObject,
                     success: function(data) {
                       $("#" + -id_button).html(data);
+                      $(location).attr("href", "confirm_admin.php");
                     },
-                    error: function() {
+                    error: function(data) {
                       $("#" + -id_button).html(data);
                     },
                   });

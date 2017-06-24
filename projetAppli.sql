@@ -1,26 +1,32 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Client :  localhost:8889
--- Généré le :  Ven 23 Juin 2017 à 18:18
--- Version du serveur :  5.6.35
--- Version de PHP :  7.0.15
+-- Client :  127.0.0.1
+-- Généré le :  Sam 24 Juin 2017 à 13:03
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Base de données :  `projetAppli`
+-- Base de données :  `projetappli`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `DEFAILLANCE`
+-- Structure de la table `defaillance`
 --
 
-CREATE TABLE `DEFAILLANCE` (
+CREATE TABLE `defaillance` (
   `IDDEFAI` int(255) NOT NULL,
   `PERTEFONCT` varchar(256) NOT NULL,
   `INTEMP` varchar(256) NOT NULL,
@@ -34,20 +40,20 @@ CREATE TABLE `DEFAILLANCE` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `DOC_D`
+-- Structure de la table `doc_d`
 --
 
-CREATE TABLE `DOC_D` (
+CREATE TABLE `doc_d` (
   `IDDOCD` int(255) NOT NULL,
   `URLDOCD` varchar(256) NOT NULL,
   `NAMEDOCD` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `DOC_D`
+-- Contenu de la table `doc_d`
 --
 
-INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
+INSERT INTO `doc_d` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 (1, '', 'doc_downloader_1'),
 (2, '', 'doc_downloader_2'),
 (3, '', 'Doc_downloader_3'),
@@ -56,20 +62,20 @@ INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `DOC_U`
+-- Structure de la table `doc_u`
 --
 
-CREATE TABLE `DOC_U` (
+CREATE TABLE `doc_u` (
   `IDDOCU` int(255) NOT NULL,
   `URLDOCU` varchar(256) NOT NULL,
   `NAMEDOCU` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `DOC_U`
+-- Contenu de la table `doc_u`
 --
 
-INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
+INSERT INTO `doc_u` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 (1, '', 'Doc_uploader_1'),
 (2, '', 'Doc_uploader_2'),
 (3, '', 'doc_uploader_3'),
@@ -78,10 +84,10 @@ INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `DTOS`
+-- Structure de la table `dtos`
 --
 
-CREATE TABLE `DTOS` (
+CREATE TABLE `dtos` (
   `INDEXKEY` int(255) NOT NULL,
   `IDDOCU` int(255) NOT NULL,
   `IDDEFAI` int(255) NOT NULL,
@@ -91,10 +97,10 @@ CREATE TABLE `DTOS` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `SETUP`
+-- Structure de la table `setup`
 --
 
-CREATE TABLE `SETUP` (
+CREATE TABLE `setup` (
   `IDSETUP` int(255) NOT NULL,
   `NUMERO` tinyint(1) NOT NULL DEFAULT '0',
   `FONCTION` tinyint(1) NOT NULL DEFAULT '0',
@@ -112,14 +118,14 @@ CREATE TABLE `SETUP` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `USER`
+-- Structure de la table `user`
 --
 
-CREATE TABLE `USER` (
+CREATE TABLE `user` (
   `IDUSER` int(255) NOT NULL,
   `PERMISSION` tinyint(1) NOT NULL DEFAULT '0',
   `URLUSER` varchar(254) DEFAULT NULL,
-  `USERNAME` varchar(254) DEFAULT NULL,
+  `USERNAME` varchar(254) DEFAULT 'no_username',
   `EMAIL` varchar(254) DEFAULT NULL,
   `PASSWORD` varchar(254) DEFAULT NULL,
   `SOCIETE` varchar(254) DEFAULT NULL,
@@ -128,22 +134,24 @@ CREATE TABLE `USER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `USER`
+-- Contenu de la table `user`
 --
 
-INSERT INTO `USER` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
+INSERT INTO `user` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
 (1, 1, '', 'adepelley', 'aloise.depelley@insa-cvl.fr', 'c5992ae9801d756f8cba5a61589771bfd06046f6', 'INSA', 'Depelley', 'Aloïse'),
 (2, 1, '', 'jiroco', 'jean.savoldeli@insa-cvl.fr', '51f8b1fa9b424745378826727452997ee2a7c3d7', 'INSA', 'Savoldeli', 'Jean'),
 (3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David'),
-(6, 0, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin');
+(6, 1, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin'),
+(7, 0, NULL, 'no_username', 'test@mail.fr', NULL, 'Gaumont', 'Galabru', 'Michel'),
+(8, 0, NULL, 'no_username', 'test@mail.com', NULL, 'J&M', 'Schieffer', 'Claudia');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UTOD`
+-- Structure de la table `utod`
 --
 
-CREATE TABLE `UTOD` (
+CREATE TABLE `utod` (
   `INDEXKEY` int(255) NOT NULL,
   `IDUSER` int(255) NOT NULL,
   `IDDOCU` int(255) NOT NULL,
@@ -151,10 +159,10 @@ CREATE TABLE `UTOD` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `UTOD`
+-- Contenu de la table `utod`
 --
 
-INSERT INTO `UTOD` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
+INSERT INTO `utod` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 (1, 1, 1, 1),
 (2, 1, 2, 2),
 (3, 1, 3, 3),
@@ -165,45 +173,45 @@ INSERT INTO `UTOD` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 --
 
 --
--- Index pour la table `DEFAILLANCE`
+-- Index pour la table `defaillance`
 --
-ALTER TABLE `DEFAILLANCE`
+ALTER TABLE `defaillance`
   ADD PRIMARY KEY (`IDDEFAI`);
 
 --
--- Index pour la table `DOC_D`
+-- Index pour la table `doc_d`
 --
-ALTER TABLE `DOC_D`
+ALTER TABLE `doc_d`
   ADD PRIMARY KEY (`IDDOCD`);
 
 --
--- Index pour la table `DOC_U`
+-- Index pour la table `doc_u`
 --
-ALTER TABLE `DOC_U`
+ALTER TABLE `doc_u`
   ADD PRIMARY KEY (`IDDOCU`);
 
 --
--- Index pour la table `DTOS`
+-- Index pour la table `dtos`
 --
-ALTER TABLE `DTOS`
+ALTER TABLE `dtos`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
--- Index pour la table `SETUP`
+-- Index pour la table `setup`
 --
-ALTER TABLE `SETUP`
+ALTER TABLE `setup`
   ADD PRIMARY KEY (`IDSETUP`);
 
 --
--- Index pour la table `USER`
+-- Index pour la table `user`
 --
-ALTER TABLE `USER`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`IDUSER`);
 
 --
--- Index pour la table `UTOD`
+-- Index pour la table `utod`
 --
-ALTER TABLE `UTOD`
+ALTER TABLE `utod`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
@@ -211,37 +219,40 @@ ALTER TABLE `UTOD`
 --
 
 --
--- AUTO_INCREMENT pour la table `DEFAILLANCE`
+-- AUTO_INCREMENT pour la table `defaillance`
 --
-ALTER TABLE `DEFAILLANCE`
+ALTER TABLE `defaillance`
   MODIFY `IDDEFAI` int(255) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `DOC_D`
+-- AUTO_INCREMENT pour la table `doc_d`
 --
-ALTER TABLE `DOC_D`
+ALTER TABLE `doc_d`
   MODIFY `IDDOCD` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `DOC_U`
+-- AUTO_INCREMENT pour la table `doc_u`
 --
-ALTER TABLE `DOC_U`
+ALTER TABLE `doc_u`
   MODIFY `IDDOCU` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `DTOS`
+-- AUTO_INCREMENT pour la table `dtos`
 --
-ALTER TABLE `DTOS`
+ALTER TABLE `dtos`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `SETUP`
+-- AUTO_INCREMENT pour la table `setup`
 --
-ALTER TABLE `SETUP`
+ALTER TABLE `setup`
   MODIFY `IDSETUP` int(255) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `USER`
+-- AUTO_INCREMENT pour la table `user`
 --
-ALTER TABLE `USER`
-  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `user`
+  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT pour la table `UTOD`
+-- AUTO_INCREMENT pour la table `utod`
 --
-ALTER TABLE `UTOD`
+ALTER TABLE `utod`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

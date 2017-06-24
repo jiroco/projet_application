@@ -3,6 +3,10 @@ include("connexiondb.php");
 if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PASSWORD']) && !empty($_POST['PASSWORD']) && is_string($_POST['USERNAME']) && is_string($_POST['PASSWORD'])){
         $username=htmlspecialchars($_POST['USERNAME']);
         $pass=htmlspecialchars(sha1($_POST['PASSWORD']));
+        if ($username != "admin") {
+            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Espace réservé à l'Administrateur. </div></div>";
+            exit();
+        }
         $req = $DBcon->prepare('SELECT IDUSER, PERMISSION, USERNAME, PASSWORD, EMAIL, NOM, PRENOM from USER WHERE USERNAME = ? ');
         $req->bindValue(1,$username,PDO::PARAM_STR);
         $check=$req->execute();
