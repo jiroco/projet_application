@@ -1,10 +1,11 @@
-<?php
+<?
 include("include/connexiondb.php");
 session_start();
 if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 </head>
 <body>
+	<?php include 'layout_base.php'; ?>
 	<div class="container">
 	  <h2>Reglage du setup</h2>
 	  <form method="POST" action="include/reglage_setup.inc.php">
@@ -195,7 +197,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		        <td><input type="checkbox" name="tensetbox[10]"></td>
 		        <td><input type="checkbox" name="elevensetbox[10]"></td>
 		      </tr>
-		       
+
 
 
 
