@@ -15,15 +15,15 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
-				</button>
-				<img id="image_navbar" src="./image/insa.gif">
-			</div>
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<img id="image_navbar" src="./image/insa.gif">
+				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<li><a href="accueil_connecte.php">Accueil</a></li>
@@ -36,7 +36,7 @@
 					<li><a href="deconnexion.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
 					</ul>
 				</div>
-		</div>
+			</div>
 		</nav>
 	</body>
 </html>

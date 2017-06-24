@@ -2,38 +2,80 @@
 <html>
 <head>
     <title>Inscription</title>
-    <link rel="stylesheet" type="text/css" href="register.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
 </head>
     <body>
+        <div id="main_containt">
+            <?php include('layout_base.php');?>
+            <div class="container-fluid">
+                <div class="row">
+                    <form class="form-horizontal" action="include/register.inc.php" method="POST">
+                        <fieldset>
+                            <!-- titre -->
+                            <div class="row">
+                                <div class="text_area">
+                                    <div class="row titre"><h3>Sign in</h3></div>
+                                </div>
+                            </div>
+                            <br/><br/>
+
+                            <!-- Prenom-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="prenom">Prénom</label>  
+                                <div class="col-md-4">
+                                    <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
+                                
+                                </div>
+                            </div>
+
+                            <!-- Nom -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="inputLastName">Nom</label>  
+                                <div class="col-md-4">
+                                    <input id="inputLastName" name="nom" type="text" placeholder="Nom" class="form-control input-md">    
+                                </div>
+                            </div>
+
+                            <!-- Société -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="inputSociete">Société</label>  
+                                <div class="col-md-4">
+                                    <input id="inputSociete" name="societe" type="text" placeholder="Société" class="form-control input-md">    
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="inputEmail">Email</label>  
+                                <div class="col-md-4">
+                                    <input id="inputEmail" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">    
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="reg"></label>
+                              <div class="col-md-4">
+                                <button id="inputSubmit" type="submit" class="btn btn-primary">S'inscrire</button>
+                              </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <div>
-
-          <form action="include/register.inc.php" method="POST">
-            <h2 class="titre">Inscription</h2>
-
-            <label for="inputFisrtName">Prenom</label>
-            <input id="inputFisrtName" placeholder="Prénom" type="text", name="prenom">
-            <br/>
-            <label for="inputLastName">Nom</label>
-            <input id="inputLastName" placeholder="Nom" name="nom" type="text">
-            <br/>
-            <label for="inputSociete" >Société</label>
-            <input id="inputSociete" placeholder="Societe" name="societe" type="text">
-            <br/>
-            <label for="inputEmail">Email</label>
-            <input id="inputEmail"  type="email" name="email" placeholder="Entrer votre adresse mail"/>
-            <br/><br/>
-            <button id="inputSubmit" type="submit">S'inscrire</button>
-          </form>
-
-          <div>
-
-            <p>
-              <strong>NB :</strong> Cette inscription ne saura en rien vous créer un compte
-              <br/>Un mail va être envoyer à l'administrateur du site qui décidera alors de votre inscription effective
-            </p>
-
+            <div>
+                </br>
+                <div class='container col-md-8 col-md-offset-2'>
+                    <div class='alert alert-danger' style='text-align: center;'> 
+                        <strong>NB :</strong> 
+                        Cette inscription ne saura en rien vous créer un compte. 
+                        <br/>Un mail va être envoyer à l'administrateur du site qui décidera alors de votre inscription effective.
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-  </body>
+    </body>
 </html>

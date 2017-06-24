@@ -1,17 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Client :  localhost:8889
--- Généré le :  Ven 23 Juin 2017 à 18:18
--- Version du serveur :  5.6.35
--- Version de PHP :  7.0.15
+-- Client :  127.0.0.1
+-- Généré le :  Sam 24 Juin 2017 à 13:03
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Base de données :  `projetAppli`
+-- Base de données :  `projetappli`
 --
 
 -- --------------------------------------------------------
@@ -48,10 +54,10 @@ CREATE TABLE `DOC_D` (
 --
 
 INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
-(1, '', 'doc_downloader_1'),
-(2, '', 'doc_downloader_2'),
-(3, '', 'Doc_downloader_3'),
-(4, '', 'Doc_downloader_4');
+(1, '', 'DOC_Downloader_1'),
+(2, '', 'DOC_Downloader_2'),
+(3, '', 'DOC_Downloader_3'),
+(4, '', 'DOC_Downloader_4');
 
 -- --------------------------------------------------------
 
@@ -70,10 +76,10 @@ CREATE TABLE `DOC_U` (
 --
 
 INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
-(1, '', 'Doc_uploader_1'),
-(2, '', 'Doc_uploader_2'),
-(3, '', 'doc_uploader_3'),
-(4, '', 'Doc_uploader_4');
+(1, '', 'DOC_Uploader_1'),
+(2, '', 'DOC_Uploader_2'),
+(3, '', 'DOC_Uploader_3'),
+(4, '', 'DOC_Uploader_4');
 
 -- --------------------------------------------------------
 
@@ -119,7 +125,7 @@ CREATE TABLE `USER` (
   `IDUSER` int(255) NOT NULL,
   `PERMISSION` tinyint(1) NOT NULL DEFAULT '0',
   `URLUSER` varchar(254) DEFAULT NULL,
-  `USERNAME` varchar(254) DEFAULT NULL,
+  `USERNAME` varchar(254) DEFAULT 'no_username',
   `EMAIL` varchar(254) DEFAULT NULL,
   `PASSWORD` varchar(254) DEFAULT NULL,
   `SOCIETE` varchar(254) DEFAULT NULL,
@@ -135,7 +141,9 @@ INSERT INTO `USER` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PAS
 (1, 1, '', 'adepelley', 'aloise.depelley@insa-cvl.fr', 'c5992ae9801d756f8cba5a61589771bfd06046f6', 'INSA', 'Depelley', 'Aloïse'),
 (2, 1, '', 'jiroco', 'jean.savoldeli@insa-cvl.fr', '51f8b1fa9b424745378826727452997ee2a7c3d7', 'INSA', 'Savoldeli', 'Jean'),
 (3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David'),
-(6, 0, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin');
+(6, 1, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin'),
+(7, 0, NULL, 'no_username', 'test@mail.fr', NULL, 'Gaumont', 'Galabru', 'Michel'),
+(8, 0, NULL, 'no_username', 'test@mail.com', NULL, 'J&M', 'Schieffer', 'Claudia');
 
 -- --------------------------------------------------------
 
@@ -239,9 +247,12 @@ ALTER TABLE `SETUP`
 -- AUTO_INCREMENT pour la table `USER`
 --
 ALTER TABLE `USER`
-  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `UTOD`
 --
 ALTER TABLE `UTOD`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -25,7 +25,7 @@
     <body>
         <?php include("layout_base.php"); ?>
         <div style="color:#0000FF">
-        	<p>Valider un utilisteur</p>
+        	<p>Valider un utilisateur</p>
             <?php
 
                 $req = $DBcon->query('SELECT IDUSER, NOM, PRENOM, SOCIETE FROM user WHERE USERNAME = "no_username"');
@@ -48,14 +48,26 @@
                   var dataObject = {};
                   dataObject["id_button"] = id_button;
                   $.ajax({
+                    url:  'include/confirm_admin.inc.php',
+                    timeout: 30000,
+                    type: 'POST',
+                    data: dataObject,
+                    success: function() {
+                    },
+                    error: function() {
+                        alert("Erreur de requête");
+                    },
+                  });
+                  $.ajax({
                     url:  'include/autor_users.php',
                     timeout: 30000,
                     type: 'POST',
                     data: dataObject,
                     success: function(data) {
                       $("#" + -id_button).html(data);
+                      $(location).attr("href", "confirm_admin.php");
                     },
-                    error: function() {
+                    error: function(data) {
                       $("#" + -id_button).html(data);
                     },
                   });
