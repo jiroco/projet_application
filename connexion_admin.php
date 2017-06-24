@@ -4,7 +4,7 @@
 	<title>Connexion Admin</title>
 </head>
 <body>
-<?php include 'layout_base.php'; ?>
+<?php include 'layout_base_unsigned.php'; ?>
 <div>
 	<form class="form-signin" method="POST">
 		<div class="titre">
