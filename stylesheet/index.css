@@ -1,5 +1,5 @@
 #main_containt{
-	background: linear-gradient(#6C6C6C,grey, white); 
+	background: linear-gradient(rgb(200, 200, 200), white); 
 }
 .text_area{
 	text-align: center;

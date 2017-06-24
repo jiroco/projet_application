@@ -24,17 +24,17 @@
 				</button>
 				<img id="image_navbar" src="./image/insa.gif">
 			</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="accueil_connecte.php">Accueil</a></li>
-						<li><a href="upload.php">Téléchargement</a></li>
-						<li><a href="connexion_admin.php">Administrateur</a></li>
-						<li><a href="#">Réglages</a></li>
-						<li><a href="profil.php">Profil</a></li>
-						<li><a href="apropos.php">A propos</a></li>
-					</ul>
-				</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">Home</a></li>
+					<li><a href="accueil_connecte.php">Accueil</a></li>
+					<li><a href="upload.php">Téléchargement</a></li>
+					<li><a href="connexion_admin.php">Administrateur</a></li>
+					<li><a href="#">Réglages</a></li>
+					<li><a href="profil.php">Profil</a></li>
+					<li><a href="apropos.php">A propos</a></li>
+				</ul>
+			</div>
 		</div>
 		</nav>
 	</body>
