@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+    echo "<meta http-equiv='refresh' content='0; URL=login.php'>";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +13,14 @@
 
 </head>
 <body>
-
+    <?php include 'layout_base.php'; ?>
     <form method="POST" action="include/reglage_defaillance.inc.php">
         <table>
             <tr>
                 <td>Mode de défaillance 1:</td>
-                <td><input type="text" name="defaillance_1" id="defaillance" value="Perte de la fonction"/></td>  
+                <td><input type="text" name="defaillance_1" id="defaillance" value="Perte de la fonction"/></td>
                 <td><input type="checkbox" name="boxdefaillance_1" id="boxdefaillance_1"  /></td>
-            
+
             </tr>
             <tr>
                 <td>Mode de défaillance 2:</td>
@@ -25,7 +32,7 @@
                 <td> <input type="text" name="defaillance_3" value="Retard d'exécution de la fonction" /> </td>
                 <td><input type="checkbox" name="boxdefaillance_3" id="boxdefaillance_3"  /></td>
             </tr>
-            
+
             <tr>
                 <td>Mode de défaillance 4:</td>
                 <td> <input type="text" name="defaillance_4" value="Démarrage de la fonction impossible" /> </td>
@@ -64,4 +71,3 @@
 
 </body>
 </html>
-
