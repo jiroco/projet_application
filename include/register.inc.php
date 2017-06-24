@@ -5,19 +5,22 @@
     	$nom=htmlspecialchars($_POST['nom']);
         $prenom=htmlspecialchars($_POST['prenom']);
         $societe=htmlspecialchars($_POST['societe']);
+        $username=htmlspecialchars($_POST['username']);
+        $password=htmlspecialchars($_POST['societe']);
+        $password=sha1($password);
 
         include("connexiondb.php");
 
-    	$req = $DBcon->prepare('INSERT INTO `user`(`EMAIL`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (?,?,?,?)');
+    	$req = $DBcon->prepare('INSERT INTO `user`(`USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (?,?,?,?,?,?)');
 
-        $req->bindValue(1,$email,PDO::PARAM_INT);
-        $req->bindValue(2,$societe,PDO::PARAM_INT);
-        $req->bindValue(3,$nom,PDO::PARAM_INT);
-        $req->bindValue(4,$prenom,PDO::PARAM_INT);
+        $req->bindValue(1,$username,PDO::PARAM_INT);
+        $req->bindValue(2,$email,PDO::PARAM_INT);
+        $req->bindValue(3,$password,PDO::PARAM_INT);
+        $req->bindValue(4,$societe,PDO::PARAM_INT);
+        $req->bindValue(5,$nom,PDO::PARAM_INT);
+        $req->bindValue(6,$prenom,PDO::PARAM_INT);
 
         $check=$req->execute();
-
-        echo $check;
 
         /* ----------------- ENVOIS DU MAIL ------------------*/
 
