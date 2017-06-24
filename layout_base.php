@@ -17,25 +17,24 @@
 		<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>                        
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
 				</button>
 				<img id="image_navbar" src="./image/insa.gif">
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li> <a href="#">Page 1 </a></li>
-					<li><a href="#">Page 2</a></li>
-					<li><a href="#">Page 3</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				</ul>
-			</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.php">Home</a></li>
+						<li><a href="accueil_connecte.php">Accueil</a></li>
+						<li><a href="upload.php">Téléchargement</a></li>
+						<li><a href="connexion_admin.php">Administrateur</a></li>
+						<li><a href="#">Réglages</a></li>
+						<li><a href="profil.php">Profil</a></li>
+						<li><a href="apropos.php">A propos</a></li>
+					</ul>
+				</div>
 		</div>
 		</nav>
 	</body>
