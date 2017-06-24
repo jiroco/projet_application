@@ -11,7 +11,7 @@
 
         include("connexiondb.php");
 
-    	$req = $DBcon->prepare('INSERT INTO `user`(`USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (?,?,?,?,?,?)');
+    	$req = $DBcon->prepare('INSERT INTO `USER`(`USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (?,?,?,?,?,?)');
 
         $req->bindValue(1,$username,PDO::PARAM_INT);
         $req->bindValue(2,$email,PDO::PARAM_INT);
