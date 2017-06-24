@@ -6,7 +6,7 @@
     </head>
     <body>
         <div id="main_containt">
-            <?php include('layout_base.php');?>
+            <?php include('layout_base_unsigned.php');?>
             <div class="container-fluid">
                 <div class="row">
                     <div class="text_area">

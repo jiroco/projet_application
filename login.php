@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-	<head>
 		<title>Connexion</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
 
@@ -9,7 +8,7 @@
 
 
 		<div id="main_containt">
-            <?php include('layout_base.php');?>
+            <?php include('layout_base_unsigned.php');?>
             <div class="container-fluid">
                 <div class="row">
                     <form class="form-horizontal" method="POST">
@@ -55,8 +54,4 @@
         </div>
 	</body>
 </html>
-
-
-
-
 
