@@ -1,6 +1,8 @@
 <?php
 
     if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['prenom']) && !empty($_POST['prenom']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['societe']) && !empty($_POST['societe'])){
+        
+
         $email=htmlspecialchars($_POST['email']);
     	$nom=htmlspecialchars($_POST['nom']);
         $prenom=htmlspecialchars($_POST['prenom']);
@@ -53,7 +55,7 @@
 
         if($check)
         {
-            echo "<meta http-equiv='refresh' content='0'; URL='../login.php'>";
+            echo "<meta http-equiv='refresh' content='0'; URL='../register.php'>";
         }
         else
         {

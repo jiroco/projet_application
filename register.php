@@ -23,47 +23,47 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="prenom">Prénom</label>
                                 <div class="col-md-4">
-                                    <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
+                                    <input id="prenom" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Nom -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputLastName">Nom</label>
+                                <label class="col-md-4 control-label" for="nom">Nom</label>
                                 <div class="col-md-4">
-                                    <input id="inputLastName" name="nom" type="text" placeholder="Nom" class="form-control input-md">
+                                    <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Username -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputUsername">Username</label>
+                                <label class="col-md-4 control-label" for="username">Username</label>
                                 <div class="col-md-4">
-                                    <input id="inputUsername" name="Username" type="text" placeholder="Username" class="form-control input-md">
+                                    <input id="username" name="username" type="text" placeholder="Username" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Password -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputPassword">Mot de passe</label>
+                                <label class="col-md-4 control-label" for="password">Mot de passe</label>
                                 <div class="col-md-4">
-                                    <input id="inputPassword" name="Password" type="password" placeholder="Password" class="form-control input-md">
+                                    <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Société -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputSociete">Société</label>
+                                <label class="col-md-4 control-label" for="societe">Société</label>
                                 <div class="col-md-4">
-                                    <input id="inputSociete" name="societe" type="text" placeholder="Société" class="form-control input-md">
+                                    <input id="societe" name="societe" type="text" placeholder="Société" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Email -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputEmail">Email</label>
+                                <label class="col-md-4 control-label" for="email">Email</label>
                                 <div class="col-md-4">
-                                    <input id="inputEmail" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">
+                                    <input id="email" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">
                                 </div>
                             </div>
 
