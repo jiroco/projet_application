@@ -5,7 +5,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 ?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Projet application</title>
@@ -33,22 +33,18 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 				}
 			}
 			else{
-				echo "<br/>";
-				echo "Documents non trouvés";
-				echo "<br/>";
+				echo "<br/>Documents non trouvés<br/>";
 			}
 		}
 		else{
-			echo "<br/>";
-			echo "Erreur de requète";
-			echo "<br/>";
+			echo "<br/>Erreur de requète<br/>";
 		}
 		?>
 
 		<br/>
 
 		<div>
-			Fichiers uploader
+			Fichiers téléchargés
 			<?php
 			echo "<br/>";
 			if($dossier = opendir('./data')){
@@ -66,7 +62,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		?>
 		</div>
 		<div>
-			Fichiers downloader
+			Fichiers résultats
 			<?php
 			echo "<br/>";
 			if($dossier = opendir('./download')){

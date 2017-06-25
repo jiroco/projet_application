@@ -14,7 +14,7 @@
                             <!-- titre -->
                             <div class="row">
                                 <div class="text_area">
-                                    <div class="row titre"><h3>Sign in</h3></div>
+                                    <div class="row titre"><h3>Inscription</h3></div>
                                 </div>
                             </div>
                             <br/><br/>
@@ -37,9 +37,9 @@
 
                             <!-- Username -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="username">Username</label>
+                                <label class="col-md-4 control-label" for="username">Nom d'utilisateur</label>
                                 <div class="col-md-4">
-                                    <input id="inputUsername" name="username" type="text" placeholder="Username" class="form-control input-md">
+                                    <input id="inputUsername" name="username" type="text" placeholder="Nom d'utilisateur" class="form-control input-md">
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="password">Mot de passe</label>
                                 <div class="col-md-4">
-                                    <input id="inputPassword" name="password" type="password" placeholder="Password" class="form-control input-md">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Mot de passe" class="form-control input-md">
                                 </div>
                             </div>
 
@@ -70,7 +70,7 @@
                             <!-- Button -->
                             <div class="form-group">
                               <label class="col-md-4 control-label" for="reg"></label>
-                              <div class="col-md-4">
+                              <div class="col-md-4" align="center">
                                 <button id="inputSubmit" type="submit" class="btn btn-primary">S'inscrire</button>
                               </div>
                             </div>
@@ -86,8 +86,7 @@
                 <div class='container col-md-8 col-md-offset-2'>
                     <div class='alert alert-danger' style='text-align: center;'>
                         <strong>NB :</strong>
-                        Cette inscription ne saura en rien vous créer un compte.
-                        <br/>Un mail va être envoyer à l'administrateur du site qui décidera alors de votre inscription effective.
+                        Toute inscription nécessite l'approbation de l'administrateur du site.
                     </div>
                 </div>
             </div>
