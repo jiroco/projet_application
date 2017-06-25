@@ -5,7 +5,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 ?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Projet application</title>
@@ -15,7 +15,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	</head>
 	<body >
 		<?php include 'layout_base.php'; ?>
-		<?php 
+		<?php
 		/*fichiers uploader*/
 		$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
 		$req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_INT);
@@ -33,22 +33,18 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 				}
 			}
 			else{
-				echo "<br/>";
-				echo "Documents non trouvés";
-				echo "<br/>";
+				echo "<br/>Documents non trouvés<br/>";
 			}
 		}
 		else{
-			echo "<br/>";
-			echo "Erreur de requète";
-			echo "<br/>";
+			echo "<br/>Erreur de requète<br/>";
 		}
 		?>
 
 		<br/>
 
 		<div>
-			Fichiers uploader
+			Fichiers téléchargés
 			<?php
 			echo "<br/>";
 			if($dossier = opendir('./data')){
@@ -62,11 +58,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 			}
 			else
 			    echo 'Le dossier n\' a pas pu être ouvert';
-			
+
 		?>
 		</div>
 		<div>
-			Fichiers downloader
+			Fichiers résultats
 			<?php
 			echo "<br/>";
 			if($dossier = opendir('./download')){
@@ -81,7 +77,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 			}
 			else
 			    echo 'Le dossier n\' a pas pu être ouvert';
-			
+
 		?>
 		</div>
 

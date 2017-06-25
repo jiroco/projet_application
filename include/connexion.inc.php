@@ -10,14 +10,14 @@ if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PAS
             if($donnee = $req->fetch()){
                 if($donnee['PERMISSION']==1){
                     if($pass == $donnee['PASSWORD']){
-                        session_start(); 
+                        session_start();
                         $_SESSION['IDUSER'] = $donnee['IDUSER'];
                         $_SESSION['EMAIL']=$donnee['EMAIL'];
                         $_SESSION['NOM'] = $donnee['NOM'];
                         $_SESSION['PRENOM']=$donnee['PRENOM'];
                         $_SESSION['USERNAME']= $donnee['USERNAME'];
                         $_SESSION['SOCIETE']=$donnee['SOCIETE'];
-                        echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";    
+                        echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";
                     }
                     else
                         echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Identifiants incorrects. </div></div>";
@@ -25,12 +25,12 @@ if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PAS
                 else
                     echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous n'avez pas la permission pour vous connecter. </div></div>";
             }
-            else                
-                echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Identifiants incorrects. </div></div>";        
+            else
+                echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Identifiants incorrects. </div></div>";
         }
         else
-            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
-        
+            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";
+
         $req->closeCursor();
     }
 ?>
