@@ -5,5 +5,14 @@
 
 </head>
 <body>
-  <?php include 'layout_base.php'; ?>
+	<?php
+		include("include/connexiondb.php");
+		session_start();
+		if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+			include 'layout_base_unsigned.php';
+		}
+		else{
+			include 'layout_base.php';
+		}
+	?>
  </body>
