@@ -3,7 +3,7 @@ include("connexiondb.php");
 if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PASSWORD']) && !empty($_POST['PASSWORD']) && is_string($_POST['USERNAME']) && is_string($_POST['PASSWORD'])){
         $username=htmlspecialchars($_POST['USERNAME']);
         $pass=htmlspecialchars(sha1($_POST['PASSWORD']));
-        $req = $DBcon->prepare('SELECT IDUSER, PERMISSION, USERNAME, PASSWORD, EMAIL, NOM, PRENOM, SOCIETE from USER WHERE USERNAME = ? ');
+        $req = $DBcon->prepare('SELECT IDUSER, PERMISSION, USERNAME, PASSWORD, EMAIL, NOM, PRENOM, SOCIETE, URLUSER from USER WHERE USERNAME = ? ');
         $req->bindValue(1,$username,PDO::PARAM_STR);
         $check=$req->execute();
         if($check){
@@ -17,6 +17,7 @@ if (isset($_POST['USERNAME']) && !empty($_POST['USERNAME']) && isset($_POST['PAS
                         $_SESSION['PRENOM']=$donnee['PRENOM'];
                         $_SESSION['USERNAME']= $donnee['USERNAME'];
                         $_SESSION['SOCIETE']=$donnee['SOCIETE'];
+                        $_SESSION['URLUSER']=$donnee['URLUSER'];
                         echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";    
                     }
                     else
