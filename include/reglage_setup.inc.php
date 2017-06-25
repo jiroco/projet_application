@@ -120,4 +120,5 @@ header("Refresh: 3; URL=../reglage_setup.php");
 // fermeture du fichier csv
 fclose($fichier_csv_setup);
 */
+include 'script.php'
 ?>

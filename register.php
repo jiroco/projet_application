@@ -21,34 +21,49 @@
 
                             <!-- Prenom-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="prenom">Prénom</label>  
+                                <label class="col-md-4 control-label" for="prenom">Prénom</label>
                                 <div class="col-md-4">
-                                    <input id="prenom" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
-                                
+                                    <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Nom -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputLastName">Nom</label>  
+                                <label class="col-md-4 control-label" for="inputLastName">Nom</label>
                                 <div class="col-md-4">
-                                    <input id="inputLastName" name="nom" type="text" placeholder="Nom" class="form-control input-md">    
+                                    <input id="inputLastName" name="nom" type="text" placeholder="Nom" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <!-- Username -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="inputUsername">Username</label>
+                                <div class="col-md-4">
+                                    <input id="inputUsername" name="Username" type="text" placeholder="Username" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="inputPassword">Mot de passe</label>
+                                <div class="col-md-4">
+                                    <input id="inputPassword" name="Password" type="password" placeholder="Password" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Société -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputSociete">Société</label>  
+                                <label class="col-md-4 control-label" for="inputSociete">Société</label>
                                 <div class="col-md-4">
-                                    <input id="inputSociete" name="societe" type="text" placeholder="Société" class="form-control input-md">    
+                                    <input id="inputSociete" name="societe" type="text" placeholder="Société" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Email -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputEmail">Email</label>  
+                                <label class="col-md-4 control-label" for="inputEmail">Email</label>
                                 <div class="col-md-4">
-                                    <input id="inputEmail" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">    
+                                    <input id="inputEmail" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">
                                 </div>
                             </div>
 
@@ -69,9 +84,9 @@
             <div>
                 </br>
                 <div class='container col-md-8 col-md-offset-2'>
-                    <div class='alert alert-danger' style='text-align: center;'> 
-                        <strong>NB :</strong> 
-                        Cette inscription ne saura en rien vous créer un compte. 
+                    <div class='alert alert-danger' style='text-align: center;'>
+                        <strong>NB :</strong>
+                        Cette inscription ne saura en rien vous créer un compte.
                         <br/>Un mail va être envoyer à l'administrateur du site qui décidera alors de votre inscription effective.
                     </div>
                 </div>
