@@ -24,7 +24,6 @@
                                 <label class="col-md-4 control-label" for="prenom">Prénom</label>
                                 <div class="col-md-4">
                                     <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
-
                                 </div>
                             </div>
 
@@ -40,7 +39,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="inputUsername">Username</label>
                                 <div class="col-md-4">
-                                    <input id="inputUsername" name="Username" type="text" placeholder="Username" class="form-control input-md">
+                                    <input id="inputUsername" name="username" type="text" placeholder="Username" class="form-control input-md">
                                 </div>
                             </div>
 
@@ -48,7 +47,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="inputPassword">Mot de passe</label>
                                 <div class="col-md-4">
-                                    <input id="inputPassword" name="Password" type="password" placeholder="Password" class="form-control input-md">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Password" class="form-control input-md">
                                 </div>
                             </div>
 
