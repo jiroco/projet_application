@@ -1,17 +1,17 @@
 <?php
-
+    include("connexiondb.php");
     if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['prenom']) && !empty($_POST['prenom']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['societe']) && !empty($_POST['societe'])){
+        
+
         $email=htmlspecialchars($_POST['email']);
-    	$nom=htmlspecialchars($_POST['nom']);
+        $nom=htmlspecialchars($_POST['nom']);
         $prenom=htmlspecialchars($_POST['prenom']);
         $societe=htmlspecialchars($_POST['societe']);
         $username=htmlspecialchars($_POST['username']);
-        $password=htmlspecialchars($_POST['societe']);
+        $password=htmlspecialchars($_POST['password']);
         $password=sha1($password);
 
-        include("connexiondb.php");
-
-    	$req = $DBcon->prepare('INSERT INTO `USER`(`USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (?,?,?,?,?,?)');
+        $req = $DBcon->prepare('INSERT INTO `user`(`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (NULL,0,"test",?,?,?,?,?,?)');
 
         $req->bindValue(1,$username,PDO::PARAM_INT);
         $req->bindValue(2,$email,PDO::PARAM_INT);
@@ -21,8 +21,15 @@
         $req->bindValue(6,$prenom,PDO::PARAM_INT);
 
         $check=$req->execute();
-
-        /* ----------------- ENVOIS DU MAIL ------------------*/
+        if($check)
+        {
+            header("Refresh: 2; URL=../login.php");
+        }
+        else
+        {
+            echo "Un problème s'est produit lors de la requete.<br>";
+        }
+/* ----------------- ENVOIS DU MAIL ------------------*/
 
         $to = "admin@admin.com";
         $subject = "Demande de création de compte";
@@ -49,19 +56,11 @@
 
         echo '<p><br/>Votre demande de création de compte a bien été enregistrée et va être traitée</p>';
 
-        /*----------------------- FIN ENVOIS MAIL ---------------*/
+/*----------------------- FIN ENVOIS MAIL ---------------*/
 
-        if($check)
-        {
-            echo "<meta http-equiv='refresh' content='0'; URL='../login.php'>";
-        }
-        else
-        {
-            echo "Un problème s'est produit lors de la requete.<br>";
-        }
+
     }
     else {
-        include("../register.php");
         echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> un champ est vide. </div></div>";
     }
 

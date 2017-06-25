@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<head>
 		<title>Connexion</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
 
@@ -8,13 +9,13 @@
 
 
 		<div id="main_containt">
-            <?php include('layout_base_unsigned.php');?>
+            <?php include('layout_base.php');?>
             <div class="container-fluid">
                 <div class="row">
                     <form class="form-horizontal" method="POST">
                         <fieldset>
                             <!-- titre -->
-                            <div class="row">
+                            <div class="row ">
                                 <div class="text_area">
                                     <div class="row titre"><h3> Sign up</h3></div>
                                 </div>
@@ -54,4 +55,8 @@
         </div>
 	</body>
 </html>
+
+
+
+
 
