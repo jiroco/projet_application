@@ -9,19 +9,12 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 <html>
 	<head>
 		<title>Projet application</title>
-		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body >
 		<?php include 'layout_base.php'; ?>
-		<?php echo $_SESSION["PRENOM"].$_SESSION["NOM"].$_SESSION["EMAIL"].$_SESSION["IDUSER"].$_SESSION["USERNAME"].$_SESSION["SOCIETE"] ;?>
-
 		<?php 
 		/*fichiers uploader*/
 		$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
@@ -39,18 +32,25 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 					echo " <br/>";
 				}
 			}
-			else
-				echo "raté...";
+			else{
+				echo "<br/>";
+				echo "Documents non trouvés";
+				echo "<br/>";
+			}
 		}
-		else
-			echo "totalement raté";
+		else{
+			echo "<br/>";
+			echo "Erreur de requète";
+			echo "<br/>";
+		}
 		?>
 
 		<br/>
 
 		<div>
-			fichier uploader
+			Fichiers uploader
 			<?php
+			echo "<br/>";
 			if($dossier = opendir('./data')){
 				while(false !== ($fichier = readdir($dossier))){
 					if($fichier != '.' && $fichier != '..'){
@@ -66,8 +66,9 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		?>
 		</div>
 		<div>
-			fichier downloader
+			Fichiers downloader
 			<?php
+			echo "<br/>";
 			if($dossier = opendir('./download')){
 				while(false !== ($fichier = readdir($dossier))){
 					if($fichier != '.' && $fichier != '..'){
