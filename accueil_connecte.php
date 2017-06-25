@@ -20,7 +20,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	</head>
 	<body >
 		<?php include 'layout_base.php'; ?>
-
+		<?php echo $_SESSION["PRENOM"].$_SESSION["NOM"].$_SESSION["EMAIL"].$_SESSION["IDUSER"].$_SESSION["USERNAME"].$_SESSION["SOCIETE"] ;?>
 
 		<?php 
 		/*fichiers uploader*/

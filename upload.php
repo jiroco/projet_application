@@ -7,17 +7,33 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Téléchargement</title>
-</head>
-<body>
-<?php include 'layout_base.php'; ?>
-<form method="post" action="actionupload.php" enctype="multipart/form-data">
-	
-	<label for="File">Sélectionner le fichier à télécharger.</label><br />
-	<br><input type="file" name="File" id="File" autocomplete="on" required="required" /><br>
-	<input type="submit" name="submit" value="Upload" />
-</form>
-
-</body>
+	<head>
+		<title>Téléchargement</title>
+		<link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
+	</head>
+	<body>
+        <div id="main_containt">
+            <?php include('layout_base.php');?>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="text_area">
+						<form method="post" action="actionupload.php" enctype="multipart/form-data" class="form-horizontal">
+							<fieldset>
+	 							<div>                                
+									<label class="custom-file" for="File">
+										<p>Sélectionner le fichier à télécharger :</p>
+										<br/>
+										<input type="file" name="File" id="File" class="custom-file-input" autocomplete="on" required="required" />
+										<br/>
+										<input type="submit" name="submit" value="Upload" />
+										<span class="custom-file-control"></span>
+									</label>
+	                            </div>
+							</fieldset>
+						</form>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</body>
 </html>
