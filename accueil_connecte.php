@@ -55,19 +55,12 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             </tbody>
                         </table>
 
-
-
-
-						<?php
-								
-
+						<?php					
 						}
 						else{
 							echo "<br/>Erreur de requète<br/>";
 						}
 						?>
-
-
 				        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
 				        <script
