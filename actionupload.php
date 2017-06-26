@@ -9,6 +9,10 @@
     $nom = md5(uniqid(rand(), true));
     $dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom.".xml";
     $resultat = move_uploaded_file($_FILES['File']['tmp_name'],$dest);
+    echo "oui";
+    phpinfo();
+    echo($resultat);
+    echo "oui";
     $req=$DBcon->prepare('INSERT INTO `DOC_U`(`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES (NULL,?,?)');
     $req->bindValue(1,$dest,PDO::PARAM_STR);
     $req->bindValue(2,$nom.".xml",PDO::PARAM_STR);
@@ -19,7 +23,6 @@
     $donnee=$req->fetch();
     $IDdocu=$donnee["IDDOCU"];
     $req=$DBcon->prepare('INSERT INTO `UTOD`(`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES (NULL,?,?,1)');
-
     $req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_STR);
     $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
     $req->execute();
