@@ -3,7 +3,7 @@
 		<tr>
 			<th></th>
 			<th>Numero</th>
-			<th>Fonction</th>
+			<th>prout 2</th>
 			<th>Exigence fonctionnelle</th>
 			<th>Organe</th>
 			<th>Mode de defaillance</th>
@@ -96,8 +96,8 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -111,9 +111,9 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -126,10 +126,10 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -141,11 +141,11 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -156,12 +156,12 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
 				<th></th>
 			</tr>
 		
@@ -171,12 +171,12 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
 			</tr>
 		</table>"
