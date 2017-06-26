@@ -110,7 +110,5 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 </div>
             </div>
         </div>
- 
-
     </body>
 </html>
