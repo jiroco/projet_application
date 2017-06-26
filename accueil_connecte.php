@@ -37,6 +37,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                                 <tr>
                                     <th style="width: 400px;text-align: center;"><h4>Upload</h4></th>
                                     <th style="width: 400px;text-align: center;"><h4>Download</h4></th>
+                                    <th style="width: 400px;text-align: center;"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +45,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	                    	<?php   
 								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
 								while($resultat=$req->fetch()){
-									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td> bouton sup et telecharger</td></tr>");
 								}
 							}
 							else{
