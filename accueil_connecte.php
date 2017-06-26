@@ -94,15 +94,13 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
               var dataObject = {};
               dataObject["iduser"] = iduser;
               dataObject["action"] = action;
-              alert(dataObject["iduser"]);
               $.ajax({
                 url:  'include/log.php',
                 timeout: 30000,
                 type: 'POST',
                 data: dataObject,
                 success: function(data) {
-                    //$(".log").html(data);
-                    $(".log").html(data);
+                    alert(data);
                 },
                 error: function(data) {
                     alert(data);
@@ -110,6 +108,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
               });
           });
         </script>
+
+        <br />
+<font size='1'><table class='xdebug-error xe-fatal-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Fatal error: Cannot use [] for reading in C:\wamp64\www\projet_application\include\log.php on line <i>22</i></th></tr>
+</table></font>
 
 	</body>
 </html>
