@@ -124,8 +124,6 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 var dataObject = {};
                 dataObject["iduser"] = iduser;
                 dataObject["action"] = action;
-                alert(dataObject["iduser"]);
-                alert(dataObject["action"]);
                 $.ajax({
                   url:  'include/log.php',
                   timeout: 30000,
