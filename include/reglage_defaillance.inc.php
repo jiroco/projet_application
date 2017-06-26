@@ -5,6 +5,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 else{
+	$check=0;
 	$chemin = '../data/tableur.csv';
 	$fichier_csv = fopen($chemin, 'w+');
 	fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
@@ -17,9 +18,8 @@ else{
 		}
 		else{
 		    echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 1 sans renseigner le réglage.</div></div>";
+			$check+=1;
 		}
-
-
 	}
 
 	if(isset($_POST['boxdefaillance_2']))
@@ -29,10 +29,8 @@ else{
 		}
 		else{
 			echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 2 sans renseigner le réglage.</div></div>";
-
+			$check+=1;
 		}
-
-
 	}
 
 	if(isset($_POST['boxdefaillance_3']))
@@ -42,9 +40,8 @@ else{
 		}
 		else{
 		    echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 3 sans renseigner le réglage.</div></div>";
+			$check+=1;
 		}
-
-
 	}
 
 
@@ -55,10 +52,8 @@ else{
 		}
 		else{
 		    echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 4 sans renseigner le réglage.</div></div>";
-
+		    $check+=1;
 		}
-
-
 	}
 
 
@@ -69,9 +64,8 @@ else{
 		}
 		else{
 		    echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 5 sans renseigner le réglage.</div></div>";
+			$check+=1;
 		}
-
-
 	}
 
 
@@ -82,9 +76,8 @@ else{
 		}
 		else{
 		    echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 6 sans renseigner le réglage.</div></div>";
+			$check+=1;
 		}
-
-
 	}
 
 
@@ -95,16 +88,17 @@ else{
 		}
 		else{
 		    echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous avez cochée le mode de défaillance 7 sans renseigner le réglage.</div></div>";
+			$check+=1;
 		}
-
-
 	}
 
 
-	if(isset($_POST['submit'])){
-		echo "Reglage de défaillance réussi";
-	    echo "<meta http-equiv='refresh' content='0; URL=reglage_setup.php'>";
+	if(isset($_POST['submit']) && $check==0 ){
+		echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-success' style='text-align: center;'> <strong>Réglage de défaillance réussi !</strong></div></div>";
+	    echo "<meta http-equiv='refresh' content='3; URL=reglage_setup.php'>";
 		//header("Refresh: 3; URL=reglage_setup.php");
+	}
+	else {
 	}
 	
 

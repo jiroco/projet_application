@@ -18,7 +18,7 @@
     $req->execute();
     $donnee=$req->fetch();
     $IDdocu=$donnee["IDDOCU"];
-    $req=$DBcon->prepare('INSERT INTO `UTOD`(`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES (NULL,?,?,NULL)');
+    $req=$DBcon->prepare('INSERT INTO `UTOD`(`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES (NULL,?,?,1)');
 
     $req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_STR);
     $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
