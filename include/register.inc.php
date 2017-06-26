@@ -1,7 +1,7 @@
 <?php
     include("connexiondb.php");
     if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['prenom']) && !empty($_POST['prenom']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['societe']) && !empty($_POST['societe'])){
-        
+
         $email=htmlspecialchars($_POST['email']);
         $nom=htmlspecialchars($_POST['nom']);
         $prenom=htmlspecialchars($_POST['prenom']);
@@ -9,6 +9,16 @@
         $username=htmlspecialchars($_POST['username']);
         $password=htmlspecialchars($_POST['password']);
         $password=sha1($password);
+
+        $usernameDsipo = true;
+
+        $verifDispoUsername = $DBcon->query('SELECT USERNAME FROM USER');
+        while ($verification=$verifDispoUsername->fetch()) {
+            if ($verification[0] == $username) {
+                echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'><strong> Attention ! </strong> Ce Username est deja pris</div></div>";
+                exit();
+            }
+        }
 
         $req = $DBcon->prepare('INSERT INTO `USER`(`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (NULL,0,"test",?,?,?,?,?,?)');
 
@@ -37,7 +47,7 @@
                     <body>
                         <div>
                             <p>
-                                Un client souahite créer un compte sur le site INSA\'script
+                                Un client souahite créer un compte sur le site INSA\'Script
                                 <br/>
                                 <ul>
                                     <li>' . $_POST["prenom"] . '<li>
@@ -61,16 +71,4 @@
         $req->closeCursor();
     }
 
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
