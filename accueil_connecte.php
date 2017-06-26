@@ -5,7 +5,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 ?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Projet application</title>
@@ -15,7 +15,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	</head>
 	<body >
 		<?php include 'layout_base.php'; ?>
-		<?php 
+		<?php
 		/*fichiers uploader*/
 		$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
 		$req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_INT);
@@ -33,22 +33,18 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 				}
 			}
 			else{
-				echo "<br/>";
-				echo "Documents non trouvés";
-				echo "<br/>";
+				echo "<br/>Documents non trouvés<br/>";
 			}
 		}
 		else{
-			echo "<br/>";
-			echo "Erreur de requète";
-			echo "<br/>";
+			echo "<br/>Erreur de requète<br/>";
 		}
 		?>
 
 		<br/>
 
 		<div>
-			Fichiers uploader
+			Fichiers téléchargés
 			<?php
 			echo "<br/>";
 			if($dossier = opendir('./data')){
@@ -62,11 +58,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 			}
 			else
 			    echo 'Le dossier n\' a pas pu être ouvert';
-			
+
 		?>
 		</div>
 		<div>
-			Fichiers downloader
+			Fichiers résultats
 			<?php
 			echo "<br/>";
 			if($dossier = opendir('./download')){
@@ -81,9 +77,37 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 			}
 			else
 			    echo 'Le dossier n\' a pas pu être ouvert';
-			
+
 		?>
 		</div>
+
+        <input class="log" id=<?php echo $_SESSION["USERNAME"]; ?> type="hidden">
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript">
+          $(document).ready(function () {
+              var action = "CONNEXION";
+              var username = $(".log").attr('id');
+              var dataObject = {};
+              dataObject["username"] = username;
+              dataObject["action"] = action;
+              $.ajax({
+                url:  'include/log.php',
+                timeout: 30000,
+                type: 'POST',
+                data: dataObject,
+                success: function(data) {
+                    $(".log").html(data);
+                },
+                error: function(data) {
+                    $(".log").html(data);
+                },
+              });
+          });
+        </script>
 
 	</body>
 </html>
