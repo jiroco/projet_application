@@ -9,7 +9,7 @@
             <?php include('layout_base_unsigned.php');?>
             <div class="container">
                 <div class="row">
-                    <form class="form-horizontal" action="include/register.inc.php" method="POST">
+                    <form class="form-horizontal" method="POST">
                         <fieldset>
                             <!-- titre -->
                             <div class="row">
@@ -63,7 +63,9 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="email">Email</label>
                                 <div class="col-md-4">
+
                                     <input id="email" name="email" type="mail" placeholder="Adresse mail" class="form-control input-md" required>
+
                                 </div>
                             </div>
 
@@ -77,8 +79,11 @@
                         </fieldset>
                     </form>
                 </div>
+                <?php include("include/register.inc.php"); ?>
+
             </div>
         </div>
+
 
         <div>
             <div>

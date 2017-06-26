@@ -2,13 +2,15 @@
 <html>
 	<head>
 		<title>Connexion</title>
-		<link rel="stylesheet" type="text/css" href="./stylesheet/login.css">
+		<link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
 
 	</head>
 	<body>
+
+
 		<div id="main_containt">
             <?php include('layout_base_unsigned.php');?>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <form class="form-horizontal" method="POST">
                         <fieldset>
@@ -20,35 +22,41 @@
                             </div>
                             <br/><br/>
 
-                          <!-- Username -->
+                            <!-- Username -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="prenom">Nom d'utilisateur</label>
+                                <label class="col-md-4 control-label" for="prenom">Username</label>  
                                 <div class="col-md-4">
-                   					<input type="hidden"/>
-                                    <input id="username" name="USERNAME" type="text" placeholder="Nom d'utilisateur" required class="form-control input-md"/>
-                              </div>
-							</div>
-
-                          <!-- Password -->
-                          <div class="form-group">
-                              <label class="col-md-4 control-label" for="inputLastName">Mot de passe</label>
-                              <div class="col-md-4">
-                                  <input id="passwd" name="PASSWORD" class="form-control input-md" placeholder="Mot de passe" required type="password"/>
-                              </div>
-                          </div>
-
-                          <!-- Button -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="reg"></label>
-                                <div class="col-md-4" align="center">
-                                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                     				<input type="hidden"/>
+                                    <input id="username" name="USERNAME" type="text" placeholder="Username" required="" class="form-control input-md"/>
+                                
                                 </div>
                             </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="inputLastName">Password</label>  
+                                <div class="col-md-4">
+                                    <input id="passwd" name="PASSWORD" placeholder="Password" class="form-control input-md" required="" type="password"/>    
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="reg"></label>
+                              <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary">Sign up</button>
+                              </div>
+                            </div>                            
                         </fieldset>
                     </form>
                 </div>
-			</div>
+				<?php include("include/connexion.inc.php");?>
+            </div>
         </div>
-    </body>
+	</body>
 </html>
-<?php include("include/connexion.inc.php");?>
+
+
+
+
+

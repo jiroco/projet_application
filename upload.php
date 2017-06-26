@@ -25,7 +25,7 @@
 										<br/>
 										<input type="file" name="File" id="File" class="custom-file-input" autocomplete="on" required="required" />
 										<br/>
-										<input class="log" id=<?php echo $_SESSION["USERNAME"] ?> type="submit" name="submit" value="Upload" />
+										<input class="log" id=<?php echo $_SESSION["IDUSER"] ?> type="submit" name="submit" value="Upload" />
 										<span class="custom-file-control"></span>
 									</label>
 	                            </div>
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 
-        <input type="hidden" id="trash_log" name="" value="">
+        <input type="hidden" id="trash_log" />
 
         <script
             src="https://code.jquery.com/jquery-3.2.1.js"
@@ -46,9 +46,9 @@
           $(document).ready(function () {
             $('.log').click(function () {
                 var action = "UPLOAD";
-                var username = $(".log").attr('id');
+                var iduser = $(".log").attr('id');
                 var dataObject = {};
-                dataObject["username"] = username;
+                dataObject["iduser"] = iduser;
                 dataObject["action"] = action;
                 $.ajax({
                   url:  'include/log.php',
