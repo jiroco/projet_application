@@ -104,8 +104,8 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                     //$(".log").html(data);
                     $(".log").html(data);
                 },
-                error: function(data) {
-                    $(".log").html(data);
+                error: function() {
+                    alert(data);
                 },
               });
           });

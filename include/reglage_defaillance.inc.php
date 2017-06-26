@@ -97,7 +97,6 @@ if(isset($_POST['boxdefaillance_6']))
 	    header("Refresh: 3; URL=../reglage_defaillance.php");
 	}
 
-
 }
 
 
