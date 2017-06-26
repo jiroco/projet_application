@@ -7,7 +7,7 @@
     <body>
         <div id="main_containt">
             <?php include('layout_base_unsigned.php');?>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="text_area">
                         <div class="row">Présentation</div>

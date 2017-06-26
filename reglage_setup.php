@@ -198,12 +198,6 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		        <td><input type="checkbox" name="elevensetbox[10]"></td>
 		      </tr>
 
-
-
-
-
-
-
 		    </tbody>
 		  </table>
 

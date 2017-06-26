@@ -6,8 +6,8 @@
 </head>
     <body>
         <div id="main_containt">
-            <?php include('layout_base.php');?>
-            <div class="container-fluid">
+            <?php include('layout_base_unsigned.php');?>
+            <div class="container">
                 <div class="row">
                     <form class="form-horizontal" action="include/register.inc.php" method="POST">
                         <fieldset>
@@ -21,34 +21,49 @@
 
                             <!-- Prenom-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="prenom">Prénom</label>  
+                                <label class="col-md-4 control-label" for="prenom">Prénom</label>
                                 <div class="col-md-4">
                                     <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
-                                
                                 </div>
                             </div>
 
                             <!-- Nom -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputLastName">Nom</label>  
+                                <label class="col-md-4 control-label" for="nom">Nom</label>
                                 <div class="col-md-4">
-                                    <input id="inputLastName" name="nom" type="text" placeholder="Nom" class="form-control input-md">    
+                                    <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <!-- Username -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="username">Username</label>
+                                <div class="col-md-4">
+                                    <input id="inputUsername" name="username" type="text" placeholder="Username" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="password">Mot de passe</label>
+                                <div class="col-md-4">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Password" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Société -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputSociete">Société</label>  
+                                <label class="col-md-4 control-label" for="societe">Société</label>
                                 <div class="col-md-4">
-                                    <input id="inputSociete" name="societe" type="text" placeholder="Société" class="form-control input-md">    
+                                    <input id="societe" name="societe" type="text" placeholder="Société" class="form-control input-md">
                                 </div>
                             </div>
 
                             <!-- Email -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="inputEmail">Email</label>  
+                                <label class="col-md-4 control-label" for="email">Email</label>
                                 <div class="col-md-4">
-                                    <input id="inputEmail" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">    
+                                    <input id="email" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">
                                 </div>
                             </div>
 
@@ -69,9 +84,9 @@
             <div>
                 </br>
                 <div class='container col-md-8 col-md-offset-2'>
-                    <div class='alert alert-danger' style='text-align: center;'> 
-                        <strong>NB :</strong> 
-                        Cette inscription ne saura en rien vous créer un compte. 
+                    <div class='alert alert-danger' style='text-align: center;'>
+                        <strong>NB :</strong>
+                        Cette inscription ne saura en rien vous créer un compte.
                         <br/>Un mail va être envoyer à l'administrateur du site qui décidera alors de votre inscription effective.
                     </div>
                 </div>
