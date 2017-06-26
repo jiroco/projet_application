@@ -1,9 +1,10 @@
 <?
-include("include/connexiondb.php");
-session_start();
-if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
-    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
-}
+	include("include/connexiondb.php");
+	session_start();
+	if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+	    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
+	}
+	else{
 ?>
 
 <!DOCTYPE html>
@@ -206,3 +207,6 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	</div>
 </body>
 </html>
+<?php
+	}
+?>

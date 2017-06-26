@@ -38,7 +38,7 @@ if ((isset($_POST['nom']) && !empty($_POST['nom'])) ||
     $change->bindValue(1,strip_tags($_POST['nom']),PDO::PARAM_INT);
     $change->bindValue(2,$_SESSION["id"],PDO::PARAM_INT);
     $change->execute();
-    $_SESSION['NOM']=strip_tags($_POST['NOM']);
+    $_SESSION['NOM']=strip_tags($_POST['nom']);
     $change_mess = $DBcon->prepare('UPDATE messages SET NOM = ? WHERE IDUSER = ?');
     $change_mess->bindValue(1,$_POST['NOM'],PDO::PARAM_INT);
     $change_mess->bindValue(2,$_SESSION["id"],PDO::PARAM_INT);

@@ -5,7 +5,7 @@
     if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
         echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
     }
-
+        else{
 ?>
 
 <html>
@@ -72,3 +72,6 @@
         </div>
     </body>
 </html>
+<?php
+    }
+?>
