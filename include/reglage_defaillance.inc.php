@@ -101,16 +101,18 @@ else{
 	}
 
 
-	else {
+	if(isset($_POST['submit'])){
 		echo "Reglage de défaillance réussi";
-		header("Refresh: 3; URL=../reglage_setup.php");
+	    echo "<meta http-equiv='refresh' content='0; URL=reglage_setup.php'>";
+		//header("Refresh: 3; URL=reglage_setup.php");
 	}
+	
 
 	// fermeture du fichier csv
 	fclose($fichier_csv);
 
 }
-	?>
+?>
 
 
 
