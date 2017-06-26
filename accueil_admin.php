@@ -65,6 +65,10 @@
         </div>
         <div>
         	<p>Logs</p>
+            <?php
+                $date = date("m/y");
+                echo $date;
+            ?>
         </div>
     </body>
 </html>

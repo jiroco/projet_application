@@ -6,7 +6,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<title>Téléchargement</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
@@ -18,8 +18,9 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 <div class="row">
                     <div class="text_area">
 						<form method="post" action="actionupload.php" enctype="multipart/form-data" class="form-horizontal">
+            <!-- <form method="post" action="include/script.php" enctype="multipart/form-data" class="form-horizontal"> -->
 							<fieldset>
-	 							<div>                                
+	 							<div>
 									<label class="custom-file" for="File">
 										<p>Sélectionner le fichier à télécharger :</p>
 										<br/>
