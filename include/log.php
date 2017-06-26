@@ -1,7 +1,7 @@
 <?php
     include("connexiondb.php");
     $dateToSearch = date("m.y");                                                                                                // Date servant a la recherche du fichier de logs
-    $dateToRegister = date("l j.m.Y H:i:s");                                                                                    // Date inscrite dans les logs
+    $dateToRegister = date("l j.m.Y H:i:s O");                                                                                    // Date inscrite dans les logs
     $nameFile = "../log/" . $dateToSearch . ".txt";                                                                             // Nom du fichier a rechercher en fonction de la date
     $file = fopen($nameFile, 'a');
     $iduser = $_POST["iduser"];                                                                                                 // username de l'utilisateur sujet du log
