@@ -89,7 +89,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
             crossorigin="anonymous"></script>
         <script type="text/javascript">
           $(document).ready(function () {
-              var action = "connexion";
+              var action = "CONNEXION";
               var username = $(".log").attr('id');
               var dataObject = {};
               dataObject["username"] = username;
@@ -100,10 +100,10 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 type: 'POST',
                 data: dataObject,
                 success: function(data) {
-                    alert(data);
+                    $(".log").html(data);
                 },
-                error: function() {
-                    alert(data);
+                error: function(data) {
+                    $(".log").html(data);
                 },
               });
           });
