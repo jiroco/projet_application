@@ -43,9 +43,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             <tbody>
 
 	                    	<?php   
-								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Télécharger</button><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr></tr>");
 								while($resultat=$req->fetch()){
-									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td> bouton sup et telecharger</td></tr>");
+									print_r("<tr><td>".$resultat['NAMEDOCU']."</td>
+										<td>".$resultat['NAMEDOCD']."</td>
+										<td><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Télécharger</button><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr>");
 								}
 							}
 							else{
