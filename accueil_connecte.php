@@ -22,7 +22,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	                <div class="text_area">
 						<?php
 						/*fichiers uploader*/
-						$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
+						$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD, URLDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
 						$req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_INT);
 
 
@@ -43,11 +43,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             <tbody>
 
 	                    	<?php   
-								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr></tr>");
+								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr></tr>");
 								while($resultat=$req->fetch()){
 									print_r("<tr><td>".$resultat['NAMEDOCU']."</td>
 										<td>".$resultat['NAMEDOCD']."</td>
-<td><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+										<td><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
 
 
 
