@@ -42,47 +42,8 @@
 		}
 		?>
 
-		<br/>
 
-		<div>
-			Fichiers téléchargés
-			<?php
-			echo "<br/>";
-			if($dossier = opendir('./data')){
-				while(false !== ($fichier = readdir($dossier))){
-					if($fichier != '.' && $fichier != '..'){
-						echo '<li>' . $fichier . '</li>';
-					}
-				}
-				echo '</ul><br />';
-				closedir($dossier);
-			}
-			else
-			    echo 'Le dossier n\' a pas pu être ouvert';
-
-		?>
-		</div>
-		<div>
-			Fichiers résultats
-			<?php
-			echo "<br/>";
-			if($dossier = opendir('./download')){
-				while(false !== ($fichier = readdir($dossier))){
-					if($fichier != '.' && $fichier != '..'){
-						echo '<li>' . $fichier . '</li>';
-
-					}
-				}
-				echo '</ul><br />';
-				closedir($dossier);
-			}
-			else
-			    echo 'Le dossier n\' a pas pu être ouvert';
-
-		?>
-		</div>
-
-        <input class="log" id=<?php echo $_SESSION["USERNAME"]; ?> type="hidden">
+        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
         <script
             src="https://code.jquery.com/jquery-3.2.1.js"
@@ -90,10 +51,10 @@
             crossorigin="anonymous"></script>
         <script type="text/javascript">
           $(document).ready(function () {
-              var action = "connexion";
-              var username = $(".log").attr('id');
+              var action = "CONNEXION";
+              var iduser = $(".log").attr('id');
               var dataObject = {};
-              dataObject["username"] = username;
+              dataObject["iduser"] = iduser;
               dataObject["action"] = action;
               $.ajax({
                 url:  'include/log.php',
@@ -101,15 +62,14 @@
                 type: 'POST',
                 data: dataObject,
                 success: function(data) {
-                    alert(data);
+                    $('.log').html(data)
                 },
-                error: function() {
-                    alert(data);
+                error: function(data) {
+                    $('.log').html(data)
                 },
               });
           });
         </script>
-
 	</body>
 </html>
 <?php

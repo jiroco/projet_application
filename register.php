@@ -9,7 +9,7 @@
             <?php include('layout_base_unsigned.php');?>
             <div class="container">
                 <div class="row">
-                    <form class="form-horizontal" action="include/register.inc.php" method="POST">
+                    <form class="form-horizontal" method="POST">
                         <fieldset>
                             <!-- titre -->
                             <div class="row">
@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="prenom">Prénom</label>
                                 <div class="col-md-4">
-                                    <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">
+                                    <input id="inputFisrtName" name="prenom" type="text" placeholder="Prénom" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="nom">Nom</label>
                                 <div class="col-md-4">
-                                    <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md">
+                                    <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="username">Nom d'utilisateur</label>
                                 <div class="col-md-4">
-                                    <input id="inputUsername" name="username" type="text" placeholder="Nom d'utilisateur" class="form-control input-md">
+                                    <input id="inputUsername" name="username" type="text" placeholder="Nom d'utilisateur" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="password">Mot de passe</label>
                                 <div class="col-md-4">
-                                    <input id="inputPassword" name="password" type="password" placeholder="Mot de passe" class="form-control input-md">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Mot de passe" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="societe">Société</label>
                                 <div class="col-md-4">
-                                    <input id="societe" name="societe" type="text" placeholder="Société" class="form-control input-md">
+                                    <input id="societe" name="societe" type="text" placeholder="Société" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -63,7 +63,9 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="email">Email</label>
                                 <div class="col-md-4">
-                                    <input id="email" name="email" type="text" placeholder="Adresse mail" class="form-control input-md">
+
+                                    <input id="email" name="email" type="mail" placeholder="Adresse mail" class="form-control input-md" required>
+
                                 </div>
                             </div>
 
@@ -77,8 +79,11 @@
                         </fieldset>
                     </form>
                 </div>
+                <?php include("include/register.inc.php"); ?>
+
             </div>
         </div>
+
 
         <div>
             <div>

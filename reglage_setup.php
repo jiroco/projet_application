@@ -1,3 +1,4 @@
+
 <?
 	include("include/connexiondb.php");
 	session_start();
@@ -14,15 +15,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-
-
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-	<?php include 'layout_base.php'; ?>
+	<?php include('layout_base.php'); ?>
 	<div class="container">
 	  <h2>Reglage du setup</h2>
 	  <form method="POST" action="include/reglage_setup.inc.php">
@@ -30,11 +27,11 @@
 		    <thead>
 		      <tr>
 		      	<th>#</th>
-		        <th><input type="text" name="firstset" value="Numéro"></th>
+		        <th><input type="text" name="firstset" value="Numero"></th>
 		        <th><input type="text" name="secondset" value="Fonction"></th>
 		        <th><input type="text" name="thirdset" value="Exigence fonctionnelle"></th>
 		        <th><input type="text" name="fourthset" value="Organe"></th>
-		        <th><input type="text" name="fiveset" value="Mode de défaillance"></th>
+		        <th><input type="text" name="fiveset" value="Mode de defaillance"></th>
 		      	<th><input type="text" name="sixset" value="Cause local"></th>
 		        <th><input type="text" name="sevenset" value="Effet local"></th>
 		        <th><input type="text" name="eightset" value="Besoin"></th>

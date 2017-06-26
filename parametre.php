@@ -19,9 +19,7 @@
   <div class="container container col-md-10 col-md-offset-1 row">
 
         <div id="paramètre" class="fade in active"> <!--Paramètre début -->
-          <div class="container panel-group panel panel-default" style="width:100%;"><!--container début -->
-            <div class=""><!-- panel group debut -->
-              <div class=""> <!--Paramètre début -->
+          <div class="container panel-group panel panel-default" style="width:100%;">
                 <div class="panel-heading"> <!--panel heading pour tous les paramètres -->
                   <h2>Paramètres</h2>
                 </div>
@@ -47,7 +45,7 @@
                             <tr>
                               <td>Changer votre e-mail</td>
                               <td><input type="text" class="form-control" placeholder="Changez votre e-mail..." name="mail" value=""></td>
-                              <td><input type="submit" name="" value="changer" class="btn btn-default"></td>
+                              <td><input type="submit" name="" value="Changer" class="btn btn-default"></td>
                             </tr>
                             <tr>
                               <td>Changer votre mot de passe</td>
@@ -63,8 +61,6 @@
               </div><!-- panel fin -->
             </div>
            </div><!--panel heading pour tous les paramètres fin -->
-          </div><!--Container fin -->
-        </div> <!-- Paramètre fin -->
         </div><!--colonne 10 fin -->
   </div><!--container fin -->
 
