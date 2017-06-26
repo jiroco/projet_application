@@ -3,7 +3,7 @@
 		<tr>
 			<th></th>
 			<th>Numero</th>
-			<th>prout 2</th>
+			<th>Fonction</th>
 			<th>Exigence fonctionnelle</th>
 			<th>Organe</th>
 			<th>Mode de defaillance</th>
@@ -64,8 +64,8 @@
 				<th>Organe</th>
 				<th></th>
 				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -79,9 +79,9 @@
 				<th>Mode de defaillance</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -94,9 +94,9 @@
 				<th>Cause locale</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -109,9 +109,9 @@
 				<th>Effet locale</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -124,9 +124,9 @@
 				<th>Besoin</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -139,9 +139,9 @@
 				<th>Exigence besoin</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -154,9 +154,9 @@
 				<th>Nouvelle ligne</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -169,9 +169,9 @@
 				<th>A garder ?</th>
 				<th></th>
 				<th></th>
-				<th></th>
-				<th></th>
 				<th>x</th>
+				<th></th>
+				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
