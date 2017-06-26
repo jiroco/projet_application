@@ -10,10 +10,12 @@
     $username=$req_doss->fetch();
 
     $urluser="./../data/".$username["USERNAME"];
+    $urluser_up=$urluser."/upload/";
+    $urluser_do=$urluser."/download/";
 
-    mkdir($urluser, 0700);
-
-
+    mkdir($urluser, 0700);/* Creation du dossier au nom de l'usrename */
+    mkdir($urluser_up);/* Creation du dossier upload dans le dossier data/username/ */
+    mkdir($urluser_do);/* Creation du dossier download dans le dossier data/username/ */
 
     $req = $DBcon->prepare('UPDATE USER SET PERMISSION=1, URLUSER= ?  WHERE IDUSER = ?');
     $req->bindValue(1,$urluser,PDO::PARAM_INT);    
