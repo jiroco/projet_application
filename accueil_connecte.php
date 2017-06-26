@@ -100,19 +100,13 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 type: 'POST',
                 data: dataObject,
                 success: function(data) {
-                    alert(data);
+                    $('.log').html(data)
                 },
                 error: function(data) {
-                    alert(data);
+                    $('.log').html(data)
                 },
               });
           });
         </script>
-
-        <br />
-<font size='1'><table class='xdebug-error xe-fatal-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Fatal error: Cannot use [] for reading in C:\wamp64\www\projet_application\include\log.php on line <i>22</i></th></tr>
-</table></font>
-
 	</body>
 </html>
