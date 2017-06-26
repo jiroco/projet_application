@@ -16,18 +16,20 @@
             break;
          case 'UPLOAD':
 
+            $req=$DBcon->prepare('SELECT USERNAME FROM USER WHERE IDUSER = ?');
+            $req->bindValue(1,$iduser,PDO::PARAM_INT);
+            $req->execute();
+            $data=$req->fetch();
+
+            fputs($file, $data[0] . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t");
+
             $req=$DBcon->prepare('SELECT D.NAMEDOCU FROM DOC_U D, UTOD R WHERE D.IDDOCU = R.IDDOCU AND R.IDUSER = ?');
             $req->bindValue(1,$iduser,PDO::PARAM_INT);
             $req->execute();
             $res=$req->fetch();
             $doss=$res;
 
-            $req=$DBcon->prepare('SELECT USERNAME FROM USER WHERE IDUSER = ?');
-            $req->bindValue(1,$iduser,PDO::PARAM_INT);
-            $req->execute();
-            $data=$req->fetch();
-
-            fputs($file, $data[0] . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t" . $doss[0] ."\r\n");
+            fputs($file, $doss[0] ."\r\n");
             break;
         case 'DOWNLOAD':
             fputs($file, $data[0] . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t" . $data[1] ."\r\n");

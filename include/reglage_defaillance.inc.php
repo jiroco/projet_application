@@ -6,7 +6,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 }
 else{
 	$check=0;
-	$chemin = '../data/tableur.csv';
+	$chemin = 'data/tableur.csv';
 	$fichier_csv = fopen($chemin, 'w+');
 	fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
 
@@ -100,26 +100,10 @@ else{
 	}
 	else {
 	}
-	
+
 
 	// fermeture du fichier csv
 	fclose($fichier_csv);
 
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
