@@ -29,8 +29,6 @@
             $req->bindValue(1,$iduser,PDO::PARAM_INT);
             $req->execute();
 
-            $data[];
-
             while ($res=$req->fetch();) {
                 $i=0;
                 $data[$i]=$res;
