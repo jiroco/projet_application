@@ -25,10 +25,10 @@
     <body>
         <?php include("layout_base.php"); ?>
         <div style="color:#0000FF">
-        	<p>Valider un utilisteur</p>
+        	<p>Valider un utilisateur</p>
             <?php
 
-                $req = $DBcon->query('SELECT IDUSER, NOM, PRENOM, SOCIETE FROM user WHERE USERNAME = "no_username"');
+                $req = $DBcon->query('SELECT IDUSER, NOM, PRENOM, SOCIETE FROM user WHERE PERMISSION=0');
                 while ($resultat = $req->fetch()) { ?>
                     <div id='<?php echo -$resultat["IDUSER"];?>' >
                         <input class='autor' id='<?php echo $resultat["IDUSER"];?>' type=button value='Autoriser'></input>
@@ -48,24 +48,12 @@
                   var dataObject = {};
                   dataObject["id_button"] = id_button;
                   $.ajax({
-                    url:  'include/confirm_admin.inc.php',
-                    timeout: 30000,
-                    type: 'POST',
-                    data: dataObject,
-                    success: function() {
-                    },
-                    error: function() {
-                        alert("Erreur de requête");
-                    },
-                  });
-                  $.ajax({
                     url:  'include/autor_users.php',
                     timeout: 30000,
                     type: 'POST',
                     data: dataObject,
                     success: function(data) {
                       $("#" + -id_button).html(data);
-                      $(location).attr("href", "confirm_admin.php");
                     },
                     error: function(data) {
                       $("#" + -id_button).html(data);
@@ -75,8 +63,12 @@
               });
             </script>
         </div>
-        <div style="color:#00F89F">
+        <div>
         	<p>Logs</p>
+            <?php
+                $date = date("m/y");
+                echo $date;
+            ?>
         </div>
     </body>
 </html>
