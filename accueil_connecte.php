@@ -43,11 +43,13 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             <tbody>
 
 	                    	<?php   
-								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Télécharger</button><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr></tr>");
+								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><input type='button' name='upload_file' onclick='<?php telecharger($datafile);?>' class='btn btn-default btn-sm' value='Télécharger'><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr></tr>");
 								while($resultat=$req->fetch()){
 									print_r("<tr><td>".$resultat['NAMEDOCU']."</td>
 										<td>".$resultat['NAMEDOCD']."</td>
-										<td><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Télécharger</button><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr>");
+										<td><a href='#'>
+          <span class='glyphicon glyphicon-download-alt'></span>
+        </a><a href='path_to_file' download='proposed_file_name'>Download</a><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr>");
 								}
 							}
 							else{
