@@ -100,10 +100,10 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 type: 'POST',
                 data: dataObject,
                 success: function(data) {
-                    alert(data);
+                    $('.log').html(data)
                 },
                 error: function(data) {
-                    alert(data);
+                    $('.log').html(data)
                 },
               });
           });
