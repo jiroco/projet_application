@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 Array		UPLOAD		Monday 26.06.2017 14:18:43		
 Array		UPLOAD		Monday 26.06.2017 14:19:26		
 chamonet	CONNEXION	Monday 26.06.2017 14:20:02
 chamonet	CONNEXION	Monday 26.06.2017 14:31:17
+=======
+
+adepelley	CONNEXION	Monday 26.06.2017 16:33:53
+adepelley	CONNEXION	Monday 26.06.2017 16:33:57
+adepelley	CONNEXION	Monday 26.06.2017 16:36:54
+Array		UPLOAD		Monday 26.06.2017 16:37:45		
+>>>>>>> 1361bbbcaded4d83be56cd187591dc15e7dccab7
