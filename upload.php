@@ -36,37 +36,5 @@
 			</div>
 		</div>
 
-        <input type="hidden" id="trash_log" />
-
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.js"
-            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>
-        <script type="text/javascript">
-          $(document).ready(function () {
-            $(".log").click(function () {
-                var action = "UPLOAD";
-                var iduser = $(".log").attr('id');
-                var dataObject = {};
-                dataObject["iduser"] = iduser;
-                dataObject["action"] = action;
-                alert(dataObject["iduser"]);
-                alert(dataObject["action"]);
-                $.ajax({
-                  url:  'include/log.php',
-                  timeout: 30000,
-                  type: 'POST',
-                  data: dataObject,
-                  success: function(data) {
-                      alert(data);
-                  },
-                  error: function(data) {
-                      alert(data);
-                  },
-              });
-            });
-          });
-        </script>
-
 	</body>
 </html>

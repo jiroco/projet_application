@@ -12,7 +12,7 @@
             $req->bindValue(1,$iduser,PDO::PARAM_INT);
             $req->execute();
             $data=$req->fetch();
-            fputs($file, $data[0] . "\t" . $action . "\t" . $dateToRegister . "\r\n");
+            fputs($file, $data[0] . " " . $action . " " . $dateToRegister . "\r\n");
             break;
          case 'UPLOAD':
 
@@ -21,7 +21,7 @@
             $req->execute();
             $data=$req->fetch();
 
-            fputs($file, $data . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t");
+            fputs($file, $data[0] . " " . $action . " " . $dateToRegister . " ");
 
             $req=$DBcon->prepare('SELECT D.NAMEDOCU FROM DOC_U D, UTOD R WHERE D.IDDOCU = R.IDDOCU AND R.IDUSER = ?');
             $req->bindValue(1,$iduser,PDO::PARAM_INT);
@@ -32,7 +32,7 @@
             fputs($file, $doss[0] ."\r\n");
             break;
         case 'DOWNLOAD':
-            fputs($file, $data[0] . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t" . $data[1] ."\r\n");
+            fputs($file, $data[0] . " " . $action . " " . $dateToRegister . " " . $data[1] ."\r\n");
             break;
         default:
             fputs($file, $username . "other action " . $dateToRegister . "\r\n");
