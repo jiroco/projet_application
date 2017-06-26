@@ -23,7 +23,7 @@
                 <div class="row">
                     <?php include("include/reglage_defaillance.inc.php") ;?>
                     <div class="text_area">
-                        <form method="POST">   
+                        <form method="POST">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -45,64 +45,64 @@
                                     </tr>
                                     <tr>
                                         <td>Mode de défaillance 2 :</td>
-                                        <td>                                            
+                                        <td>
                                             <div class="form-group">
                                                 <input type="text" name="defaillance_2" value="Fonction exécutée de façon intempestive" class="form-control" style="width:500px;"/>
-                                            </div>  
+                                            </div>
                                         </td>
                                         <td><input type="checkbox" name="boxdefaillance_2" id="boxdefaillance_2"  /></td>
                                     </tr>
                                     <tr>
                                         <td>Mode de défaillance 3 :</td>
-                                        <td> 
+                                        <td>
                                             <div class="form-group">
                                                 <input type="text" name="defaillance_3" value="Retard d'exécution de la fonction" class="form-control" style="width:500px;"/>
-                                            </div>  
+                                            </div>
                                         </td>
                                         <td><input type="checkbox" name="boxdefaillance_3" id="boxdefaillance_3"  /></td>
                                     </tr>
 
                                     <tr>
                                         <td>Mode de défaillance 4 :</td>
-                                        <td> 
+                                        <td>
                                             <div class="form-group">
-                                                <input type="text" name="defaillance_4" value="Démarrage de la fonction impossible" class="form-control" style="width:500px;"/>                                            
-                                            </div> 
+                                                <input type="text" name="defaillance_4" value="Démarrage de la fonction impossible" class="form-control" style="width:500px;"/>
+                                            </div>
                                         </td>
                                         <td><input type="checkbox" name="boxdefaillance_4" id="boxdefaillance_4"  />
                                     </td>
                                     </tr>
                                     <tr>
                                         <td>Mode de défaillance 5 :</td>
-                                        <td> 
+                                        <td>
                                             <div class="form-group">
                                                 <input type="text" name="defaillance_5" value="Arrêt de la fonction impossible" class="form-control" style="width:500px;"/>
-                                            </div> 
+                                            </div>
                                         </td>
                                         <td><input type="checkbox" name="boxdefaillance_5" id="boxdefaillance_5"  /></td>
                                     </tr>
                                     <tr>
                                         <td>Mode de défaillance 6 :</td>
-                                        <td> 
+                                        <td>
                                             <div class="form-group">
-                                                <input type="text" name="defaillance_6" value="Fonction intermittente" class="form-control" style="width:500px;"/> 
-                                            </div> 
+                                                <input type="text" name="defaillance_6" value="Fonction intermittente" class="form-control" style="width:500px;"/>
+                                            </div>
                                         </td>
                                         <td><input type="checkbox" name="boxdefaillance_6" id="boxdefaillance_6"  /></td>
                                     </tr>
                                     <tr>
                                         <td>Mode de défaillance 7 :</td>
-                                        <td> 
+                                        <td>
                                             <div class="form-group">
                                                 <input type="text" name="defaillance_7" value="Fonction dégradée" class="form-control" style="width:500px;"/>
-                                            </div> 
+                                            </div>
                                         </td>
                                         <td><input type="checkbox" name="boxdefaillance_7" id="boxdefaillance_7"  /></td>
                                     </tr>
                                     <tr>
                                         <td>&nbsp;</td>
                                         <td><input type="submit" id="valider_defaillance_btn" name="submit" value="Valider"/></td>
-                                        <td>&nbsp;</td>                                         
+                                        <td>&nbsp;</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -111,6 +111,35 @@
                 </div>
             </div>
         </div>
+
+        <input type="hidden" id="trash">
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript">
+          $(document).ready(function () {
+                var action = "UPLOAD";
+                var iduser = <?php echo $_SESSION["IDUSER"]; ?>;
+                var dataObject = {};
+                dataObject["iduser"] = iduser;
+                dataObject["action"] = action;
+                $.ajax({
+                  url:  'include/log.php',
+                  timeout: 30000,
+                  type: 'POST',
+                  data: dataObject,
+                  success: function(data) {
+                      $('#trash').html(data);
+                  },
+                  error: function(data) {
+                      $('#trash').html(data);
+                  },
+            });
+          });
+        </script>
+
     </body>
 </html>
 <?php
