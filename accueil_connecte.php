@@ -38,14 +38,22 @@
                                 <tr>
                                     <th style="width: 400px;text-align: center;"><h4>Upload</h4></th>
                                     <th style="width: 400px;text-align: center;"><h4>Download</h4></th>
+                                    <th style="width: 400px;text-align: center;"></th>
                                 </tr>
                             </thead>
                             <tbody>
 
 	                    	<?php   
-								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr></tr>");
 								while($resultat=$req->fetch()){
-									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+									print_r("<tr><td>".$resultat['NAMEDOCU']."</td>
+										<td>".$resultat['NAMEDOCD']."</td>
+<td><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+
+
+
+
+
 								}
 							}
 							else{
@@ -56,19 +64,12 @@
                             </tbody>
                         </table>
 
-
-
-
-						<?php
-								
-
+						<?php					
 						}
 						else{
 							echo "<br/>Erreur de requète<br/>";
 						}
 						?>
-
-
 				        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
 				        <script

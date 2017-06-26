@@ -64,8 +64,6 @@
         </div><!--colonne 10 fin -->
   </div><!--container fin -->
 
-<!-- <?php include("include/parametre.inc.php"); ?> -->
-
 </body>
 </html>
 <?php
