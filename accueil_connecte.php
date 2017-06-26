@@ -47,7 +47,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 			Fichiers téléchargés
 			<?php
 			echo "<br/>";
-			if($dossier = opendir('./data')){
+			if($dossier = opendir('./data/'.$_SESSION['USERNAME'].'/upload/')){
 				while(false !== ($fichier = readdir($dossier))){
 					if($fichier != '.' && $fichier != '..'){
 						echo '<li>' . $fichier . '</li>';
@@ -65,7 +65,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 			Fichiers résultats
 			<?php
 			echo "<br/>";
-			if($dossier = opendir('./download')){
+			if($dossier = opendir('./data/'.$_SESSION['USERNAME'].'/download')){
 				while(false !== ($fichier = readdir($dossier))){
 					if($fichier != '.' && $fichier != '..'){
 						echo '<li>' . $fichier . '</li>';

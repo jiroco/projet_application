@@ -21,6 +21,6 @@
     $req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_STR);
     $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
     $req->execute();
-    //if ($resultat) echo "<meta http-equiv='refresh' content='0; URL=reglage_defaillance.php'>";
+    if ($resultat) echo "<meta http-equiv='refresh' content='0; URL=reglage_defaillance.php'>";
 
 ?>
