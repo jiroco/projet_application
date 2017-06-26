@@ -18,10 +18,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     <body>
         <div id="main_containt">
             <?php include 'layout_base.php'; ?>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
+                    <?php include("include/reglage_defaillance.inc.php") ;?>
                     <div class="text_area">
-                        <form method="POST" action="include/reglage_defaillance.inc.php">   
+                        <form method="POST">   
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -99,7 +100,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                                     </tr>
                                     <tr>
                                         <td>&nbsp;</td>
-                                        <td><input type="submit" name="submit" value="Valider"/></td>
+                                        <td><input type="submit" id="valider_defaillance_btn" name="submit" value="Valider"/></td>
                                         <td>&nbsp;</td>                                         
                                     </tr>
                                 </tbody>
@@ -109,5 +110,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 </div>
             </div>
         </div>
+ 
+
     </body>
 </html>
