@@ -39,7 +39,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="username">Nom d'utilisateur</label>
                                 <div class="col-md-4">
-                                    <input id="inputUsername" name="username" type="text" placeholder="Nom d'utilisateur" class="form-control input-md">
+                                    <input id="inputUsername" name="username" type="text" placeholder="Nom d'utilisateur" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="password">Mot de passe</label>
                                 <div class="col-md-4">
-                                    <input id="inputPassword" name="password" type="password" placeholder="Mot de passe" class="form-control input-md">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Mot de passe" class="form-control input-md" required>
                                 </div>
                             </div>
 
@@ -63,7 +63,9 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="email">Email</label>
                                 <div class="col-md-4">
-                                    <input id="email" name="email" type="text" placeholder="Adresse mail" class="form-control input-md" required>
+
+                                    <input id="email" name="email" type="mail" placeholder="Adresse mail" class="form-control input-md" required>
+
                                 </div>
                             </div>
 
