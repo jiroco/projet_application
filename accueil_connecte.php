@@ -41,45 +41,6 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		}
 		?>
 
-		<br/>
-
-		<div>
-			Fichiers téléchargés
-			<?php
-			echo "<br/>";
-			if($dossier = opendir('./data/'.$_SESSION['USERNAME'].'/upload/')){
-				while(false !== ($fichier = readdir($dossier))){
-					if($fichier != '.' && $fichier != '..'){
-						echo '<li>' . $fichier . '</li>';
-					}
-				}
-				echo '</ul><br />';
-				closedir($dossier);
-			}
-			else
-			    echo 'Le dossier n\' a pas pu être ouvert';
-
-		?>
-		</div>
-		<div>
-			Fichiers résultats
-			<?php
-			echo "<br/>";
-			if($dossier = opendir('./data/'.$_SESSION['USERNAME'].'/download')){
-				while(false !== ($fichier = readdir($dossier))){
-					if($fichier != '.' && $fichier != '..'){
-						echo '<li>' . $fichier . '</li>';
-
-					}
-				}
-				echo '</ul><br />';
-				closedir($dossier);
-			}
-			else
-			    echo 'Le dossier n\' a pas pu être ouvert';
-
-		?>
-		</div>
 
         <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
