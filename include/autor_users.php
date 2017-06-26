@@ -10,8 +10,12 @@
     $username=$req_doss->fetch();
 
     $urluser="./../data/".$username["USERNAME"];
-
+    $urluserdownload="./../data/".$username["USERNAME"]."/download";
+    $urluserupload="./../data/".$username["USERNAME"]."/upload";
+    
     mkdir($urluser, 0700);
+    mkdir($urluserdownload, 0700);
+    mkdir($urluserupload, 0700);
 
 
 
