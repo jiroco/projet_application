@@ -44,7 +44,7 @@
             crossorigin="anonymous"></script>
         <script type="text/javascript">
           $(document).ready(function () {
-            $('.log').click(function () {
+            $(".log").click(function () {
                 var action = "UPLOAD";
                 var iduser = $(".log").attr('id');
                 var dataObject = {};
