@@ -43,8 +43,45 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 		<br/>
 
-		
-        <input class="log" id=<?php echo $_SESSION["USERNAME"]; ?> type="hidden">
+		<div>
+			Fichiers téléchargés
+			<?php
+			echo "<br/>";
+			if($dossier = opendir('./data/'.$_SESSION['USERNAME'].'/upload/')){
+				while(false !== ($fichier = readdir($dossier))){
+					if($fichier != '.' && $fichier != '..'){
+						echo '<li>' . $fichier . '</li>';
+					}
+				}
+				echo '</ul><br />';
+				closedir($dossier);
+			}
+			else
+			    echo 'Le dossier n\' a pas pu être ouvert';
+
+		?>
+		</div>
+		<div>
+			Fichiers résultats
+			<?php
+			echo "<br/>";
+			if($dossier = opendir('./data/'.$_SESSION['USERNAME'].'/download')){
+				while(false !== ($fichier = readdir($dossier))){
+					if($fichier != '.' && $fichier != '..'){
+						echo '<li>' . $fichier . '</li>';
+
+					}
+				}
+				echo '</ul><br />';
+				closedir($dossier);
+			}
+			else
+			    echo 'Le dossier n\' a pas pu être ouvert';
+
+		?>
+		</div>
+
+        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
         <script
             src="https://code.jquery.com/jquery-3.2.1.js"
@@ -52,10 +89,10 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
             crossorigin="anonymous"></script>
         <script type="text/javascript">
           $(document).ready(function () {
-              var action = "connexion";
-              var username = $(".log").attr('id');
+              var action = "CONNEXION";
+              var iduser = $(".log").attr('id');
               var dataObject = {};
-              dataObject["username"] = username;
+              dataObject["iduser"] = iduser;
               dataObject["action"] = action;
               $.ajax({
                 url:  'include/log.php',
@@ -65,12 +102,17 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                 success: function(data) {
                     alert(data);
                 },
-                error: function() {
+                error: function(data) {
                     alert(data);
                 },
               });
           });
         </script>
+
+        <br />
+<font size='1'><table class='xdebug-error xe-fatal-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Fatal error: Cannot use [] for reading in C:\wamp64\www\projet_application\include\log.php on line <i>22</i></th></tr>
+</table></font>
 
 	</body>
 </html>

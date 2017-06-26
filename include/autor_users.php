@@ -3,22 +3,23 @@
     include("connexiondb.php");
 
     $id_button=$_POST["id_button"];
-    
+
     $req_doss=$DBcon->prepare('SELECT USERNAME FROM USER WHERE IDUSER = ?');
     $req_doss->bindValue(1,$id_button,PDO::PARAM_INT);
     $req_doss->execute();
     $username=$req_doss->fetch();
 
     $urluser="./../data/".$username["USERNAME"];
+
     $urluserdownload="./../data/".$username["USERNAME"]."/download";
     $urluserupload="./../data/".$username["USERNAME"]."/upload";
-    
+
     mkdir($urluser, 0700);
     mkdir($urluserdownload, 0700);
     mkdir($urluserupload, 0700);
 
     $req = $DBcon->prepare('UPDATE USER SET PERMISSION=1, URLUSER= ?  WHERE IDUSER = ?');
-    $req->bindValue(1,$urluser,PDO::PARAM_INT);    
+    $req->bindValue(1,$urluser,PDO::PARAM_INT);
     $req->bindValue(2,$id_button,PDO::PARAM_INT);
     $req->execute();
 
