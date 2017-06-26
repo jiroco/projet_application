@@ -1,4 +1,5 @@
 <?php
+//MeDISIS_APP2/script.php
 
 	session_start();
 	include("include/connexiondb.php");
