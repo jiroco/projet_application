@@ -1,4 +1,5 @@
 <?php
+//MeDISIS_APP2/script.php
 
 	session_start();
 	include("include/connexiondb.php");
@@ -18,6 +19,7 @@
     $donnee=$req->fetch();
     $IDdocu=$donnee["IDDOCU"];
     $req=$DBcon->prepare('INSERT INTO `UTOD`(`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES (NULL,?,?,NULL)');
+
     $req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_STR);
     $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
     $req->execute();
