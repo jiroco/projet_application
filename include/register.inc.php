@@ -1,6 +1,8 @@
 <?php
     include("connexiondb.php");
     if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['prenom']) && !empty($_POST['prenom']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['societe']) && !empty($_POST['societe'])){
+        
+
         $email=htmlspecialchars($_POST['email']);
         $nom=htmlspecialchars($_POST['nom']);
         $prenom=htmlspecialchars($_POST['prenom']);
@@ -19,6 +21,14 @@
         $req->bindValue(6,$prenom,PDO::PARAM_INT);
 
         $check=$req->execute();
+        if($check)
+        {
+            header("Refresh: 2; URL=../login.php");
+        }
+        else
+        {
+            echo "Un problème s'est produit lors de la requete.<br>";
+        }
 /* ----------------- ENVOIS DU MAIL ------------------*/
 
         $to = "admin@admin.com";
@@ -45,16 +55,10 @@
         //mail($to,$subject,$message,$headers);
 
         echo '<p><br/>Votre demande de création de compte a bien été enregistrée et va être traitée</p>';
+
 /*----------------------- FIN ENVOIS MAIL ---------------*/
 
-        if($check)
-        {
-            header("Refresh: 2; URL=../login.php");
-        }
-        else
-        {
-            echo "Un problème s'est produit lors de la requete.<br>";
-        }
+
     }
     else {
         echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> un champ est vide. </div></div>";

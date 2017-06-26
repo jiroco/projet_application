@@ -1,12 +1,11 @@
 <?php
 include("connexiondb.php");
-$output = "" ;
 $req=$DBcon->prepare("SELECT * FROM setup");
 $check=$req->execute();
 
 if($check){
-	$output .= '
-	<table class="table" bordered="1">
+	$output = '
+		<table class="table" bordered="1">
 		<tr>
 			<th></th>
 			<th>'.$_POST["firstset"].'</th>
@@ -48,10 +47,12 @@ if($check){
 else
     echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 
+$output .= '</table>';
 $req->closeCursor();
  
-header("Content-Type: application/xls");
-header("Content-disposition: inline; filename=/data/download.xls");
-echo $output;
+//header("Content-Type: application/xls");
+//header("Content-disposition: inline; filename=/data/download.xls");
+$file= fopen("../data/reglage_setup.xls","w+");
+fputcsv($file,array($output));
 
 ?>
