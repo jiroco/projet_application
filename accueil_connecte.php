@@ -41,7 +41,8 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             </thead>
                             <tbody>
 
-	                    	<?php   
+	                    	<?php
+
 								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
 								while($resultat=$req->fetch()){
 									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
@@ -50,6 +51,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 							else{
                         		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
 							}
+
                             ?>
 
                             </tbody>
@@ -59,7 +61,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 
 						<?php
-								
+
 
 						}
 						else{
