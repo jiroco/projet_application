@@ -1,11 +1,12 @@
 <?php
-include("connexiondb.php");
+include("include/connexiondb.php");
 session_start();
 if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 else{
 	$confirm=0;
+
 
 	$req= $DBcon->prepare('TRUNCATE TABLE setup');
 	$req->execute();
@@ -20,7 +21,6 @@ else{
 	$count9=0;
 	$count10=0;
 	$count11=0;
-
 	if (isset($_POST["firstsetbox"][0])){
 		$one0 ="x";
 		$count1+=1;
@@ -98,7 +98,6 @@ else{
 	else{
 		$eleven0 = "";
 	}
-
 	//requet avec la selection des données
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`,`TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Numero",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one0,PDO::PARAM_STR);
@@ -113,15 +112,12 @@ else{
 	        $req->bindValue(10,$ten0,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven0,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][1])){
 		$one1 ="x";
 		$count2+=1;
@@ -132,7 +128,6 @@ else{
 	if (isset($_POST["secondsetbox"][1])){
 		$two1 ="x";
 		$count2+=1;
-
 	}
 	else{
 		$two1 = "";
@@ -200,7 +195,6 @@ else{
 	else{
 		$eleven1 = "";
 	}
-
 	//requet avec la selection des données
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Fonction",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one1,PDO::PARAM_STR);
@@ -215,15 +209,12 @@ else{
 	        $req->bindValue(10,$ten1,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven1,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][2])){
 		$one2 ="x";
 		$count3+=1;
@@ -301,7 +292,6 @@ else{
 	else{
 		$eleven2 = "";
 	}
-
 	//requet avec la selection des données
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`,`TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Exigence fonctionnelle",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one2,PDO::PARAM_STR);
@@ -316,15 +306,12 @@ else{
 	        $req->bindValue(10,$ten2,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven2,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][3])){
 		$one3 ="x";
 		$count4+=1;
@@ -402,8 +389,6 @@ else{
 	else{
 		$eleven3 = "";
 	}
-
-
 	//requet avec la selection des données
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Organe",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one3,PDO::PARAM_STR);
@@ -418,15 +403,12 @@ else{
 	        $req->bindValue(10,$ten3,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven3,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][4])){
 		$one4 ="x";
 		$count5+=1;
@@ -437,7 +419,6 @@ else{
 	if (isset($_POST["secondsetbox"][4])){
 		$two4 ="x";
 		$count5+=1;
-
 	}
 	else{
 		$two4 = "";
@@ -519,15 +500,12 @@ else{
 	        $req->bindValue(10,$ten4,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven4,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][5])){
 		$one5 ="x";
 		$count6+=1;
@@ -605,7 +583,6 @@ else{
 	else{
 		$eleven5 = "";
 	}
-
 	//requet avec la selection des données
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`,`TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Cause locale",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one5,PDO::PARAM_STR);
@@ -620,15 +597,12 @@ else{
 	        $req->bindValue(10,$ten5,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven5,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][6])){
 		$one6 ="x";
 		$count7+=1;
@@ -706,7 +680,6 @@ else{
 	else{
 		$eleven6 = "";
 	}
-
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Effet locale",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one6,PDO::PARAM_STR);
 	        $req->bindValue(2,$two6,PDO::PARAM_STR);
@@ -720,15 +693,12 @@ else{
 	        $req->bindValue(10,$ten6,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven6,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][7])){
 		$one7 ="x";
 		$count8+=1;
@@ -806,7 +776,6 @@ else{
 	else{
 		$eleven7 = "";
 	}
-
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`,`TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Besoin",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one7,PDO::PARAM_STR);
 	        $req->bindValue(2,$two7,PDO::PARAM_STR);
@@ -820,16 +789,12 @@ else{
 	        $req->bindValue(10,$ten7,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven7,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
-
 	if (isset($_POST["firstsetbox"][8])){
 		$one8 ="x";
 		$count9+=1;
@@ -907,8 +872,6 @@ else{
 	else{
 		$eleven8 = "";
 	}
-
-
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`,`TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Exigence besoin",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one8,PDO::PARAM_STR);
 	        $req->bindValue(2,$two8,PDO::PARAM_STR);
@@ -922,16 +885,12 @@ else{
 	        $req->bindValue(10,$ten8,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven8,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
-
 	if (isset($_POST["firstsetbox"][9])){
 		$one9 ="x";
 		$count10+=1;
@@ -1009,8 +968,6 @@ else{
 	else{
 		$eleven9 = "";
 	}
-
-
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Nouvelle ligne",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one9,PDO::PARAM_STR);
 	        $req->bindValue(2,$two9,PDO::PARAM_STR);
@@ -1024,15 +981,12 @@ else{
 	        $req->bindValue(10,$ten9,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven9,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
 	if (isset($_POST["firstsetbox"][10])){
 		$one10 ="x";
 		$count11+=1;
@@ -1110,7 +1064,6 @@ else{
 	else{
 		$eleven10 = "";
 	}
-
 	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`,`TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"A garder ?",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one10,PDO::PARAM_STR);
 	        $req->bindValue(2,$two10,PDO::PARAM_STR);
@@ -1124,28 +1077,23 @@ else{
 	        $req->bindValue(10,$ten10,PDO::PARAM_STR);
 	        $req->bindValue(11,$eleven10,PDO::PARAM_STR);
 	        $check=$req->execute();
-
 	        if($check){
 	            }
-
 	        else
-	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-
-
-	if($count1==1 && $count2==1 && $count3<=1 && $count4<=1 && $count5==1 && $count6==1 && $count7==1 && $count8<=1 && $count9<=1 && $count10==1 && $count11==1 ){
+	if ($count1==1 && $count2==1 && $count3<=1 && $count4<=1 && $count5==1 && $count6==1 && $count7==1 && $count8<=1 && $count9<=1 && $count10==1 && $count11==1 ){
 		include("excel.php");
-		echo "<meta http-equiv='refresh' content='3; URL=reglage_setup_2.php'>";
+		echo "<meta http-equiv='refresh' content='3; URL=../reglage_setup_2.php'>";
 	}
-	else {
+	else{
 		$confirm+=1;
 	}
-	if (isset($_POST['submit']) && $confirm==1 ){
-		echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous n'avez pas coché correctement les cases du setup</div></div>";     
-   
+	if (isset($_POST['submitsetup']) && $confirm==1){
+		echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous n'avez pas coché correctement les cases du setup.</div></div><br/><br/><br/>";        
 	}
 
-
+}
 //echo $output;
 ?>

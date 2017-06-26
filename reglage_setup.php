@@ -204,7 +204,7 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
 						  </table>
 						</div>
 					  <input type="submit" name="submitsetup" value="Valider">
-					</form>
+					</form><br/><br/>
 				</div>
 			</div>
 		</div>
