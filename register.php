@@ -7,7 +7,7 @@
     <body>
         <div id="main_containt">
             <?php include('layout_base_unsigned.php');?>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <form class="form-horizontal" action="include/register.inc.php" method="POST">
                         <fieldset>

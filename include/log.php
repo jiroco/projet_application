@@ -1,8 +1,8 @@
 <?php
 
     $dateToSearch = date("m.y");                                                                                                // Date servant a la recherche du fichier de logs
-    $dateToRegister = date("D j m Y H i s");                                                                                    // Date inscrite dans les logs
-    $nameFile = "../log/" . $dateToSearch . ".txt";                                                                                // Nom du fichier a rechercher en fonction de la date
+    $dateToRegister = date("l j.m.Y H:i:s");                                                                                    // Date inscrite dans les logs
+    $nameFile = "../log/" . $dateToSearch . ".txt";                                                                             // Nom du fichier a rechercher en fonction de la date
 
     $file = fopen($nameFile, 'a');
 
@@ -11,8 +11,19 @@
 
 
     switch ($action) {                                                                                                          // Inscription dans le fichier log en fonction dans le log
-        case "connexion":
-            fputs($file, $username . " " . $action . " at " . $dateToRegister . "\r\n");
+        case 'CONNEXION':
+            fputs($file, $username . "\t" . $action . "\t" . $dateToRegister . "\r\n");
+            break;
+
+         case 'UPLOAD':
+
+
+
+            fputs($file, $username . "\t" . $action . "\t\t" . $dateToRegister . "\r\n");
+            break;
+
+        case 'DOWNLOAD':
+            fputs($file, $username . "\t" . $action . "\t" . $dateToRegister . "\r\n");
             break;
 
         default:
@@ -22,6 +33,6 @@
 
     fclose($file);
 
-    echo "write_logs : ok";
+    echo "";
 
 ?>

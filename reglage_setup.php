@@ -1,7 +1,7 @@
-<?
+<?php
 include("include/connexiondb.php");
 session_start();
-if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
     echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
 }
 ?>
@@ -17,7 +17,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 </head>
 <body>
-	<?php include 'layout_base.php'; ?>
+	<?php include('layout_base.php'); ?>
 	<div class="container">
 	  <h2>Reglage du setup</h2>
 	  <form method="POST" action="include/reglage_setup.inc.php">
@@ -25,11 +25,11 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		    <thead>
 		      <tr>
 		      	<th>#</th>
-		        <th><input type="text" name="firstset" value="Numéro"></th>
+		        <th><input type="text" name="firstset" value="Numero"></th>
 		        <th><input type="text" name="secondset" value="Fonction"></th>
 		        <th><input type="text" name="thirdset" value="Exigence fonctionnelle"></th>
 		        <th><input type="text" name="fourthset" value="Organe"></th>
-		        <th><input type="text" name="fiveset" value="Mode de défaillance"></th>
+		        <th><input type="text" name="fiveset" value="Mode de defaillance"></th>
 		      	<th><input type="text" name="sixset" value="Cause local"></th>
 		        <th><input type="text" name="sevenset" value="Effet local"></th>
 		        <th><input type="text" name="eightset" value="Besoin"></th>
