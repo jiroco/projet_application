@@ -81,7 +81,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 		?>
 		</div>
 
-        <input class="log" id=<?php echo $_SESSION["USERNAME"]; ?> type="hidden">
+        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
         <script
             src="https://code.jquery.com/jquery-3.2.1.js"
@@ -90,16 +90,18 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
         <script type="text/javascript">
           $(document).ready(function () {
               var action = "CONNEXION";
-              var username = $(".log").attr('id');
+              var iduser = $(".log").attr('id');
               var dataObject = {};
-              dataObject["username"] = username;
+              dataObject["iduser"] = iduser;
               dataObject["action"] = action;
+              alert(dataObject["iduser"]);
               $.ajax({
                 url:  'include/log.php',
                 timeout: 30000,
                 type: 'POST',
                 data: dataObject,
                 success: function(data) {
+                    //$(".log").html(data);
                     $(".log").html(data);
                 },
                 error: function(data) {
