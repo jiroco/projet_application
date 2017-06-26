@@ -11,7 +11,7 @@
         $password=htmlspecialchars($_POST['password']);
         $password=sha1($password);
 
-        $req = $DBcon->prepare('INSERT INTO `user`(`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (NULL,0,"test",?,?,?,?,?,?)');
+        $req = $DBcon->prepare('INSERT INTO `USER`(`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES (NULL,0,"test",?,?,?,?,?,?)');
 
         $req->bindValue(1,$username,PDO::PARAM_INT);
         $req->bindValue(2,$email,PDO::PARAM_INT);

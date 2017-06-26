@@ -18,7 +18,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     <body>
         <div id="main_containt">
             <?php include 'layout_base.php'; ?>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="text_area">
                         <form method="POST" action="include/reglage_defaillance.inc.php">   

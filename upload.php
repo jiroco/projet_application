@@ -14,7 +14,7 @@
 	<body>
         <div id="main_containt">
             <?php include('layout_base.php');?>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="text_area">
 						<form method="post" action="actionupload.php" enctype="multipart/form-data" class="form-horizontal">
