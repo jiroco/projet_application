@@ -25,7 +25,7 @@
 										<br/>
 										<input type="file" name="File" id="File" class="custom-file-input" autocomplete="on" required="required" />
 										<br/>
-										<input class="log" id=<?php echo $_SESSION["IDUSER"] ?> type="submit" name="submit" value="Upload" />
+										<input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="submit" name="submit" value="Upload" />
 										<span class="custom-file-control"></span>
 									</label>
 	                            </div>
@@ -50,16 +50,18 @@
                 var dataObject = {};
                 dataObject["iduser"] = iduser;
                 dataObject["action"] = action;
+                alert(dataObject["iduser"]);
+                alert(dataObject["action"]);
                 $.ajax({
                   url:  'include/log.php',
                   timeout: 30000,
                   type: 'POST',
                   data: dataObject,
                   success: function(data) {
-                      $('#trash_log').html(data);
+                      alert(data);
                   },
                   error: function(data) {
-                      $('#trash_log').html(data);
+                      alert(data);
                   },
               });
             });

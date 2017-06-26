@@ -21,7 +21,7 @@
             $req->execute();
             $data=$req->fetch();
 
-            fputs($file, $data[0] . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t");
+            fputs($file, $data . "\t\t" . $action . "\t\t" . $dateToRegister . "\t\t");
 
             $req=$DBcon->prepare('SELECT D.NAMEDOCU FROM DOC_U D, UTOD R WHERE D.IDDOCU = R.IDDOCU AND R.IDUSER = ?');
             $req->bindValue(1,$iduser,PDO::PARAM_INT);
