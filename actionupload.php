@@ -1,4 +1,5 @@
 <?php
+
     header('charset=iso-8859-1');
     if ($_FILES['File']['error'] > 0) $erreur = "Erreur lors du transfert";
     $nom = md5(uniqid(rand(), true));

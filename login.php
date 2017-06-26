@@ -24,10 +24,10 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="prenom">Nom d'utilisateur</label>
                                 <div class="col-md-4">
-                   					<input type="hidden"/>
+                   					        <input type="hidden"/>
                                     <input id="username" name="USERNAME" type="text" placeholder="Nom d'utilisateur" required class="form-control input-md"/>
-                              </div>
-							</div>
+                                </div>
+							             </div>
 
                           <!-- Password -->
                           <div class="form-group">
@@ -47,7 +47,7 @@
                         </fieldset>
                     </form>
                 </div>
-			</div>
+			      </div>
         </div>
     </body>
 </html>
