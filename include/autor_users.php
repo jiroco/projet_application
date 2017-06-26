@@ -17,8 +17,6 @@
     mkdir($urluserdownload, 0700);
     mkdir($urluserupload, 0700);
 
-
-
     $req = $DBcon->prepare('UPDATE USER SET PERMISSION=1, URLUSER= ?  WHERE IDUSER = ?');
     $req->bindValue(1,$urluser,PDO::PARAM_INT);    
     $req->bindValue(2,$id_button,PDO::PARAM_INT);
