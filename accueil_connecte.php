@@ -37,15 +37,17 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                                 <tr>
                                     <th style="width: 400px;text-align: center;"><h4>Upload</h4></th>
                                     <th style="width: 400px;text-align: center;"><h4>Download</h4></th>
+                                    <th style="width: 400px;text-align: center;"></th>
                                 </tr>
                             </thead>
                             <tbody>
 
 	                    	<?php
-
-								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Télécharger</button><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr></tr>");
 								while($resultat=$req->fetch()){
-									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+									print_r("<tr><td>".$resultat['NAMEDOCU']."</td>
+										<td>".$resultat['NAMEDOCD']."</td>
+										<td><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Télécharger</button><button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Suprimer </button></td></tr>");
 								}
 							}
 							else{
@@ -57,19 +59,13 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             </tbody>
                         </table>
 
-
-
-
 						<?php
-
 
 						}
 						else{
 							echo "<br/>Erreur de requète<br/>";
 						}
 						?>
-
-
 				        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
 
 				        <script

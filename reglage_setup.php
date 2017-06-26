@@ -23,9 +23,10 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
         <?php include 'layout_base.php'; ?>
         <div class="container">
             <div class="row">
+            	<?php include("include/reglage_setup.inc.php"); ?>
                 <div class="text_area">
-                	<legend><h2>Reglage du setup</h2></legend>
-					<form method="POST" action="include/reglage_setup.inc.php">
+                	<legend><h2>Réglage du setup</h2></legend>
+					<form method="POST">
 					  	<div class="table-responsive"> 
 						  <table class="table table-bordered table-striped" style="background-color:white !important;">
 						    <thead>
@@ -203,7 +204,7 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
 						  </table>
 						</div>
 					  <input type="submit" name="submitsetup" value="Valider">
-					</form>
+					</form><br/><br/>
 				</div>
 			</div>
 		</div>
