@@ -29,29 +29,29 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 						$check=$req->execute();
 						if($check){
 							if($resultat=$req->fetch()){
-								echo "<legend><h2>Nom des documents de ".$_SESSION["PRENOM"]." : </h2></legend><br/>";
+								echo "<legend><h2>Nom des documents de ".$_SESSION["PRENOM"]." : </h2></legend>";
 						?>
 
 						<table class="table">
                             <thead>
                                 <tr>
-                                    <th style="width: 400px;"><h4>Upload</h4></th>
-                                    <th style="width: 400px;"><h4>Download</h4></th>
+                                    <th style="width: 400px;text-align: center;"><h4>Upload</h4></th>
+                                    <th style="width: 400px;text-align: center;"><h4>Download</h4></th>
                                 </tr>
                             </thead>
                             <tbody>
-                            	<?php   
+
+	                    	<?php   
+								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+								while($resultat=$req->fetch()){
 									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
+								}
+							}
+							else{
+                        		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
+							}
+                            ?>
 
-                            	?>
-
-
-
-
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                             </tbody>
                         </table>
 
@@ -59,15 +59,8 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 
 						<?php
-								echo " <br/>";
-								while($resultat=$req->fetch()){
-									print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td></tr>");
-									echo " <br/>";
-								}
-							}
-							else{
-								echo "<br/>Documents non trouvés<br/>";
-							}
+								
+
 						}
 						else{
 							echo "<br/>Erreur de requète<br/>";
