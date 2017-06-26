@@ -118,7 +118,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -220,7 +220,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -321,7 +321,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -423,7 +423,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -524,7 +524,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -625,7 +625,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -725,7 +725,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -825,7 +825,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -927,7 +927,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -1029,7 +1029,7 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
@@ -1129,22 +1129,22 @@ else{
 	            }
 
 	        else
-	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
+	            echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
 
 
 	if($count1==1 && $count2==1 && $count3<=1 && $count4<=1 && $count5==1 && $count6==1 && $count7==1 && $count8<=1 && $count9<=1 && $count10==1 && $count11==1 ){
 		include("excel.php");
+		echo "<meta http-equiv='refresh' content='3; URL=reglage_setup_2.php'>";
 	}
 	else {
-		$confirm=1;
+		$confirm+=1;
 	}
 	if (isset($_POST['submit']) && $confirm==1 ){
-		echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous n'avez pas coché correctement les cases du setup</div></div>";        
+		echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous n'avez pas coché correctement les cases du setup</div></div>";     
+   
 	}
-	
-}
 
 
 //echo $output;

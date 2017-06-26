@@ -1,0 +1,50 @@
+"
+		<table class=""table"" bordered=""1"">
+		<tr>
+			<th></th>
+			<th>Exigence fonctionnelle</th>
+			<th>Organe</th>
+			<th>Besoin</th>
+			<th>Exigence besoin</th>
+		</tr>
+		
+			<tr>
+				<th>Texte de la premiere ligne fusionnee</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		
+			<tr>
+				<th>Concatenation</th>
+				<th></th>
+				<th>x</th>
+				<th></th>
+				<th></th>
+			</tr>
+		
+			<tr>
+				<th>Fusion avec cardinalite</th>
+				<th>x</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		
+			<tr>
+				<th>Fusion sans cardinalite</th>
+				<th></th>
+				<th></th>
+				<th>x</th>
+				<th></th>
+			</tr>
+		
+			<tr>
+				<th>Intersection</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th>x</th>
+			</tr>
+		</table>"
