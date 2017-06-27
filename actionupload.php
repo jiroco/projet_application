@@ -20,9 +20,14 @@
             echo $nom;
             $dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom;
             $resultat = move_uploaded_file($file['tmp_name'],$dest);
-            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\Python_extraction\\extracteur.py C:\wamp64\www\projet_application\\".$dest." C:\wamp64\www\projet_application\MeDISIS_APP3\InputFile\\".$avant.".xml");
-
-
+            echo "veuillez patientez! Cette étape peut durer plusieurs minutes!"
+            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\Python_extraction\\extracteur.py C:\wamp64\www\projet_application\\".$dest." C:\wamp64\www\projet_application\InputFile\listes_extraites.xml");
+            copy("C:\wamp64\www\projet_application\data\\".$_SESSION["USERNAME"]."\FailureModes.xls", "C:\wamp64\www\projet_application\Parameters\\FailureModes.xls");
+            sleep(2);
+            exec("C:\wamp64\www\projet_application\\MEDISIS.exe");
+            copy("C:\wamp64\www\projet_application\data\\".$_SESSION["USERNAME"]."\\reglage_setup.xls", "C:\wamp64\www\projet_application\Parameters\\reglage_setup.xls");
+            sleep(40);
+            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\postTraitement.pyc C:\wamp64\www\projet_application\\Parameters\\reglage_setup.xls C:\wamp64\www\projet_application\OutputFile\AMDEC1.xls C:\wamp64\www\projet_application\OutputFile\AMDEC2.xls");
 
             //$nom = md5(uniqid(rand(), true));
             //$avant=basename($_FILES['File']['name'],'.uml');
@@ -48,7 +53,7 @@
                 $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
                 $req->execute();
                 if ($resultat){
-                    echo "<meta http-equiv='refresh' content='0; URL=reglage_defaillance.php'>";
+                    echo "<meta http-equiv='refresh' content='0; URL=upload2.php'>";
                     $_SESSION['IDDOCU']=$IDdocu;
                 }
             }
