@@ -53,7 +53,7 @@
                 $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
                 $req->execute();
                 if ($resultat){
-                    echo "<meta http-equiv='refresh' content='0; URL=donwload_etape1.php'>";
+                    echo "<meta http-equiv='refresh' content='0; URL=download_etape1.php'>";
                     $_SESSION['IDDOCU']=$IDdocu;
                 }
             }

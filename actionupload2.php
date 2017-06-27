@@ -4,7 +4,7 @@
     session_start();
     include("include/connexiondb.php");
     header('charset=iso-8859-1');
-    
+
     $valide=0;
     if (isset($_POST["submit"])){
         if ($_FILES['File']['error'] > 0){
@@ -21,9 +21,9 @@
             echo $nom;
             $dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom;
             $resultat = move_uploaded_file($file['tmp_name'],$dest);
-            echo "veuillez patientez! Cette étape peut durer plusieurs minutes!"
-            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\suivi_modifications.py C:\wamp64\www\projet_application\\OutputFile\preAMDEC.xls C:\wamp64\www\projet_application\\".$dest."C:\wamp64\www\projet_application\\OutputFile\preAMDECMaJ.xls C:\wamp64\www\projet_application\\OutputFile\logAMDEC.xls");
-            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\creation_graphe_flux.py C:\wamp64\www\projet_application\\OutputFile\preAMDEC.xls C:\wamp64\www\projet_application\\".$dest."C:\wamp64\www\projet_application\\OutputFile\preAMDECMaJ.xls C:\wamp64\www\projet_application\\OutputFile\logAMDEC.xls");
+            echo "veuillez patientez! Cette étape peut durer plusieurs minutes!";
+            //exec("C:\Python27\python.exe C:\wamp64\www\projet_application\suivi_modifications.py C:\wamp64\www\projet_application\\OutputFile\preAMDEC.xls C:\wamp64\www\projet_application\\".$dest."C:\wamp64\www\projet_application\\OutputFile\preAMDECMaJ.xls C:\wamp64\www\projet_application\\OutputFile\logAMDEC.xls");
+            //exec("C:\Python27\python.exe C:\wamp64\www\projet_application\creation_graphe_flux.py C:\wamp64\www\projet_application\\OutputFile\preAMDEC.xls C:\wamp64\www\projet_application\\".$dest."C:\wamp64\www\projet_application\\OutputFile\preAMDECMaJ.xls C:\wamp64\www\projet_application\\OutputFile\logAMDEC.xls");
             //$nom = md5(uniqid(rand(), true));
             //$avant=basename($_FILES['File']['name'],'.uml');
             //$dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom.".xml";

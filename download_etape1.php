@@ -16,8 +16,9 @@
             <div class="container">
                 <div class="row">
                     <div class="text_area">
-											<a href="OutputFile/"
-                    </div>
+											<a href="OutputFile/AMDEC2.xls"> download du fichier xls de la premiere etape</a><br>
+											<a href="upload2.php">Suite des etapes</a>
+										</div>
                 </div>
 			</div>
 		</div>
