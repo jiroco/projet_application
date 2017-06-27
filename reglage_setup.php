@@ -1,5 +1,4 @@
-
-<?
+<?php
 	include("include/connexiondb.php");
 	session_start();
 	if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
@@ -8,7 +7,7 @@
 	else{
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
 	<title></title>
@@ -45,7 +44,7 @@
 						        <th><input type="text" name="nineset" value="Exigence besoin"></th>
 						        <th><input type="text" name="tenset" value="Nouvelle ligne ?"></th>
 						        <th><input type="text" name="elevenset" value="A garder ?"></th>
-
+						      </tr>
 						    </thead>
 						    <tbody>
 						      <tr>
@@ -214,5 +213,5 @@
 </body>
 </html>
 <?php
-	}
+}
 ?>

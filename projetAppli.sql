@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 26 Juin 2017 à 12:21
+-- Généré le :  Mar 27 Juin 2017 à 08:18
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `defaillance`
+-- Structure de la table `DEFAILLANCE`
 --
 
 CREATE TABLE `DEFAILLANCE` (
@@ -40,7 +40,7 @@ CREATE TABLE `DEFAILLANCE` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `doc_d`
+-- Structure de la table `DOC_D`
 --
 
 CREATE TABLE `DOC_D` (
@@ -50,7 +50,7 @@ CREATE TABLE `DOC_D` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `doc_d`
+-- Contenu de la table `DOC_D`
 --
 
 INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `doc_u`
+-- Structure de la table `DOC_U`
 --
 
 CREATE TABLE `DOC_U` (
@@ -69,17 +69,21 @@ CREATE TABLE `DOC_U` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `doc_u`
+-- Contenu de la table `DOC_U`
 --
 
 INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 (8, './data/jiroco/upload/ded5f4a771b7d9e84fdfcb2df3752a70.xml', 'ded5f4a771b7d9e84fdfcb2df3752a70.xml'),
-(9, './data/jiroco/upload/b32507d7007407b864ad586505c9b0e0.xml', 'b32507d7007407b864ad586505c9b0e0.xml');
+(9, './data/jiroco/upload/b32507d7007407b864ad586505c9b0e0.xml', 'b32507d7007407b864ad586505c9b0e0.xml'),
+(10, './data/chamonet/upload/51a97713314ff02c59e2b340d7de607c.xml', '51a97713314ff02c59e2b340d7de607c.xml'),
+(11, './data/chamonet/upload/8f60c8cfdf05020796f8417412fc12f2.xml', '8f60c8cfdf05020796f8417412fc12f2.xml'),
+(12, './data/chamonet/upload/6f79ea08404c7e6d7ef03a491c21d59d.xml', '6f79ea08404c7e6d7ef03a491c21d59d.xml'),
+(13, './data/chamonet/upload/d3746a6ff28b4c92dd44cabe2b5f9a0e.xml', 'd3746a6ff28b4c92dd44cabe2b5f9a0e.xml');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `dtos`
+-- Structure de la table `DTOS`
 --
 
 CREATE TABLE `DTOS` (
@@ -92,7 +96,7 @@ CREATE TABLE `DTOS` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `setup`
+-- Structure de la table `SETUP`
 --
 
 CREATE TABLE `SETUP` (
@@ -112,7 +116,7 @@ CREATE TABLE `SETUP` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `setup`
+-- Contenu de la table `SETUP`
 --
 
 INSERT INTO `SETUP` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES
@@ -120,18 +124,62 @@ INSERT INTO `SETUP` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, 
 (2, 'Fonction', '', 'x', '', '', '', '', '', '', '', '', ''),
 (3, 'Exigence fonctionnelle', '', '', 'x', '', '', '', '', '', '', '', ''),
 (4, 'Organe', '', '', '', 'x', '', '', '', '', '', '', ''),
-(5, 'Mode de defaillance', '', '', '', '', 'x', '', '', '', '', '', ''),
-(6, 'Cause locale', '', '', '', '', '', 'x', '', '', '', '', ''),
-(7, 'Effet locale', '', '', '', '', '', '', 'x', '', '', '', ''),
-(8, 'Besoin', '', '', '', '', '', '', '', 'x', '', '', ''),
-(9, 'Exigence besoin', '', '', '', '', '', '', '', '', 'x', '', ''),
-(10, 'Nouvelle ligne', '', '', '', '', '', '', '', '', '', 'x', ''),
-(11, 'A garder ?', '', '', '', '', '', '', '', '', '', '', 'x');
+(5, 'Mode de DEFAILLANCE', '', '', '', '', 'x', '', '', '', '', '', ''),
+(6, 'Cause locale', '', '', '', 'x', '', '', '', '', '', '', ''),
+(7, 'Effet locale', '', '', 'x', '', '', '', '', '', '', '', ''),
+(8, 'Besoin', '', 'x', '', '', '', '', '', '', '', '', ''),
+(9, 'Exigence besoin', 'x', '', '', '', '', '', '', '', '', '', ''),
+(10, 'Nouvelle ligne', '', 'x', '', '', '', '', '', '', '', '', ''),
+(11, 'A garder ?', '', '', 'x', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Structure de la table `SETUP2`
+--
+
+CREATE TABLE `SETUP2` (
+  `IDSETUP2` int(4) DEFAULT NULL,
+  `TYPE2` varchar(256) NOT NULL,
+  `1` varchar(256) DEFAULT NULL,
+  `2` varchar(256) DEFAULT NULL,
+  `3` varchar(256) DEFAULT NULL,
+  `4` varchar(256) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `SETUP2`
+--
+
+INSERT INTO `SETUP2` (`IDSETUP2`, `TYPE2`, `1`, `2`, `3`, `4`) VALUES
+(NULL, 'Texte de la premiere ligne fusionnee', 'x', '', '', ''),
+(NULL, 'Concatenation', '', 'x', '', ''),
+(NULL, 'Fusion avec cardinalite', 'x', '', '', ''),
+(NULL, 'Fusion sans cardinalite', '', '', '', ''),
+(NULL, 'Intersection', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `SETUP3`
+--
+
+CREATE TABLE `SETUP3` (
+  `IDSETUP3` int(4) NOT NULL,
+  `1` varchar(256) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `SETUP3`
+--
+
+INSERT INTO `SETUP3` (`IDSETUP3`, `1`) VALUES
+(1, '=>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `USER`
 --
 
 CREATE TABLE `USER` (
@@ -147,19 +195,20 @@ CREATE TABLE `USER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `user`
+-- Contenu de la table `USER`
 --
 
 INSERT INTO `USER` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
 (1, 1, '', 'adepelley', 'aloise.depelley@insa-cvl.fr', 'c5992ae9801d756f8cba5a61589771bfd06046f6', 'INSA', 'Depelley', 'Aloïse'),
 (3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David'),
 (6, 1, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin'),
-(26, 1, './../data/jiroco', 'jiroco', 'jeansavol@gmail.com', 'd4e457004f39e01ec1c25fdc0cfb20d5a9ebb792', 'jemo services', 'savoldelli', 'jean');
+(26, 1, './../data/jiroco', 'jiroco', 'jeansavol@gmail.com', 'd4e457004f39e01ec1c25fdc0cfb20d5a9ebb792', 'jemo services', 'savoldelli', 'jean'),
+(27, 1, './../data/chamonet', 'chamonet', 'hamonet.claire@insa-cvl.fr', '042e22d11fc660923f91f241d15834b3919b92c9', 'poiuytr', 'hamonet', 'claire');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utod`
+-- Structure de la table `UTOD`
 --
 
 CREATE TABLE `UTOD` (
@@ -170,55 +219,65 @@ CREATE TABLE `UTOD` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `utod`
+-- Contenu de la table `UTOD`
 --
 
 INSERT INTO `UTOD` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 (5, 26, 8, 1),
-(6, 26, 9, 1);
+(6, 26, 9, 1),
+(7, 27, 10, 1),
+(8, 27, 11, 1),
+(9, 27, 12, 1),
+(10, 27, 13, 1);
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `defaillance`
+-- Index pour la table `DEFAILLANCE`
 --
 ALTER TABLE `DEFAILLANCE`
   ADD PRIMARY KEY (`IDDEFAI`);
 
 --
--- Index pour la table `doc_d`
+-- Index pour la table `DOC_D`
 --
 ALTER TABLE `DOC_D`
   ADD PRIMARY KEY (`IDDOCD`);
 
 --
--- Index pour la table `doc_u`
+-- Index pour la table `DOC_U`
 --
 ALTER TABLE `DOC_U`
   ADD PRIMARY KEY (`IDDOCU`);
 
 --
--- Index pour la table `dtos`
+-- Index pour la table `DTOS`
 --
 ALTER TABLE `DTOS`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
--- Index pour la table `setup`
+-- Index pour la table `SETUP`
 --
 ALTER TABLE `SETUP`
   ADD PRIMARY KEY (`IDSETUP`);
 
 --
--- Index pour la table `user`
+-- Index pour la table `SETUP3`
+--
+ALTER TABLE `SETUP3`
+  ADD PRIMARY KEY (`IDSETUP3`);
+
+--
+-- Index pour la table `USER`
 --
 ALTER TABLE `USER`
   ADD PRIMARY KEY (`IDUSER`);
 
 --
--- Index pour la table `utod`
+-- Index pour la table `UTOD`
 --
 ALTER TABLE `UTOD`
   ADD PRIMARY KEY (`INDEXKEY`);
@@ -228,40 +287,45 @@ ALTER TABLE `UTOD`
 --
 
 --
--- AUTO_INCREMENT pour la table `defaillance`
+-- AUTO_INCREMENT pour la table `DEFAILLANCE`
 --
 ALTER TABLE `DEFAILLANCE`
   MODIFY `IDDEFAI` int(255) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `doc_d`
+-- AUTO_INCREMENT pour la table `DOC_D`
 --
 ALTER TABLE `DOC_D`
   MODIFY `IDDOCD` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `doc_u`
+-- AUTO_INCREMENT pour la table `DOC_U`
 --
 ALTER TABLE `DOC_U`
-  MODIFY `IDDOCU` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `IDDOCU` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT pour la table `dtos`
+-- AUTO_INCREMENT pour la table `DTOS`
 --
 ALTER TABLE `DTOS`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `setup`
+-- AUTO_INCREMENT pour la table `SETUP`
 --
 ALTER TABLE `SETUP`
   MODIFY `IDSETUP` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT pour la table `SETUP3`
+--
+ALTER TABLE `SETUP3`
+  MODIFY `IDSETUP3` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `USER`
 --
 ALTER TABLE `USER`
-  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
--- AUTO_INCREMENT pour la table `utod`
+-- AUTO_INCREMENT pour la table `UTOD`
 --
 ALTER TABLE `UTOD`
-  MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
