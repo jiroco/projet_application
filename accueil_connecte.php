@@ -95,21 +95,16 @@
 				                },
 				              });
                               $('.userToDeleteButton').click(function () {
-                                  alert("click");
                                   var docToDelete = $(this).attr('id');
                                   var dataObject = {};
                                   dataObject["NAMEDOCU"] = docToDelete;
-                                  alert(dataObject["NAMEDOCU"]);
                                   $.ajax({
                                      url: 'include/delete.php',
                                      timeout: 30000,
                                      type: 'POST',
                                      data : dataObject,
                                      success: function(data) {
-                                         var classToDelete = ".tab" + docToDelete;
-                                         alert(classToDelete);
-                                         alert("Fichier supprime");
-                                         $(classToDelete).html("TA RAAAAAACEEEEE !!!");
+                                         window.location.reload(true);
                                      },
                                      error: function(data) {
                                          alert("Disfonctionement");
