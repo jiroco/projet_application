@@ -7,7 +7,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 else{
 	$check=0;
 
-	$chemin = 'data/'.$_SESSION["USERNAME"].'/MdD.xls';
+	$chemin = 'data/'.$_SESSION["USERNAME"].'/FailureModes.xls';
 
 	$fichier_csv = fopen($chemin, 'w+');
 	fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
@@ -106,6 +106,6 @@ else{
 
 	// fermeture du fichier csv
 	fclose($fichier_csv);
-
+  copy("C:\wamp64\www\projet_application\data\\".$_SESSION["USERNAME"]."\FailureModes.xls", "C:\wamp64\www\projet_application\Parameters\\FailureModes.xls");
 }
 ?>

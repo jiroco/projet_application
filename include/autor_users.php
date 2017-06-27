@@ -17,8 +17,8 @@
     mkdir($urluser, 0700);
     mkdir($urluserdownload, 0700);
     mkdir($urluserupload, 0700);
-    copy("../data/admin_data/FailureModes.xlsx", "../data/".$username["USERNAME"]."/FailureModes.xlsx");
-    copy("../data/admin_data/reglage_setup.xlsx", "../data/".$username["USERNAME"]."/reglage_setup.xlsx");
+    copy("../data/admin_data/FailureModes.xls", "../data/".$username["USERNAME"]."/FailureModes.xls");
+    copy("../data/admin_data/reglage_setup.xls", "../data/".$username["USERNAME"]."/reglage_setup.xls");
 
 
 
