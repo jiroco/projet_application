@@ -4,6 +4,7 @@
     session_start();
     include("include/connexiondb.php");
     header('charset=iso-8859-1');
+    
     $valide=0;
     if (isset($_POST["submit"])){
         if ($_FILES['File']['error'] > 0){
@@ -21,15 +22,8 @@
             $dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom;
             $resultat = move_uploaded_file($file['tmp_name'],$dest);
             echo "veuillez patientez! Cette étape peut durer plusieurs minutes!"
-            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\Python_extraction\\extracteur.py C:\wamp64\www\projet_application\\".$dest." C:\wamp64\www\projet_application\InputFile\listes_extraites.xml");
-            copy("C:\wamp64\www\projet_application\data\\".$_SESSION["USERNAME"]."\FailureModes.xls", "C:\wamp64\www\projet_application\Parameters\\FailureModes.xls");
-            sleep(2);
-            exec("C:\wamp64\www\projet_application\\MEDISIS.exe");
-            copy("C:\wamp64\www\projet_application\data\\".$_SESSION["USERNAME"]."\\reglage_setup.xls", "C:\wamp64\www\projet_application\Parameters\\reglage_setup.xls");
-            sleep(40);
-            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\postTraitement.pyc C:\wamp64\www\projet_application\\Parameters\\reglage_setup.xls C:\wamp64\www\projet_application\OutputFile\AMDEC1.xls C:\wamp64\www\projet_application\OutputFile\AMDEC2.xls");
-            sleep(5);
-
+            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\suivi_modifications.py C:\wamp64\www\projet_application\\OutputFile\preAMDEC.xls C:\wamp64\www\projet_application\\".$dest."C:\wamp64\www\projet_application\\OutputFile\preAMDECMaJ.xls C:\wamp64\www\projet_application\\OutputFile\logAMDEC.xls");
+            exec("C:\Python27\python.exe C:\wamp64\www\projet_application\creation_graphe_flux.py C:\wamp64\www\projet_application\\OutputFile\preAMDEC.xls C:\wamp64\www\projet_application\\".$dest."C:\wamp64\www\projet_application\\OutputFile\preAMDECMaJ.xls C:\wamp64\www\projet_application\\OutputFile\logAMDEC.xls");
             //$nom = md5(uniqid(rand(), true));
             //$avant=basename($_FILES['File']['name'],'.uml');
             //$dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom.".xml";
@@ -54,7 +48,7 @@
                 $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
                 $req->execute();
                 if ($resultat){
-                    echo "<meta http-equiv='refresh' content='0; URL=donwload_etape1.php'>";
+                    echo "<meta http-equiv='refresh' content='0; URL=upload2.php'>";
                     $_SESSION['IDDOCU']=$IDdocu;
                 }
             }

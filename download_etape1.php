@@ -16,16 +16,7 @@
             <div class="container">
                 <div class="row">
                     <div class="text_area">
-						<form method="post" enctype="multipart/form-data" class="form-horizontal">
-							<fieldset>
-	 							<div>
-									<label class="custom-file" for="File">
-										<p>Fichier généré : </p>
-
-									</label>
-	               </div>
-							</fieldset>
-						</form>
+											<a href="OutputFile/"
                     </div>
                 </div>
 			</div>
