@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 26 Juin 2017 à 12:21
+-- Généré le :  Mar 27 Juin 2017 à 08:18
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `defaillance`
 --
 
-CREATE TABLE `DEFAILLANCE` (
+CREATE TABLE `defaillance` (
   `IDDEFAI` int(255) NOT NULL,
   `PERTEFONCT` varchar(256) NOT NULL,
   `INTEMP` varchar(256) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `DEFAILLANCE` (
 -- Structure de la table `doc_d`
 --
 
-CREATE TABLE `DOC_D` (
+CREATE TABLE `doc_d` (
   `IDDOCD` int(255) NOT NULL,
   `URLDOCD` varchar(256) NOT NULL,
   `NAMEDOCD` varchar(256) NOT NULL
@@ -53,7 +53,7 @@ CREATE TABLE `DOC_D` (
 -- Contenu de la table `doc_d`
 --
 
-INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
+INSERT INTO `doc_d` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 (1, 'test', 'aefnazekjfnazefkjnzefj');
 
 -- --------------------------------------------------------
@@ -62,7 +62,7 @@ INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 -- Structure de la table `doc_u`
 --
 
-CREATE TABLE `DOC_U` (
+CREATE TABLE `doc_u` (
   `IDDOCU` int(255) NOT NULL,
   `URLDOCU` varchar(256) NOT NULL,
   `NAMEDOCU` varchar(256) NOT NULL
@@ -72,9 +72,13 @@ CREATE TABLE `DOC_U` (
 -- Contenu de la table `doc_u`
 --
 
-INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
+INSERT INTO `doc_u` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 (8, './data/jiroco/upload/ded5f4a771b7d9e84fdfcb2df3752a70.xml', 'ded5f4a771b7d9e84fdfcb2df3752a70.xml'),
-(9, './data/jiroco/upload/b32507d7007407b864ad586505c9b0e0.xml', 'b32507d7007407b864ad586505c9b0e0.xml');
+(9, './data/jiroco/upload/b32507d7007407b864ad586505c9b0e0.xml', 'b32507d7007407b864ad586505c9b0e0.xml'),
+(10, './data/chamonet/upload/51a97713314ff02c59e2b340d7de607c.xml', '51a97713314ff02c59e2b340d7de607c.xml'),
+(11, './data/chamonet/upload/8f60c8cfdf05020796f8417412fc12f2.xml', '8f60c8cfdf05020796f8417412fc12f2.xml'),
+(12, './data/chamonet/upload/6f79ea08404c7e6d7ef03a491c21d59d.xml', '6f79ea08404c7e6d7ef03a491c21d59d.xml'),
+(13, './data/chamonet/upload/d3746a6ff28b4c92dd44cabe2b5f9a0e.xml', 'd3746a6ff28b4c92dd44cabe2b5f9a0e.xml');
 
 -- --------------------------------------------------------
 
@@ -82,7 +86,7 @@ INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 -- Structure de la table `dtos`
 --
 
-CREATE TABLE `DTOS` (
+CREATE TABLE `dtos` (
   `INDEXKEY` int(255) NOT NULL,
   `IDDOCU` int(255) NOT NULL,
   `IDDEFAI` int(255) NOT NULL,
@@ -95,7 +99,7 @@ CREATE TABLE `DTOS` (
 -- Structure de la table `setup`
 --
 
-CREATE TABLE `SETUP` (
+CREATE TABLE `setup` (
   `IDSETUP` int(255) NOT NULL,
   `TYPE` varchar(256) NOT NULL,
   `1` varchar(256) NOT NULL DEFAULT '0',
@@ -115,18 +119,62 @@ CREATE TABLE `SETUP` (
 -- Contenu de la table `setup`
 --
 
-INSERT INTO `SETUP` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES
+INSERT INTO `setup` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES
 (1, 'Numero', 'x', '', '', '', '', '', '', '', '', '', ''),
 (2, 'Fonction', '', 'x', '', '', '', '', '', '', '', '', ''),
 (3, 'Exigence fonctionnelle', '', '', 'x', '', '', '', '', '', '', '', ''),
 (4, 'Organe', '', '', '', 'x', '', '', '', '', '', '', ''),
 (5, 'Mode de defaillance', '', '', '', '', 'x', '', '', '', '', '', ''),
-(6, 'Cause locale', '', '', '', '', '', 'x', '', '', '', '', ''),
-(7, 'Effet locale', '', '', '', '', '', '', 'x', '', '', '', ''),
-(8, 'Besoin', '', '', '', '', '', '', '', 'x', '', '', ''),
-(9, 'Exigence besoin', '', '', '', '', '', '', '', '', 'x', '', ''),
-(10, 'Nouvelle ligne', '', '', '', '', '', '', '', '', '', 'x', ''),
-(11, 'A garder ?', '', '', '', '', '', '', '', '', '', '', 'x');
+(6, 'Cause locale', '', '', '', 'x', '', '', '', '', '', '', ''),
+(7, 'Effet locale', '', '', 'x', '', '', '', '', '', '', '', ''),
+(8, 'Besoin', '', 'x', '', '', '', '', '', '', '', '', ''),
+(9, 'Exigence besoin', 'x', '', '', '', '', '', '', '', '', '', ''),
+(10, 'Nouvelle ligne', '', 'x', '', '', '', '', '', '', '', '', ''),
+(11, 'A garder ?', '', '', 'x', '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `setup2`
+--
+
+CREATE TABLE `setup2` (
+  `IDSETUP2` int(4) DEFAULT NULL,
+  `TYPE2` varchar(256) NOT NULL,
+  `1` varchar(256) DEFAULT NULL,
+  `2` varchar(256) DEFAULT NULL,
+  `3` varchar(256) DEFAULT NULL,
+  `4` varchar(256) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `setup2`
+--
+
+INSERT INTO `setup2` (`IDSETUP2`, `TYPE2`, `1`, `2`, `3`, `4`) VALUES
+(NULL, 'Texte de la premiere ligne fusionnee', 'x', '', '', ''),
+(NULL, 'Concatenation', '', 'x', '', ''),
+(NULL, 'Fusion avec cardinalite', 'x', '', '', ''),
+(NULL, 'Fusion sans cardinalite', '', '', '', ''),
+(NULL, 'Intersection', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `setup3`
+--
+
+CREATE TABLE `setup3` (
+  `IDSETUP3` int(4) NOT NULL,
+  `1` varchar(256) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `setup3`
+--
+
+INSERT INTO `setup3` (`IDSETUP3`, `1`) VALUES
+(1, '=>');
 
 -- --------------------------------------------------------
 
@@ -134,7 +182,7 @@ INSERT INTO `SETUP` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, 
 -- Structure de la table `user`
 --
 
-CREATE TABLE `USER` (
+CREATE TABLE `user` (
   `IDUSER` int(255) NOT NULL,
   `PERMISSION` tinyint(1) NOT NULL DEFAULT '0',
   `URLUSER` varchar(254) DEFAULT NULL,
@@ -150,11 +198,12 @@ CREATE TABLE `USER` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `USER` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
+INSERT INTO `user` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
 (1, 1, '', 'adepelley', 'aloise.depelley@insa-cvl.fr', 'c5992ae9801d756f8cba5a61589771bfd06046f6', 'INSA', 'Depelley', 'Aloïse'),
 (3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David'),
 (6, 1, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin'),
-(26, 1, './../data/jiroco', 'jiroco', 'jeansavol@gmail.com', 'd4e457004f39e01ec1c25fdc0cfb20d5a9ebb792', 'jemo services', 'savoldelli', 'jean');
+(26, 1, './../data/jiroco', 'jiroco', 'jeansavol@gmail.com', 'd4e457004f39e01ec1c25fdc0cfb20d5a9ebb792', 'jemo services', 'savoldelli', 'jean'),
+(27, 1, './../data/chamonet', 'chamonet', 'hamonet.claire@insa-cvl.fr', '042e22d11fc660923f91f241d15834b3919b92c9', 'poiuytr', 'hamonet', 'claire');
 
 -- --------------------------------------------------------
 
@@ -162,7 +211,7 @@ INSERT INTO `USER` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PAS
 -- Structure de la table `utod`
 --
 
-CREATE TABLE `UTOD` (
+CREATE TABLE `utod` (
   `INDEXKEY` int(255) NOT NULL,
   `IDUSER` int(255) NOT NULL,
   `IDDOCU` int(255) NOT NULL,
@@ -173,9 +222,13 @@ CREATE TABLE `UTOD` (
 -- Contenu de la table `utod`
 --
 
-INSERT INTO `UTOD` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
+INSERT INTO `utod` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 (5, 26, 8, 1),
-(6, 26, 9, 1);
+(6, 26, 9, 1),
+(7, 27, 10, 1),
+(8, 27, 11, 1),
+(9, 27, 12, 1),
+(10, 27, 13, 1);
 
 --
 -- Index pour les tables exportées
@@ -184,43 +237,49 @@ INSERT INTO `UTOD` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 --
 -- Index pour la table `defaillance`
 --
-ALTER TABLE `DEFAILLANCE`
+ALTER TABLE `defaillance`
   ADD PRIMARY KEY (`IDDEFAI`);
 
 --
 -- Index pour la table `doc_d`
 --
-ALTER TABLE `DOC_D`
+ALTER TABLE `doc_d`
   ADD PRIMARY KEY (`IDDOCD`);
 
 --
 -- Index pour la table `doc_u`
 --
-ALTER TABLE `DOC_U`
+ALTER TABLE `doc_u`
   ADD PRIMARY KEY (`IDDOCU`);
 
 --
 -- Index pour la table `dtos`
 --
-ALTER TABLE `DTOS`
+ALTER TABLE `dtos`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
 -- Index pour la table `setup`
 --
-ALTER TABLE `SETUP`
+ALTER TABLE `setup`
   ADD PRIMARY KEY (`IDSETUP`);
+
+--
+-- Index pour la table `setup3`
+--
+ALTER TABLE `setup3`
+  ADD PRIMARY KEY (`IDSETUP3`);
 
 --
 -- Index pour la table `user`
 --
-ALTER TABLE `USER`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`IDUSER`);
 
 --
 -- Index pour la table `utod`
 --
-ALTER TABLE `UTOD`
+ALTER TABLE `utod`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
@@ -230,38 +289,43 @@ ALTER TABLE `UTOD`
 --
 -- AUTO_INCREMENT pour la table `defaillance`
 --
-ALTER TABLE `DEFAILLANCE`
+ALTER TABLE `defaillance`
   MODIFY `IDDEFAI` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `doc_d`
 --
-ALTER TABLE `DOC_D`
+ALTER TABLE `doc_d`
   MODIFY `IDDOCD` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `doc_u`
 --
-ALTER TABLE `DOC_U`
-  MODIFY `IDDOCU` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `doc_u`
+  MODIFY `IDDOCU` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT pour la table `dtos`
 --
-ALTER TABLE `DTOS`
+ALTER TABLE `dtos`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `setup`
 --
-ALTER TABLE `SETUP`
+ALTER TABLE `setup`
   MODIFY `IDSETUP` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT pour la table `setup3`
+--
+ALTER TABLE `setup3`
+  MODIFY `IDSETUP3` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
-ALTER TABLE `USER`
-  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+ALTER TABLE `user`
+  MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT pour la table `utod`
 --
-ALTER TABLE `UTOD`
-  MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `utod`
+  MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
