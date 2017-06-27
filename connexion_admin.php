@@ -1,3 +1,17 @@
+<?php
+include("include/connexiondb.php");
+session_start();
+if ((isset($_SESSION['IDUSER'])) || !(empty($_SESSION['IDUSER']))) {
+    if ($_SESSION['NOM']=='admin'){
+        echo "<meta http-equiv='refresh' content='0; URL=accueil_admin.php'>";
+    }
+    else{
+            echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";
+    }
+}
+else{
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -65,25 +79,11 @@
                 </div>
             </div>
         </div>
-
-<!--
-		<div>
-			<form class="form-signin" method="POST">
-				<div class="titre">
-					<p>Connexion Administrateur</p>
-					<br>
-					<input type="hidden"/>
-					<input name="USERNAME" id="username"  placeholder="username" required="" type="text"/>
-					<br>
-					<input name="PASSWORD" id="passwd" placeholder="Mot de passe" required="" type="password"/>
-					<br/><br/>
-					<input type="submit"  value="Connexion"/>
-				</div>
-			</form>
-		</div>
- -->
 	</body>
 </html>
+<?php
+    }
+?>
 
 
 
