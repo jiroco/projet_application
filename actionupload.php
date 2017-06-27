@@ -3,14 +3,22 @@
     session_start();
     include("include/connexiondb.php");
     header('charset=iso-8859-1');
-    if ($_FILES['File']['error'] > 0){ 
+    if ($_FILES['File']['error'] > 0){
         $erreur = "Erreur lors du transfert";
     }
     else{
         $file=$_FILES['File'];
         $extension = strrchr($_FILES['File']['name'], '.');
         $legalExtensions = array(".xls", ".uml", ".xml",".xmi");
-        $nom = md5(uniqid(rand(), true));
+        $avant=basename($_FILES['File']['name'],'.uml');
+        $nom = $_FILES['File']['name'];
+        $dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom;
+        $resultat = move_uploaded_file($_FILES['File']['tmp_name'],$dest);
+        exec("C:\Python27\python.exe C:\wamp64\www\projet_application\Python_extraction\\extracteur.py C:\wamp64\www\projet_application\\".$dest." C:\wamp64\www\projet_application\MeDISIS_APP3\InputFile\\".$avant.".xml");
+
+        //include("MeDISIS_APP3/script.php");
+        //exec("del C:\wamp64\www\projet_application\MeDISIS_APP3\InputFile\\".$avant.".xml"); //de même supprimer les parametres
+        //exec("C:\wamp64\www\projet_application\MeDISIS_APP3\MEDISIS.exe");
         if (in_array($extension, $legalExtensions)) {
             $dest="./data/".$_SESSION["USERNAME"]."/upload/".$nom.".xml";
             $resultat = move_uploaded_file($file['tmp_name'],$dest);
@@ -27,7 +35,7 @@
             $req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_STR);
             $req->bindValue(2,$IDdocu,PDO::PARAM_STR);
             $req->execute();
-            if ($resultat){ 
+            if ($resultat){
                 echo "<meta http-equiv='refresh' content='0; URL=reglage_defaillance.php'>";
             }
         }
