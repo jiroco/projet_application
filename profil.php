@@ -1,14 +1,22 @@
 <?php
- session_start();
- if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
-     echo "<meta http-equiv='refresh' content='0; URL=login.php'>";
-}
+	session_start();
+	if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+		$phpvar=1;
+	    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
+	}
+	else{
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Profil</title>
+	<script type="text/javascript">
+		var test= <?php echo $phpvar ;?>
+		if(test==1){
+			document.InnerHTML=" ";
+		}
+	</script>
 </head>
 <body>
 	<?php include 'layout_base.php'; ?>
@@ -51,6 +59,9 @@
 		        </div> <!-- profil fin -->
 
 	</div><!--container fin -->
-
 </body>
 </html>
+
+<?php
+	}
+?>

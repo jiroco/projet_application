@@ -5,7 +5,7 @@
     if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
         echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
     }
-
+        else{
 ?>
 
 <html>
@@ -28,7 +28,7 @@
         	<p>Valider un utilisateur</p>
             <?php
 
-                $req = $DBcon->query('SELECT IDUSER, NOM, PRENOM, SOCIETE FROM user WHERE PERMISSION=0');
+                $req = $DBcon->query('SELECT IDUSER, NOM, PRENOM, SOCIETE FROM USER WHERE PERMISSION=0');
                 while ($resultat = $req->fetch()) { ?>
                     <div id='<?php echo -$resultat["IDUSER"];?>' >
                         <input class='autor' id='<?php echo $resultat["IDUSER"];?>' type=button value='Autoriser'></input>
@@ -72,3 +72,6 @@
         </div>
     </body>
 </html>
+<?php
+    }
+?>

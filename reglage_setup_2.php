@@ -1,10 +1,12 @@
 <?php
-include("include/connexiondb.php");
-session_start();
-if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
-    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
-}
+	include("include/connexiondb.php");
+	session_start();
+	if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+	    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
+	}
+	else{
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -23,9 +25,10 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
         <?php include 'layout_base.php'; ?>
         <div class="container">
             <div class="row">
+                <?php include("include/reglage_setup_2.inc.php"); ?>
                 <div class="text_area">
                 	<legend><h2>Reglage du setup</h2></legend>
-					<form method="POST" action="include/reglage_setup_2.inc.php">
+					<form method="POST">
 					  	<div class="table-responsive"> 
 							<table class="table table-bordered" style="background-color:white !important;">
 							    <thead>
@@ -84,3 +87,6 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
 	</div>
 </body>
 </html>
+<?php 
+}
+?>

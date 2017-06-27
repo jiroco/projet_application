@@ -1,12 +1,13 @@
 <?php
-include("include/connexiondb.php");
-session_start();
-if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
-    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
-}
+	include("include/connexiondb.php");
+	session_start();
+	if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+	    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
+	}
+	else{
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
 	<title></title>
@@ -43,7 +44,7 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
 						        <th><input type="text" name="nineset" value="Exigence besoin"></th>
 						        <th><input type="text" name="tenset" value="Nouvelle ligne ?"></th>
 						        <th><input type="text" name="elevenset" value="A garder ?"></th>
-
+						      </tr>
 						    </thead>
 						    <tbody>
 						      <tr>
@@ -211,3 +212,6 @@ if (!isset($_SESSION['IDUSER']) || empty($_SESSION['IDUSER'])){
 	</div>
 </body>
 </html>
+<?php
+}
+?>

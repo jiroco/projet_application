@@ -248,11 +248,14 @@ $req = $DBcon->prepare('INSERT INTO `setup2`(`IDSETUP2`,`TYPE2`, `1`, `2`, `3`, 
 
 
 
-if ($count1<=1 && $count2<=1 && $count3<=1 && $count4<=1 ){
+if (isset($_POST['submitsetup2']) && $count1<=1 && $count2<=1 && $count3<=1 && $count4<=1 ){
 	include("excel2.php");
+	echo "<meta http-equiv='refresh' content='3; URL=reglage_setup_3.php'>";
 }
 else{
-	echo "vous n'avez pas coché correctement les cases du setup";
+	if (isset($_POST['submitsetup2'])) {
+		echo "vous n'avez pas coché correctement les cases du setup2";
+	}
 }
 
 
