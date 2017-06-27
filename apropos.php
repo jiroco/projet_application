@@ -13,7 +13,12 @@
 				include 'layout_base_unsigned.php';
 			}
 			else{
-				include 'layout_base.php';
+				if ($_SESSION['NOM']=='admin'){
+					include('layout_base_admin.php');
+				}
+				else{
+					include ('layout_base.php'); 	
+				}
 			}
 		?>
 		<div class="container">
