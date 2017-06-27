@@ -37,7 +37,7 @@ if (isset($_POST["fiveset"]) && !empty($_POST["fiveset"])){
 	$five=$_POST["fiveset"];
 }
 else{
-	$five="Mode de défaillance";
+	$five="Mode de Defaillance";
 }
 if (isset($_POST["sixset"]) && !empty($_POST["sixset"])){
 	$six=$_POST["sixset"];
@@ -49,7 +49,7 @@ if (isset($_POST["sevenset"]) && !empty($_POST["sevenset"])){
 	$seven=$_POST["sevenset"];
 }
 else{
-	$seven="Effet locale";
+	$seven="Effet local";
 }
 if (isset($_POST["eightset"]) && !empty($_POST["eightset"])){
 	$eight=$_POST["eightset"];

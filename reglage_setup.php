@@ -37,8 +37,8 @@
 						        <th><input type="text" name="secondset" value="Fonction"></th>
 						        <th><input type="text" name="thirdset" value="Exigence fonctionnelle"></th>
 						        <th><input type="text" name="fourthset" value="Organe"></th>
-						        <th><input type="text" name="fiveset" value="Mode de defaillance"></th>
-						      	<th><input type="text" name="sixset" value="Cause local"></th>
+						        <th><input type="text" name="fiveset" value="Mode de Defaillance"></th>
+						      	<th><input type="text" name="sixset" value="Cause locale"></th>
 						        <th><input type="text" name="sevenset" value="Effet local"></th>
 						        <th><input type="text" name="eightset" value="Besoin"></th>
 						        <th><input type="text" name="nineset" value="Exigence besoin"></th>

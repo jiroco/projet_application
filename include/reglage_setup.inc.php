@@ -145,7 +145,7 @@ else{
 	if (isset($_POST["firstsetbox"][1])){
 		$one1 ="x";
 		$count2+=1;
-		$countl2+=1;
+		$countl1+=1;
 	}
 	else{
 		$one1 = "";
@@ -153,7 +153,7 @@ else{
 	if (isset($_POST["secondsetbox"][1])){
 		$two1 ="x";
 		$count2+=1;
-		$countl3+=1;
+		$countl2+=1;
 	}
 	else{
 		$two1 = "";
@@ -161,7 +161,7 @@ else{
 	if (isset($_POST["thirdsetbox"][1])){
 		$three1 ="x";
 		$count2+=1;
-		$countl4+=1;
+		$countl3+=1;
 	}
 	else{
 		$three1 = "";
@@ -225,7 +225,7 @@ else{
 	if (isset($_POST["elevensetbox"][1])){
 		$eleven1 ="x";
 		$count2+=1;
-		$countlA1+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven1 = "";
@@ -1092,7 +1092,7 @@ else{
 	else{
 		$eleven9 = "";
 	}
-	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Nouvelle ligne",?,?,?,?,?,?,?,?,?,?,?)');
+	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Nouvelle ligne ?",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one9,PDO::PARAM_STR);
 	        $req->bindValue(2,$two9,PDO::PARAM_STR);
 	        $req->bindValue(3,$three9,PDO::PARAM_STR);
