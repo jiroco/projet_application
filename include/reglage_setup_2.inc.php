@@ -10,11 +10,15 @@ $count3=0;
 $count4=0;
 $count5=0;
 
-
+$countl1=0;
+$countl2=0;
+$countl3=0;
+$countl4=0;
 
 if (isset($_POST["firstsetbox"][0])){
 	$one0 ="x";
 	$count1+=1;
+	$countl1+=1;
 }
 else{
 	$one0 = "";
@@ -22,6 +26,7 @@ else{
 if (isset($_POST["secondsetbox"][0])){
 	$two0 ="x";
 	$count1+=1;
+	$countl2+=1;
 }
 else{
 	$two0 = "";
@@ -29,6 +34,7 @@ else{
 if (isset($_POST["thirdsetbox"][0])){
 	$three0 ="x";
 	$count1+=1;
+	$countl3+=1;
 }
 else{
 	$three0 = "";
@@ -36,6 +42,7 @@ else{
 if (isset($_POST["fourthsetbox"][0])){
 	$four0 ="x";
 	$count1+=1;
+	$countl4+=1;
 }
 else{
 	$four0 = "";
@@ -61,6 +68,7 @@ $req = $DBcon->prepare('INSERT INTO `setup2`(`IDSETUP2`,`TYPE2`, `1`, `2`, `3`, 
 if (isset($_POST["firstsetbox"][1])){
 	$one1 ="x";
 	$count2+=1;
+	$countl1+=1;
 }
 else{
 	$one1 = "";
@@ -68,6 +76,7 @@ else{
 if (isset($_POST["secondsetbox"][1])){
 	$two1 ="x";
 	$count2+=1;
+	$countl2+=1;
 
 }
 else{
@@ -76,6 +85,7 @@ else{
 if (isset($_POST["thirdsetbox"][1])){
 	$three1 ="x";
 	$count2+=1;
+	$countl3+=1;
 }
 else{
 	$three1 = "";
@@ -83,6 +93,7 @@ else{
 if (isset($_POST["fourthsetbox"][1])){
 	$four1 ="x";
 	$count2+=1;
+	$countl4+=1;
 }
 else{
 	$four1 = "";
@@ -108,6 +119,7 @@ $req = $DBcon->prepare('INSERT INTO `setup2`(`IDSETUP2`,`TYPE2`,`1`, `2`, `3`, `
 if (isset($_POST["firstsetbox"][2])){
 	$one2 ="x";
 	$count3+=1;
+	$countl1+=1;
 }
 else{
 	$one2 = "";
@@ -115,6 +127,7 @@ else{
 if (isset($_POST["secondsetbox"][2])){
 	$two2 ="x";
 	$count3+=1;
+	$countl2+=1;
 }
 else{
 	$two2 = "";
@@ -122,6 +135,7 @@ else{
 if (isset($_POST["thirdsetbox"][2])){
 	$three2 ="x";
 	$count3+=1;
+	$countl3+=1;
 }
 else{
 	$three2 = "";
@@ -129,6 +143,7 @@ else{
 if (isset($_POST["fourthsetbox"][2])){
 	$four2 ="x";
 	$count3+=1;
+	$countl4+=1;
 }
 else{
 	$four2 = "";
@@ -154,6 +169,7 @@ $req = $DBcon->prepare('INSERT INTO `setup2`(`IDSETUP2`,`TYPE2`, `1`, `2`, `3`, 
 if (isset($_POST["firstsetbox"][3])){
 	$one3 ="x";
 	$count4+=1;
+	$countl1+=1;
 }
 else{
 	$one3 = "";
@@ -161,6 +177,7 @@ else{
 if (isset($_POST["secondsetbox"][3])){
 	$count4+=1;
 	$two3 ="x";
+	$countl2+=1;
 }
 else{
 	$two3 = "";
@@ -168,6 +185,7 @@ else{
 if (isset($_POST["thirdsetbox"][3])){
 	$three3 ="x";
 	$count4+=1;
+	$countl3+=1;
 }
 else{
 	$three3 = "";
@@ -175,6 +193,7 @@ else{
 if (isset($_POST["fourthsetbox"][3])){
 	$four3 ="x";
 	$count4+=1;
+	$countl4+=1;
 }
 else{
 	$four3 = "";
@@ -201,6 +220,7 @@ $req = $DBcon->prepare('INSERT INTO `setup2`(`IDSETUP2`,`TYPE2`,`1`, `2`, `3`, `
 if (isset($_POST["firstsetbox"][4])){
 	$one4 ="x";
 	$count5+=1;
+	$countl1+=1;
 }
 else{
 	$one4 = "";
@@ -208,6 +228,7 @@ else{
 if (isset($_POST["secondsetbox"][4])){
 	$two4 ="x";
 	$count5+=1;
+	$countl2+=1;
 
 }
 else{
@@ -216,6 +237,7 @@ else{
 if (isset($_POST["thirdsetbox"][4])){
 	$count5+=1;
 	$three4 ="x";
+	$countl3+=1;
 }
 else{
 	$three4 = "";
@@ -223,6 +245,7 @@ else{
 if (isset($_POST["fourthsetbox"][4])){
 	$four4 ="x";
 	$count5+=1;
+	$countl4+=1;
 }
 else{
 	$four4 = "";
@@ -248,14 +271,13 @@ $req = $DBcon->prepare('INSERT INTO `setup2`(`IDSETUP2`,`TYPE2`, `1`, `2`, `3`, 
 
 
 
-if (isset($_POST['submitsetup2']) && $count1<=1 && $count2<=1 && $count3<=1 && $count4<=1 ){
+if (isset($_POST['submitsetup2']) && $count1<=1 && $count2<=1 && $count3<=1 && $count4<=1 && $countl1==1 && $countl2==1 && $countl3==1 && $countl4 ==1 ){
 	include("excel2.php");
 	echo "<meta http-equiv='refresh' content='3; URL=reglage_setup_3.php'>";
 }
 else{
 	if (isset($_POST['submitsetup2'])) {
-		echo "vous n'avez pas coché correctement les cases du setup2";
-	}
+	echo "</br><div class='container col-md-8 col-md-offset-2'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Vous n'avez pas coché correctement les cases du setup.</div></div><br/><br/><br/>";        	}
 }
 
 

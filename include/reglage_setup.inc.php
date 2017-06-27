@@ -21,9 +21,23 @@ else{
 	$count9=0;
 	$count10=0;
 	$count11=0;
+
+	$countl1=0;
+	$countl2=0;
+	$countl3=0;
+	$countl4=0;
+	$countl5=0;
+	$countl6=0;
+	$countl7=0;
+	$countl8=0;
+	$countl9=0;
+	$countl10=0;
+	$countl11=0;
 	if (isset($_POST["firstsetbox"][0])){
 		$one0 ="x";
 		$count1+=1;
+		$countl1+=1;
+
 	}
 	else{
 		$one0 = "";
@@ -31,6 +45,7 @@ else{
 	if (isset($_POST["secondsetbox"][0])){
 		$two0 ="x";
 		$count1+=1;
+		$countl2+=1;
 	}
 	else{
 		$two0 = "";
@@ -38,6 +53,7 @@ else{
 	if (isset($_POST["thirdsetbox"][0])){
 		$three0 ="x";
 		$count1+=1;
+		$countl3+=1;
 	}
 	else{
 		$three0 = "";
@@ -45,6 +61,7 @@ else{
 	if (isset($_POST["fourthsetbox"][0])){
 		$four0 ="x";
 		$count1+=1;
+		$countl4+=1;
 	}
 	else{
 		$four0 = "";
@@ -52,6 +69,7 @@ else{
 	if (isset($_POST["fivesetbox"][0])){
 		$five0 ="x";
 		$count1+=1;
+		$countl5+=1;
 	}
 	else{
 		$five0 = "";
@@ -59,6 +77,7 @@ else{
 	if (isset($_POST["sixsetbox"][0])){
 		$six0 ="x";
 		$count1+=1;
+		$countl6+=1;
 	}
 	else{
 		$six0 = "";
@@ -66,6 +85,7 @@ else{
 	if (isset($_POST["sevensetbox"][0])){
 		$seven0 ="x";
 		$count1+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven0 = "";
@@ -73,6 +93,7 @@ else{
 	if (isset($_POST["eightsetbox"][0])){
 		$eight0 ="x";
 		$count1+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight0 = "";
@@ -80,6 +101,7 @@ else{
 	if (isset($_POST["ninesetbox"][0])){
 		$nine0 ="x";
 		$count1+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine0 = "";
@@ -87,6 +109,7 @@ else{
 	if (isset($_POST["tensetbox"][0])){
 		$ten0 ="x";
 		$count1+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten0 = "";
@@ -94,6 +117,7 @@ else{
 	if (isset($_POST["elevensetbox"][0])){
 		$eleven0 ="x";
 		$count1+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven0 = "";
@@ -121,6 +145,7 @@ else{
 	if (isset($_POST["firstsetbox"][1])){
 		$one1 ="x";
 		$count2+=1;
+		$countl1+=1;
 	}
 	else{
 		$one1 = "";
@@ -128,6 +153,7 @@ else{
 	if (isset($_POST["secondsetbox"][1])){
 		$two1 ="x";
 		$count2+=1;
+		$countl2+=1;
 	}
 	else{
 		$two1 = "";
@@ -135,6 +161,7 @@ else{
 	if (isset($_POST["thirdsetbox"][1])){
 		$three1 ="x";
 		$count2+=1;
+		$countl3+=1;
 	}
 	else{
 		$three1 = "";
@@ -142,6 +169,7 @@ else{
 	if (isset($_POST["fourthsetbox"][1])){
 		$four1 ="x";
 		$count2+=1;
+		$countl4+=1;
 	}
 	else{
 		$four1 = "";
@@ -149,6 +177,7 @@ else{
 	if (isset($_POST["fivesetbox"][1])){
 		$five1 ="x";
 		$count2+=1;
+		$countl5+=1;
 	}
 	else{
 		$five1 = "";
@@ -156,6 +185,7 @@ else{
 	if (isset($_POST["sixsetbox"][1])){
 		$six1 ="x";
 		$count2+=1;
+		$countl6+=1;
 	}
 	else{
 		$six1 = "";
@@ -163,6 +193,7 @@ else{
 	if (isset($_POST["sevensetbox"][1])){
 		$seven1 ="x";
 		$count2+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven1 = "";
@@ -170,6 +201,7 @@ else{
 	if (isset($_POST["eightsetbox"][1])){
 		$eight1 ="x";
 		$count2+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight1 = "";
@@ -177,6 +209,7 @@ else{
 	if (isset($_POST["ninesetbox"][1])){
 		$nine1 ="x";
 		$count2+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine1 = "";
@@ -184,6 +217,7 @@ else{
 	if (isset($_POST["tensetbox"][1])){
 		$ten1 ="x";
 		$count2+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten1 = "";
@@ -191,6 +225,7 @@ else{
 	if (isset($_POST["elevensetbox"][1])){
 		$eleven1 ="x";
 		$count2+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven1 = "";
@@ -218,6 +253,7 @@ else{
 	if (isset($_POST["firstsetbox"][2])){
 		$one2 ="x";
 		$count3+=1;
+		$countl1+=1;
 	}
 	else{
 		$one2 = "";
@@ -225,6 +261,7 @@ else{
 	if (isset($_POST["secondsetbox"][2])){
 		$two2 ="x";
 		$count3+=1;
+		$countl2+=1;
 	}
 	else{
 		$two2 = "";
@@ -232,6 +269,7 @@ else{
 	if (isset($_POST["thirdsetbox"][2])){
 		$three2 ="x";
 		$count3+=1;
+		$countl3+=1;
 	}
 	else{
 		$three2 = "";
@@ -239,6 +277,7 @@ else{
 	if (isset($_POST["fourthsetbox"][2])){
 		$four2 ="x";
 		$count3+=1;
+		$countl4+=1;
 	}
 	else{
 		$four2 = "";
@@ -246,6 +285,7 @@ else{
 	if (isset($_POST["fivesetbox"][2])){
 		$five2 ="x";
 		$count3+=1;
+		$countl5+=1;
 	}
 	else{
 		$five2 = "";
@@ -253,6 +293,7 @@ else{
 	if (isset($_POST["sixsetbox"][2])){
 		$six2 ="x";
 		$count3+=1;
+		$countl6+=1;
 	}
 	else{
 		$six2 = "";
@@ -260,6 +301,7 @@ else{
 	if (isset($_POST["sevensetbox"][2])){
 		$seven2 ="x";
 		$count3+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven2 = "";
@@ -267,12 +309,14 @@ else{
 	if (isset($_POST["eightsetbox"][2])){
 		$eight2 ="x";
 		$count3+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight2 = "";
 	}
 	if (isset($_POST["ninesetbox"][2])){
 		$nine2 ="x";
+		$countl9+=1;
 		$count3+=1;
 	}
 	else{
@@ -281,6 +325,7 @@ else{
 	if (isset($_POST["tensetbox"][2])){
 		$ten2 ="x";
 		$count3+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten2 = "";
@@ -288,6 +333,7 @@ else{
 	if (isset($_POST["elevensetbox"][2])){
 		$eleven2 ="x";
 		$count3+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven2 = "";
@@ -315,6 +361,7 @@ else{
 	if (isset($_POST["firstsetbox"][3])){
 		$one3 ="x";
 		$count4+=1;
+		$countl1+=1;
 	}
 	else{
 		$one3 = "";
@@ -322,6 +369,7 @@ else{
 	if (isset($_POST["secondsetbox"][3])){
 		$count4+=1;
 		$two3 ="x";
+		$countl2+=1;
 	}
 	else{
 		$two3 = "";
@@ -329,6 +377,7 @@ else{
 	if (isset($_POST["thirdsetbox"][3])){
 		$three3 ="x";
 		$count4+=1;
+		$countl3+=1;
 	}
 	else{
 		$three3 = "";
@@ -336,6 +385,7 @@ else{
 	if (isset($_POST["fourthsetbox"][3])){
 		$four3 ="x";
 		$count4+=1;
+		$countl4+=1;
 	}
 	else{
 		$four3 = "";
@@ -343,6 +393,7 @@ else{
 	if (isset($_POST["fivesetbox"][3])){
 		$five3 ="x";
 		$count4+=1;
+		$countl5+=1;
 	}
 	else{
 		$five3 = "";
@@ -350,6 +401,7 @@ else{
 	if (isset($_POST["sixsetbox"][3])){
 		$six3 ="x";
 		$count4+=1;
+		$countl6+=1;
 	}
 	else{
 		$six3 = "";
@@ -357,6 +409,7 @@ else{
 	if (isset($_POST["sevensetbox"][3])){
 		$seven3 ="x";
 		$count4+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven3 = "";
@@ -364,6 +417,7 @@ else{
 	if (isset($_POST["eightsetbox"][3])){
 		$eight3 ="x";
 		$count4+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight3 = "";
@@ -371,6 +425,7 @@ else{
 	if (isset($_POST["ninesetbox"][3])){
 		$nine3 ="x";
 		$count4+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine3 = "";
@@ -378,6 +433,7 @@ else{
 	if (isset($_POST["tensetbox"][3])){
 		$ten3 ="x";
 		$count4+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten3 = "";
@@ -385,6 +441,7 @@ else{
 	if (isset($_POST["elevensetbox"][3])){
 		$eleven3 ="x";
 		$count4+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven3 = "";
@@ -409,9 +466,11 @@ else{
 	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
+
 	if (isset($_POST["firstsetbox"][4])){
 		$one4 ="x";
 		$count5+=1;
+		$countl1+=1;
 	}
 	else{
 		$one4 = "";
@@ -419,6 +478,7 @@ else{
 	if (isset($_POST["secondsetbox"][4])){
 		$two4 ="x";
 		$count5+=1;
+		$countl2+=1;
 	}
 	else{
 		$two4 = "";
@@ -426,6 +486,7 @@ else{
 	if (isset($_POST["thirdsetbox"][4])){
 		$count5+=1;
 		$three4 ="x";
+		$countl3+=1;
 	}
 	else{
 		$three4 = "";
@@ -433,6 +494,7 @@ else{
 	if (isset($_POST["fourthsetbox"][4])){
 		$four4 ="x";
 		$count5+=1;
+		$countl4+=1;
 	}
 	else{
 		$four4 = "";
@@ -440,6 +502,7 @@ else{
 	if (isset($_POST["fivesetbox"][4])){
 		$five4 ="x";
 		$count5+=1;
+		$countl5+=1;
 	}
 	else{
 		$five4 = "";
@@ -447,6 +510,7 @@ else{
 	if (isset($_POST["sixsetbox"][4])){
 		$six4 ="x";
 		$count5+=1;
+		$countl6+=1;
 	}
 	else{
 		$six4 = "";
@@ -454,6 +518,7 @@ else{
 	if (isset($_POST["sevensetbox"][4])){
 		$seven4 ="x";
 		$count5+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven4 = "";
@@ -461,6 +526,7 @@ else{
 	if (isset($_POST["eightsetbox"][4])){
 		$eight4 ="x";
 		$count5+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight4 = "";
@@ -468,6 +534,7 @@ else{
 	if (isset($_POST["ninesetbox"][4])){
 		$nine4 ="x";
 		$count5+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine4 = "";
@@ -475,6 +542,7 @@ else{
 	if (isset($_POST["tensetbox"][4])){
 		$ten4 ="x";
 		$count5+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten4 = "";
@@ -482,6 +550,7 @@ else{
 	if (isset($_POST["elevensetbox"][4])){
 		$eleven4 ="x";
 		$count5+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven4 = "";
@@ -509,6 +578,7 @@ else{
 	if (isset($_POST["firstsetbox"][5])){
 		$one5 ="x";
 		$count6+=1;
+		$countl1+=1;
 	}
 	else{
 		$one5 = "";
@@ -516,6 +586,7 @@ else{
 	if (isset($_POST["secondsetbox"][5])){
 		$two5 ="x";
 		$count6+=1;
+		$countl2+=1;
 	}
 	else{
 		$two5 = "";
@@ -523,6 +594,7 @@ else{
 	if (isset($_POST["thirdsetbox"][5])){
 		$three5 ="x";
 		$count6+=1;
+		$countl3+=1;
 	}
 	else{
 		$three5 = "";
@@ -530,6 +602,7 @@ else{
 	if (isset($_POST["fourthsetbox"][5])){
 		$four5 ="x";
 		$count6+=1;
+		$countl4+=1;
 	}
 	else{
 		$four5 = "";
@@ -537,6 +610,7 @@ else{
 	if (isset($_POST["fivesetbox"][5])){
 		$five5 ="x";
 		$count6+=1;
+		$countl5+=1;
 	}
 	else{
 		$five5 = "";
@@ -544,6 +618,7 @@ else{
 	if (isset($_POST["sixsetbox"][5])){
 		$six5 ="x";
 		$count6+=1;
+		$countl6+=1;
 	}
 	else{
 		$six5 = "";
@@ -551,6 +626,7 @@ else{
 	if (isset($_POST["sevensetbox"][5])){
 		$seven5 ="x";
 		$count6+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven5 = "";
@@ -558,6 +634,7 @@ else{
 	if (isset($_POST["eightsetbox"][5])){
 		$eight5 ="x";
 		$count6+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight5 = "";
@@ -565,6 +642,7 @@ else{
 	if (isset($_POST["ninesetbox"][5])){
 		$nine5 ="x";
 		$count6+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine5 = "";
@@ -572,6 +650,7 @@ else{
 	if (isset($_POST["tensetbox"][5])){
 		$ten5 ="x";
 		$count6+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten5 = "";
@@ -579,6 +658,7 @@ else{
 	if (isset($_POST["elevensetbox"][5])){
 		$eleven5 ="x";
 		$count6+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven5 = "";
@@ -606,6 +686,7 @@ else{
 	if (isset($_POST["firstsetbox"][6])){
 		$one6 ="x";
 		$count7+=1;
+		$countl1+=1;
 	}
 	else{
 		$one6 = "";
@@ -613,6 +694,7 @@ else{
 	if (isset($_POST["secondsetbox"][6])){
 		$two6 ="x";
 		$count7+=1;
+		$countl2+=1;
 	}
 	else{
 		$two6 = "";
@@ -620,6 +702,7 @@ else{
 	if (isset($_POST["thirdsetbox"][6])){
 		$three6 ="x";
 		$count7+=1;
+		$countl3+=1;
 	}
 	else{
 		$three6 = "";
@@ -627,6 +710,7 @@ else{
 	if (isset($_POST["fourthsetbox"][6])){
 		$four6 ="x";
 		$count7+=1;
+		$countl4+=1;
 	}
 	else{
 		$four6 = "";
@@ -634,6 +718,7 @@ else{
 	if (isset($_POST["fivesetbox"][6])){
 		$five6 ="x";
 		$count7+=1;
+		$countl5+=1;
 	}
 	else{
 		$five6 = "";
@@ -641,6 +726,7 @@ else{
 	if (isset($_POST["sixsetbox"][6])){
 		$six6 ="x";
 		$count7+=1;
+		$countl6+=1;
 	}
 	else{
 		$six6 = "";
@@ -648,6 +734,7 @@ else{
 	if (isset($_POST["sevensetbox"][6])){
 		$seven6 ="x";
 		$count7+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven6 = "";
@@ -655,6 +742,7 @@ else{
 	if (isset($_POST["eightsetbox"][6])){
 		$eight6 ="x";
 		$count7+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight6 = "";
@@ -662,6 +750,7 @@ else{
 	if (isset($_POST["ninesetbox"][6])){
 		$nine6 ="x";
 		$count7+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine6 = "";
@@ -669,6 +758,7 @@ else{
 	if (isset($_POST["tensetbox"][6])){
 		$ten6 ="x";
 		$count7+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten6 = "";
@@ -676,6 +766,7 @@ else{
 	if (isset($_POST["elevensetbox"][6])){
 		$eleven6 ="x";
 		$count7+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven6 = "";
@@ -702,6 +793,7 @@ else{
 	if (isset($_POST["firstsetbox"][7])){
 		$one7 ="x";
 		$count8+=1;
+		$countl1+=1;
 	}
 	else{
 		$one7 = "";
@@ -709,6 +801,7 @@ else{
 	if (isset($_POST["secondsetbox"][7])){
 		$two7 ="x";
 		$count8+=1;
+		$countl2+=1;
 	}
 	else{
 		$two7 = "";
@@ -716,6 +809,7 @@ else{
 	if (isset($_POST["thirdsetbox"][7])){
 		$three7 ="x";
 		$count8+=1;
+		$countl3+=1;
 	}
 	else{
 		$three7 = "";
@@ -723,6 +817,7 @@ else{
 	if (isset($_POST["fourthsetbox"][7])){
 		$four7 ="x";
 		$count8+=1;
+		$countl4+=1;
 	}
 	else{
 		$four7 = "";
@@ -730,6 +825,7 @@ else{
 	if (isset($_POST["fivesetbox"][7])){
 		$five7 ="x";
 		$count8+=1;
+		$countl5+=1;
 	}
 	else{
 		$five7 = "";
@@ -737,6 +833,7 @@ else{
 	if (isset($_POST["sixsetbox"][7])){
 		$six7 ="x";
 		$count8+=1;
+		$countl6+=1;
 	}
 	else{
 		$six7 = "";
@@ -744,6 +841,7 @@ else{
 	if (isset($_POST["sevensetbox"][7])){
 		$seven7 ="x";
 		$count8+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven7 = "";
@@ -751,6 +849,7 @@ else{
 	if (isset($_POST["eightsetbox"][7])){
 		$eight7 ="x";
 		$count8+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight7 = "";
@@ -758,6 +857,7 @@ else{
 	if (isset($_POST["ninesetbox"][7])){
 		$nine7 ="x";
 		$count8+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine7 = "";
@@ -765,6 +865,7 @@ else{
 	if (isset($_POST["tensetbox"][7])){
 		$ten7 ="x";
 		$count8+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten7 = "";
@@ -772,6 +873,7 @@ else{
 	if (isset($_POST["elevensetbox"][7])){
 		$eleven7 ="x";
 		$count8+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven7 = "";
@@ -798,6 +900,7 @@ else{
 	if (isset($_POST["firstsetbox"][8])){
 		$one8 ="x";
 		$count9+=1;
+		$countl1+=1;
 	}
 	else{
 		$one8 = "";
@@ -805,6 +908,7 @@ else{
 	if (isset($_POST["secondsetbox"][8])){
 		$two8 ="x";
 		$count9+=1;
+		$countl2+=1;
 	}
 	else{
 		$two8 = "";
@@ -812,6 +916,7 @@ else{
 	if (isset($_POST["thirdsetbox"][8])){
 		$three8 ="x";
 		$count9+=1;
+		$countl3+=1;
 	}
 	else{
 		$three8 = "";
@@ -819,6 +924,7 @@ else{
 	if (isset($_POST["fourthsetbox"][8])){
 		$four8 ="x";
 		$count9+=1;
+		$countl4+=1;
 	}
 	else{
 		$four8 = "";
@@ -826,6 +932,7 @@ else{
 	if (isset($_POST["fivesetbox"][8])){
 		$five8 ="x";
 		$count9+=1;
+		$countl5+=1;
 	}
 	else{
 		$five8 = "";
@@ -833,6 +940,7 @@ else{
 	if (isset($_POST["sixsetbox"][8])){
 		$six8 ="x";
 		$count9+=1;
+		$countl6+=1;
 	}
 	else{
 		$six8 = "";
@@ -840,6 +948,7 @@ else{
 	if (isset($_POST["sevensetbox"][8])){
 		$seven8 ="x";
 		$count9+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven8 = "";
@@ -847,6 +956,7 @@ else{
 	if (isset($_POST["eightsetbox"][8])){
 		$eight8 ="x";
 		$count9+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight8 = "";
@@ -854,6 +964,7 @@ else{
 	if (isset($_POST["ninesetbox"][8])){
 		$nine8 ="x";
 		$count9+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine8 = "";
@@ -861,6 +972,7 @@ else{
 	if (isset($_POST["tensetbox"][8])){
 		$ten8 ="x";
 		$count9+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten8 = "";
@@ -868,6 +980,7 @@ else{
 	if (isset($_POST["elevensetbox"][8])){
 		$eleven8 ="x";
 		$count9+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven8 = "";
@@ -894,6 +1007,7 @@ else{
 	if (isset($_POST["firstsetbox"][9])){
 		$one9 ="x";
 		$count10+=1;
+		$countl1+=1;
 	}
 	else{
 		$one9 = "";
@@ -901,6 +1015,7 @@ else{
 	if (isset($_POST["secondsetbox"][9])){
 		$two9 ="x";
 		$count10+=1;
+		$countl2+=1;
 	}
 	else{
 		$two9 = "";
@@ -908,6 +1023,7 @@ else{
 	if (isset($_POST["thirdsetbox"][9])){
 		$three9 ="x";
 		$count10+=1;
+		$countl3+=1;
 	}
 	else{
 		$three9 = "";
@@ -915,6 +1031,7 @@ else{
 	if (isset($_POST["fourthsetbox"][9])){
 		$four9 ="x";
 		$count10+=1;
+		$countl4+=1;
 	}
 	else{
 		$four9 = "";
@@ -922,6 +1039,7 @@ else{
 	if (isset($_POST["fivesetbox"][9])){
 		$five9 ="x";
 		$count10+=1;
+		$countl5+=1;
 	}
 	else{
 		$five9 = "";
@@ -929,6 +1047,7 @@ else{
 	if (isset($_POST["sixsetbox"][9])){
 		$six9 ="x";
 		$count10+=1;
+		$countl6+=1;
 	}
 	else{
 		$six9 = "";
@@ -936,6 +1055,7 @@ else{
 	if (isset($_POST["sevensetbox"][9])){
 		$seven9 ="x";
 		$count10+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven9 = "";
@@ -943,6 +1063,7 @@ else{
 	if (isset($_POST["eightsetbox"][9])){
 		$eight9 ="x";
 		$count10+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight9 = "";
@@ -950,6 +1071,7 @@ else{
 	if (isset($_POST["ninesetbox"][9])){
 		$nine9 ="x";
 		$count10+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine9 = "";
@@ -957,6 +1079,7 @@ else{
 	if (isset($_POST["tensetbox"][9])){
 		$ten9 ="x";
 		$count10+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten9 = "";
@@ -964,11 +1087,12 @@ else{
 	if (isset($_POST["elevensetbox"][9])){
 		$eleven9 ="x";
 		$count10+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven9 = "";
 	}
-	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Nouvelle ligne",?,?,?,?,?,?,?,?,?,?,?)');
+	$req = $DBcon->prepare('INSERT INTO `setup`(`IDSETUP`, `TYPE`,`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES (NULL,"Nouvelle ligne ?",?,?,?,?,?,?,?,?,?,?,?)');
 	        $req->bindValue(1,$one9,PDO::PARAM_STR);
 	        $req->bindValue(2,$two9,PDO::PARAM_STR);
 	        $req->bindValue(3,$three9,PDO::PARAM_STR);
@@ -990,6 +1114,7 @@ else{
 	if (isset($_POST["firstsetbox"][10])){
 		$one10 ="x";
 		$count11+=1;
+		$countl1+=1;
 	}
 	else{
 		$one10 = "";
@@ -997,6 +1122,7 @@ else{
 	if (isset($_POST["secondsetbox"][10])){
 		$two10 ="x";
 		$count11+=1;
+		$countl2+=1;
 	}
 	else{
 		$two10 = "";
@@ -1004,6 +1130,7 @@ else{
 	if (isset($_POST["thirdsetbox"][10])){
 		$three10 ="x";
 		$count11+=1;
+		$countl3+=1;
 	}
 	else{
 		$three10 = "";
@@ -1011,6 +1138,7 @@ else{
 	if (isset($_POST["fourthsetbox"][10])){
 		$four10 ="x";
 		$count11+=1;
+		$countl4+=1;
 	}
 	else{
 		$four10 = "";
@@ -1018,6 +1146,7 @@ else{
 	if (isset($_POST["fivesetbox"][10])){
 		$five10 ="x";
 		$count11+=1;
+		$countl5+=1;
 	}
 	else{
 		$five10 = "";
@@ -1025,6 +1154,7 @@ else{
 	if (isset($_POST["sixsetbox"][10])){
 		$six10 ="x";
 		$count11+=1;
+		$countl6+=1;
 	}
 	else{
 		$six10 = "";
@@ -1032,6 +1162,7 @@ else{
 	if (isset($_POST["sevensetbox"][10])){
 		$seven10 ="x";
 		$count11+=1;
+		$countl7+=1;
 	}
 	else{
 		$seven10 = "";
@@ -1039,6 +1170,7 @@ else{
 	if (isset($_POST["eightsetbox"][10])){
 		$eight10 ="x";
 		$count11+=1;
+		$countl8+=1;
 	}
 	else{
 		$eight10 = "";
@@ -1046,6 +1178,7 @@ else{
 	if (isset($_POST["ninesetbox"][10])){
 		$nine10 ="x";
 		$count11+=1;
+		$countl9+=1;
 	}
 	else{
 		$nine10 = "";
@@ -1053,6 +1186,7 @@ else{
 	if (isset($_POST["tensetbox"][10])){
 		$ten10 ="x";
 		$count11+=1;
+		$countl10+=1;
 	}
 	else{
 		$ten10 = "";
@@ -1060,6 +1194,7 @@ else{
 	if (isset($_POST["elevensetbox"][10])){
 		$eleven10 ="x";
 		$count11+=1;
+		$countl11+=1;
 	}
 	else{
 		$eleven10 = "";
@@ -1083,7 +1218,7 @@ else{
 	            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Erreur de requete.</div></div>";        
 	        
 	        $req->closeCursor();
-	if (isset($_POST['submitsetup'])&&$count1==1 && $count2==1 && $count3<=1 && $count4<=1 && $count5==1 && $count6==1 && $count7==1 && $count8<=1 && $count9<=1 && $count10==1 && $count11==1 ){
+	if (isset($_POST['submitsetup']) && $count1==1 && $count2==1 && $count3<=1 && $count4<=1 && $count5==1 && $count6==1 && $count7==1 && $count8<=1 && $count9<=1 && $count10==1 && $count11==1 && $countl1<=1 && $countl2<=1 && $countl3<=1 && $countl4<=1 && $countl5<=1 && $countl6<=1 && $countl7<=1 && $countl8<=1 && $countl9<=1 && $countl10<=1 && $countl11<=1  ){
 		include("excel.php");
 		echo "<meta http-equiv='refresh' content='3; URL=reglage_setup_2.php'>";
 	}
