@@ -17,6 +17,10 @@
     mkdir($urluser, 0700);
     mkdir($urluserdownload, 0700);
     mkdir($urluserupload, 0700);
+    copy("../data/admin_data/FailureModes.xlsx", "../data/".$username["USERNAME"]."/FailureModes.xlsx");
+    copy("../data/admin_data/reglage_setup.xlsx", "../data/".$username["USERNAME"]."/reglage_setup.xlsx");
+
+
 
     $req = $DBcon->prepare('UPDATE USER SET PERMISSION=1, URLUSER= ?  WHERE IDUSER = ?');
     $req->bindValue(1,$urluser,PDO::PARAM_INT);
