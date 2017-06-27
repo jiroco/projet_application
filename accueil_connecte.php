@@ -49,7 +49,7 @@
                                     echo "<input type='hidden' id=" . $resultat['NAMEDOCU'] . " class='userToDelete'/>";
                                     print_r("<tr class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " >".$resultat['NAMEDOCU']."</td>
                                         <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " >".$resultat['NAMEDOCD']."</td>
-                                        <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+                                        <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
                                 } while ($resultat=$req->fetch());
 
     							}
@@ -106,10 +106,10 @@
                                      type: 'POST',
                                      data : dataObject,
                                      success: function(data) {
-                                         var classToDelete = "'.tab" + docToDelete + "'";
+                                         var classToDelete = ".tab" + docToDelete;
                                          alert(classToDelete);
                                          alert("Fichier supprime");
-                                         $("td").remove('.tabuserToDeleteButtonc4ba135ad1819ed29607944d0fcfa919.xml');
+                                         $(classToDelete).html("TA RAAAAAACEEEEE !!!");
                                      },
                                      error: function(data) {
                                          alert("Disfonctionement");
