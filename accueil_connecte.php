@@ -49,7 +49,7 @@
                                     echo "<input type='hidden' id=" . $resultat['NAMEDOCU'] . " class='userToDelete'/>";
                                     print_r("<tr class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " >".$resultat['NAMEDOCU']."</td>
                                         <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " >".$resultat['NAMEDOCD']."</td>
-                                        <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+                                        <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
                                 } while ($resultat=$req->fetch());
 
 							}
