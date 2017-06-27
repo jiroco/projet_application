@@ -43,17 +43,14 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
                             <tbody>
 
 	                    	<?php
-								print_r("<tr><td>".$resultat['NAMEDOCU']."</td><td>".$resultat['NAMEDOCD']."</td><td><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr></tr>");
-								while($resultat=$req->fetch()){
-									print_r("<tr><td>".$resultat['NAMEDOCU']."</td>
-										<td>".$resultat['NAMEDOCD']."</td>
-<td><a href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
 
+                            do {
+                                echo "<input type='hidden' id=" . $resultat['NAMEDOCU'] . " class='userToDelete'/>";
+                                print_r("<tr id=\'tab" . $resultat['NAMEDOCU'] . "\'><td>".$resultat['NAMEDOCU']."</td>
+                                    <td>".$resultat['NAMEDOCD']."</td>
+                                    <td><a id=T".$resultat["NAMEDOCU"]." .href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+                            } while ($resultat=$req->fetch());
 
-
-
-
-								}
 							}
 							else{
                         		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
@@ -96,6 +93,26 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 				                    $('.log').html(data)
 				                },
 				              });
+                              $('.userToDeleteButton').click(function () {
+                                  alert("click");
+                                  var docToDelete = $(this).attr('id');
+                                  var dataObject = {};
+                                  dataObject["NAMEDOCU"] = docToDelete;
+                                  alert(dataObject["NAMEDOCU"]);
+                                  $.ajax({
+                                     url: 'include/delete.php',
+                                     timeout: 30000,
+                                     type: 'POST',
+                                     data : dataObject,
+                                     success: function(data) {
+                                         alert("Fichier supprime");
+                                         $("#" + docToDelete).html("");
+                                     },
+                                     error: function(data) {
+                                         alert("Disfonctionement");
+                                     },
+                                  });
+                              });
 				          });
 				        </script>
         			</div>
