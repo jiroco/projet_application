@@ -52,10 +52,10 @@
                                         <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
                                 } while ($resultat=$req->fetch());
 
-    							}
-    							else{
-                            		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
-    							}
+							}
+							else{
+                        		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Vous n'avez pas encore de fichiers. </div></div>";
+							}
 
                             ?>
 
