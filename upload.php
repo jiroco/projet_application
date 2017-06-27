@@ -17,8 +17,9 @@
             <?php include('layout_base.php');?>
             <div class="container">
                 <div class="row">
+                	<?php include("actionupload.php"); ?>
                     <div class="text_area">
-						<form method="post" action="actionupload.php" enctype="multipart/form-data" class="form-horizontal">
+						<form method="post" enctype="multipart/form-data" class="form-horizontal">
 							<fieldset>
 	 							<div>
 									<label class="custom-file" for="File">
