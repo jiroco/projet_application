@@ -33,11 +33,11 @@
             if ($resultat){ 
                 echo "<meta http-equiv='refresh' content='0; URL=reglage_defaillance.php'>";
             }
+        }
         else{
             $valide+=1;
         }
-        }
-        if (isset($_POST['submit']) && $valide==0 ) {
+        if (isset($_POST['submit']) && $valide>0 ) {
            echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> <strong>Attention !</strong> Extension de fichiers incorrectes! </div></div><br/><br/><br/><br/>";;
         }
     }
