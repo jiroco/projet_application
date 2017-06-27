@@ -18,7 +18,7 @@
 		?>
 		<div class="container">
 			<div class="row text_area">
-					<h1>A propos de ce projet:</h1>
+					<h1>A propos de ce projet : medisis web</h1>
 			</div>
 			<div class="row">
 				
