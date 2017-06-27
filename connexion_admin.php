@@ -6,7 +6,7 @@ if ((isset($_SESSION['IDUSER'])) || !(empty($_SESSION['IDUSER']))) {
         echo "<meta http-equiv='refresh' content='0; URL=accueil_admin.php'>";
     }
     else{
-            echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";
+        echo "<meta http-equiv='refresh' content='0; URL=accueil_connecte.php'>";
     }
 }
 else{
