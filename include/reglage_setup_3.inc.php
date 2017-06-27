@@ -26,7 +26,7 @@ else
 $req->closeCursor();
 if (isset($_POST['submitsetup3'])){
 	include("excel3.php");
-	echo "<meta http-equiv='refresh' content='3; URL=reglage_setup_4.php'>";
+	echo "<meta http-equiv='refresh' content='3; URL=download.php'>";
 }
 else{
 	if (isset($_POST['submitsetup3'])) {

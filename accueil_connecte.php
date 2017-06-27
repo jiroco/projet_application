@@ -70,6 +70,7 @@
 						}
 						?>
 				        <input class="log" id=<?php echo $_SESSION["IDUSER"]; ?> type="hidden">
+						<input class="delfileuser" id=<?php echo $_SESSION["USERNAME"]; ?> type="hidden">
 
 				        <script
 				            src="https://code.jquery.com/jquery-3.2.1.js"
@@ -96,14 +97,17 @@
 				              });
                               $('.userToDeleteButton').click(function () {
                                   var docToDelete = $(this).attr('id');
+								  var username = $(".delfileuser").attr("id");
                                   var dataObject = {};
                                   dataObject["NAMEDOCU"] = docToDelete;
+								  dataObject["USERNAME"] = username;
                                   $.ajax({
                                      url: 'include/delete.php',
                                      timeout: 30000,
                                      type: 'POST',
                                      data : dataObject,
                                      success: function(data) {
+										 alert("Fichier supprime");
                                          window.location.reload(true);
                                      },
                                      error: function(data) {
@@ -117,6 +121,9 @@
         		</div>
         	</div>
     	</div>
+
+
+
 	</body>
 </html>
 <?php

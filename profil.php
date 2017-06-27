@@ -17,13 +17,25 @@
 			document.InnerHTML=" ";
 		}
 	</script>
+	<link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
+
 </head>
 <body>
-	<?php include 'layout_base.php'; ?>
-	<div class="container col-md-10 col-md-offset-1 row">
-
-		        <div id="profil" class="fade in active"> <!--profil début -->
-		        	<div class="container panel-group panel panel-default" style="width:100%;">
+	<div id="main_containt">
+		<?php
+		if ($_SESSION['NOM']=='admin'){
+			include('layout_base_admin.php');
+		}
+		else{
+			include ('layout_base.php'); 	
+		}
+		?>
+		<div class="container">
+            <div class="row">
+                <div class="text_area ">
+					<div class="container col-md-10 col-md-offset-1 row">
+				        <div id="profil" class="fade in active"> <!--profil début -->
+				        	<div class="container panel-group panel panel-default " style="width:100%;">
 							    <div class="panel-heading">
 							    	<h3>Mon Profil
 					    				<small class="pull-right">
@@ -32,33 +44,36 @@
 						      		</h3>
 							    </div>
 							    <div class="panel-body">
-            						<div class=" col-md-9 col-lg-9 ">
-				                  <table class="table table-user-information">
-				                    <tbody>
-				                      <tr>
-				                        <td>Prénom :	</td>
-				                        <td><?php print_r($_SESSION['PRENOM']) ?></td>
-				                      </tr>
-				                      <tr>
-				                        <td>Nom :	</td>
-				                        <td><?php print_r($_SESSION["NOM"]) ?></td>
-				                      </tr>
-				                      <tr>
-				                        <td>Société :	</td>
-				                        <td><?php print_r($_SESSION['SOCIETE']) ?></td>
-				                      </tr>
-					                  <tr>
-					                    <td>Email :	</td>
-					                    <td><a href="mailto:"><?php print_r($_SESSION['EMAIL']) ?></a></td>
-				                     </tr>
-				                    </tbody>
-				                  </table>
-				                </div>
-							    </div> <!-- panel body  fin -->
-			        </div><!--container de profil fin -->
-		        </div> <!-- profil fin -->
-
-	</div><!--container fin -->
+									<div class=" col-md-9 col-lg-9 ">
+					                  <table class="table table-user-information">
+					                    <tbody>
+					                      <tr>
+					                        <td>Prénom :	</td>
+					                        <td><?php print_r($_SESSION['PRENOM']) ?></td>
+					                      </tr>
+					                      <tr>
+					                        <td>Nom :	</td>
+					                        <td><?php print_r($_SESSION["NOM"]) ?></td>
+					                      </tr>
+					                      <tr>
+					                        <td>Société :	</td>
+					                        <td><?php print_r($_SESSION['SOCIETE']) ?></td>
+					                      </tr>
+						                  <tr>
+						                    <td>Email :	</td>
+						                    <td><a href="mailto:"><?php print_r($_SESSION['EMAIL']) ?></a></td>
+					                     </tr>
+					                    </tbody>
+					                  </table>
+				                	</div>
+							    </div>
+					        </div>
+				        </div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 
