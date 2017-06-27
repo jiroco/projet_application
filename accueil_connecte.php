@@ -1,9 +1,10 @@
 <?php
-include("include/connexiondb.php");
-session_start();
-if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
-    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
-}
+	include("include/connexiondb.php");
+	session_start();
+	if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
+	    echo "<meta http-equiv='refresh' content='0; URL=index.php'>";
+	}
+	else{
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,7 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 	                <div class="text_area">
 						<?php
 						/*fichiers uploader*/
-						$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
+						$req = $DBcon->prepare("SELECT NAMEDOCU, NAMEDOCD, URLDOCD FROM DOC_U DU, DOC_D DD, USER U, UTOD WHERE U.IDUSER= ? AND U.IDUSER=UTOD.IDUSER AND DU.IDDOCU=UTOD.IDDOCU AND DD.IDDOCD=UTOD.IDDOCD;");
 						$req->bindValue(1,$_SESSION["IDUSER"],PDO::PARAM_INT);
 
 
@@ -44,17 +45,17 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
 
 	                    	<?php
 
-                            do {
-                                echo "<input type='hidden' id=" . $resultat['NAMEDOCU'] . " class='userToDelete'/>";
-                                print_r("<tr id=\'tab" . $resultat['NAMEDOCU'] . "\'><td>".$resultat['NAMEDOCU']."</td>
-                                    <td>".$resultat['NAMEDOCD']."</td>
-                                    <td><a id=T".$resultat["NAMEDOCU"]." .href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
-                            } while ($resultat=$req->fetch());
+                                do {
+                                    echo "<input type='hidden' id=" . $resultat['NAMEDOCU'] . " class='userToDelete'/>";
+                                    print_r("<tr id=\'tab" . $resultat['NAMEDOCU'] . "\'><td>".$resultat['NAMEDOCU']."</td>
+                                        <td>".$resultat['NAMEDOCD']."</td>
+                                        <td><a id=T".$resultat["NAMEDOCU"]." .href='path_to_file' download='proposed_file_name'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+                                } while ($resultat=$req->fetch());
 
-							}
-							else{
-                        		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
-							}
+    							}
+    							else{
+                            		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
+    							}
 
                             ?>
 
@@ -121,3 +122,6 @@ if ((!isset($_SESSION['IDUSER'])) || (empty($_SESSION['IDUSER']))){
     	</div>
 	</body>
 </html>
+<?php
+	}
+?>

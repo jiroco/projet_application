@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `defaillance`
 --
 
-CREATE TABLE `defaillance` (
+CREATE TABLE `DEFAILLANCE` (
   `IDDEFAI` int(255) NOT NULL,
   `PERTEFONCT` varchar(256) NOT NULL,
   `INTEMP` varchar(256) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `defaillance` (
 -- Structure de la table `doc_d`
 --
 
-CREATE TABLE `doc_d` (
+CREATE TABLE `DOC_D` (
   `IDDOCD` int(255) NOT NULL,
   `URLDOCD` varchar(256) NOT NULL,
   `NAMEDOCD` varchar(256) NOT NULL
@@ -53,7 +53,7 @@ CREATE TABLE `doc_d` (
 -- Contenu de la table `doc_d`
 --
 
-INSERT INTO `doc_d` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
+INSERT INTO `DOC_D` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 (1, 'test', 'aefnazekjfnazefkjnzefj');
 
 -- --------------------------------------------------------
@@ -62,7 +62,7 @@ INSERT INTO `doc_d` (`IDDOCD`, `URLDOCD`, `NAMEDOCD`) VALUES
 -- Structure de la table `doc_u`
 --
 
-CREATE TABLE `doc_u` (
+CREATE TABLE `DOC_U` (
   `IDDOCU` int(255) NOT NULL,
   `URLDOCU` varchar(256) NOT NULL,
   `NAMEDOCU` varchar(256) NOT NULL
@@ -72,7 +72,7 @@ CREATE TABLE `doc_u` (
 -- Contenu de la table `doc_u`
 --
 
-INSERT INTO `doc_u` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
+INSERT INTO `DOC_U` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 (8, './data/jiroco/upload/ded5f4a771b7d9e84fdfcb2df3752a70.xml', 'ded5f4a771b7d9e84fdfcb2df3752a70.xml'),
 (9, './data/jiroco/upload/b32507d7007407b864ad586505c9b0e0.xml', 'b32507d7007407b864ad586505c9b0e0.xml');
 
@@ -82,7 +82,7 @@ INSERT INTO `doc_u` (`IDDOCU`, `URLDOCU`, `NAMEDOCU`) VALUES
 -- Structure de la table `dtos`
 --
 
-CREATE TABLE `dtos` (
+CREATE TABLE `DTOS` (
   `INDEXKEY` int(255) NOT NULL,
   `IDDOCU` int(255) NOT NULL,
   `IDDEFAI` int(255) NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `dtos` (
 -- Structure de la table `setup`
 --
 
-CREATE TABLE `setup` (
+CREATE TABLE `SETUP` (
   `IDSETUP` int(255) NOT NULL,
   `TYPE` varchar(256) NOT NULL,
   `1` varchar(256) NOT NULL DEFAULT '0',
@@ -115,7 +115,7 @@ CREATE TABLE `setup` (
 -- Contenu de la table `setup`
 --
 
-INSERT INTO `setup` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES
+INSERT INTO `SETUP` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`) VALUES
 (1, 'Numero', 'x', '', '', '', '', '', '', '', '', '', ''),
 (2, 'Fonction', '', 'x', '', '', '', '', '', '', '', '', ''),
 (3, 'Exigence fonctionnelle', '', '', 'x', '', '', '', '', '', '', '', ''),
@@ -134,7 +134,7 @@ INSERT INTO `setup` (`IDSETUP`, `TYPE`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, 
 -- Structure de la table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `USER` (
   `IDUSER` int(255) NOT NULL,
   `PERMISSION` tinyint(1) NOT NULL DEFAULT '0',
   `URLUSER` varchar(254) DEFAULT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `user` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
+INSERT INTO `USER` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PASSWORD`, `SOCIETE`, `NOM`, `PRENOM`) VALUES
 (1, 1, '', 'adepelley', 'aloise.depelley@insa-cvl.fr', 'c5992ae9801d756f8cba5a61589771bfd06046f6', 'INSA', 'Depelley', 'Aloïse'),
 (3, 0, '', 'dneyron', 'david.neyron@insa-cvl.fr', 'aa743a0aaec8f7d7a1f01442503957f4d7a2d634', 'INSA', 'Neyron', 'David'),
 (6, 1, NULL, 'admin', NULL, '2261cf51c9172d668297bd6524239b9e23591611', 'INSA', 'admin', 'admin'),
@@ -162,7 +162,7 @@ INSERT INTO `user` (`IDUSER`, `PERMISSION`, `URLUSER`, `USERNAME`, `EMAIL`, `PAS
 -- Structure de la table `utod`
 --
 
-CREATE TABLE `utod` (
+CREATE TABLE `UTOD` (
   `INDEXKEY` int(255) NOT NULL,
   `IDUSER` int(255) NOT NULL,
   `IDDOCU` int(255) NOT NULL,
@@ -173,7 +173,7 @@ CREATE TABLE `utod` (
 -- Contenu de la table `utod`
 --
 
-INSERT INTO `utod` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
+INSERT INTO `UTOD` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 (5, 26, 8, 1),
 (6, 26, 9, 1);
 
@@ -184,43 +184,43 @@ INSERT INTO `utod` (`INDEXKEY`, `IDUSER`, `IDDOCU`, `IDDOCD`) VALUES
 --
 -- Index pour la table `defaillance`
 --
-ALTER TABLE `defaillance`
+ALTER TABLE `DEFAILLANCE`
   ADD PRIMARY KEY (`IDDEFAI`);
 
 --
 -- Index pour la table `doc_d`
 --
-ALTER TABLE `doc_d`
+ALTER TABLE `DOC_D`
   ADD PRIMARY KEY (`IDDOCD`);
 
 --
 -- Index pour la table `doc_u`
 --
-ALTER TABLE `doc_u`
+ALTER TABLE `DOC_U`
   ADD PRIMARY KEY (`IDDOCU`);
 
 --
 -- Index pour la table `dtos`
 --
-ALTER TABLE `dtos`
+ALTER TABLE `DTOS`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
 -- Index pour la table `setup`
 --
-ALTER TABLE `setup`
+ALTER TABLE `SETUP`
   ADD PRIMARY KEY (`IDSETUP`);
 
 --
 -- Index pour la table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE `USER`
   ADD PRIMARY KEY (`IDUSER`);
 
 --
 -- Index pour la table `utod`
 --
-ALTER TABLE `utod`
+ALTER TABLE `UTOD`
   ADD PRIMARY KEY (`INDEXKEY`);
 
 --
@@ -230,37 +230,37 @@ ALTER TABLE `utod`
 --
 -- AUTO_INCREMENT pour la table `defaillance`
 --
-ALTER TABLE `defaillance`
+ALTER TABLE `DEFAILLANCE`
   MODIFY `IDDEFAI` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `doc_d`
 --
-ALTER TABLE `doc_d`
+ALTER TABLE `DOC_D`
   MODIFY `IDDOCD` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `doc_u`
 --
-ALTER TABLE `doc_u`
+ALTER TABLE `DOC_U`
   MODIFY `IDDOCU` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `dtos`
 --
-ALTER TABLE `dtos`
+ALTER TABLE `DTOS`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `setup`
 --
-ALTER TABLE `setup`
+ALTER TABLE `SETUP`
   MODIFY `IDSETUP` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE `USER`
   MODIFY `IDUSER` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT pour la table `utod`
 --
-ALTER TABLE `utod`
+ALTER TABLE `UTOD`
   MODIFY `INDEXKEY` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
