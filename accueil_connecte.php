@@ -49,13 +49,13 @@
                                     echo "<input type='hidden' id=" . $resultat['NAMEDOCU'] . " class='userToDelete'/>";
                                     print_r("<tr class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " >".$resultat['NAMEDOCU']."</td>
                                         <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " >".$resultat['NAMEDOCD']."</td>
-                                        <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='userToDeleteButton" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
+                                        <td class=tabuserToDeleteButton" . $resultat['NAMEDOCU'] . " ><a href='".$resultat['URLDOCD']."' download='fichier_telecharger'><span class='glyphicon glyphicon-download-alt'></span> Télécharger </a><a class='userToDeleteButton' id='" . $resultat['NAMEDOCU'] . "' href='#' ><span class='glyphicon glyphicon-remove'></span> Supprimer </a></td></tr>");
                                 } while ($resultat=$req->fetch());
 
-    							}
-    							else{
-                            		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Dossier non trouvé </div></div>";
-    							}
+							}
+							else{
+                        		echo "</br><div class='container col-md-4 col-md-offset-4'><div class='alert alert-danger' style='text-align: center;'> Vous n'avez pas encore de fichiers. </div></div>";
+							}
 
                             ?>
 
@@ -95,21 +95,16 @@
 				                },
 				              });
                               $('.userToDeleteButton').click(function () {
-                                  alert("click");
                                   var docToDelete = $(this).attr('id');
                                   var dataObject = {};
                                   dataObject["NAMEDOCU"] = docToDelete;
-                                  alert(dataObject["NAMEDOCU"]);
                                   $.ajax({
                                      url: 'include/delete.php',
                                      timeout: 30000,
                                      type: 'POST',
                                      data : dataObject,
                                      success: function(data) {
-                                         var classToDelete = ".tab" + docToDelete;
-                                         alert(classToDelete);
-                                         alert("Fichier supprime");
-                                         $(classToDelete).html("TA RAAAAAACEEEEE !!!");
+                                         window.location.reload(true);
                                      },
                                      error: function(data) {
                                          alert("Disfonctionement");
