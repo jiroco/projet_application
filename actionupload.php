@@ -32,6 +32,7 @@
             $req->execute();
             if ($resultat){ 
                 echo "<meta http-equiv='refresh' content='0; URL=reglage_defaillance.php'>";
+                $_SESSION['IDDOCU']=$IDdocu;
             }
         }
         else{
